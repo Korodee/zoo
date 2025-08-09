@@ -8,7 +8,9 @@ export type UserProfile = {
   membership_date?: string;
 };
 
-const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
+// Normalize to avoid trailing slash issues that cause double slashes in requests
+const RAW_BASE_URL = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:5001";
+const BASE_URL = RAW_BASE_URL.replace(/\/+$/, "");
 
 const TOKEN_KEY = "token";
 

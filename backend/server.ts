@@ -33,10 +33,23 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-// CORS configuration
+// CORS configuration with support for multiple origins (prod, preview, local)
+const allowedOrigins = [
+  process.env.FRONTEND_URL || "http://localhost:3000",
+  "http://localhost:3000",
+];
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL || "http://localhost:3000",
+    origin(origin, callback) {
+      if (!origin) return callback(null, true);
+      if (
+        allowedOrigins.includes(origin) ||
+        /\.vercel\.app$/i.test(origin)
+      ) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
     credentials: true,
   })
 );
@@ -56,6 +69,11 @@ app.get("/health", (req, res) => {
     environment: process.env.NODE_ENV || "development",
     database: "MongoDB",
   });
+});
+
+// Basic root endpoint for uptime checks
+app.get("/", (_req, res) => {
+  res.type("text/plain").send("WildLife Hub API is running");
 });
 
 // API routes
@@ -86,8 +104,8 @@ app.use(
   }
 );
 
-// Start server
-app.listen(PORT, () => {
+// Start server (explicit host to avoid binding issues)
+app.listen(Number(PORT), "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`API Docs: http://localhost:${PORT}/api-docs`);
