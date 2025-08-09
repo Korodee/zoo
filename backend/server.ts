@@ -18,20 +18,25 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
+const DISABLE_SECURITY = process.env.DISABLE_SECURITY === "true";
 
 // Connect to MongoDB
 connectDB();
 
-// Security middleware
-app.use(helmet());
+// Security middleware (can be disabled via env for debugging on hosts)
+if (!DISABLE_SECURITY) {
+  app.use(helmet());
+}
 
-// Rate limiting
-const limiter = rateLimit({
-  windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // limit each IP to 100 requests per windowMs
-  message: "Too many requests from this IP, please try again later.",
-});
-app.use(limiter);
+// Rate limiting (can be disabled via env)
+if (!DISABLE_SECURITY) {
+  const limiter = rateLimit({
+    windowMs: 15 * 60 * 1000, // 15 minutes
+    max: 100, // limit each IP to 100 requests per windowMs
+    message: "Too many requests from this IP, please try again later.",
+  });
+  app.use(limiter);
+}
 
 // CORS configuration with support for multiple origins (prod, preview, local)
 const allowedOrigins = [
