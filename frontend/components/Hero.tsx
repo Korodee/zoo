@@ -35,6 +35,9 @@ export default function Hero() {
           priority
           className="object-cover transform scale-110"
           sizes="100vw"
+          onError={(e) => {
+            console.error('Hero image failed to load:', e);
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>

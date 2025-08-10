@@ -13,9 +13,12 @@ export default function Navbar() {
   );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
+  const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
   useEffect(() => {
+    setMounted(true);
+    
     const init = async () => {
       // On the landing page, keep buttons as guest and skip fetching auth
       if (pathname === "/") {
@@ -51,19 +54,35 @@ export default function Navbar() {
   const linkClass =
     "relative text-sm md:text-base font-medium transition-colors duration-300 text-white hover:text-yellow-300 scrolled:text-gray-800 scrolled:hover:text-primary-600 after:content-[''] after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-current after:transition-all after:duration-300 hover:after:w-full";
 
+  // Prevent hydration mismatch by not rendering until mounted
+  if (!mounted) {
+    return (
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between h-16">
+            <div className="flex items-center">
+              <div className="flex items-center gap-2">
+                <PawPrint className="h-7 w-7 text-white" />
+                <span className="text-xl font-semibold tracking-tight text-white">
+                  WildLife Hub
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+    );
+  }
+
   if (isLoading) {
     return (
-      <motion.nav
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50"
-      >
+      <nav className="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="h-8 w-32 bg-gray-200 animate-pulse rounded" />
           </div>
         </div>
-      </motion.nav>
+      </nav>
     );
   }
 
@@ -71,10 +90,8 @@ export default function Navbar() {
   const isLoggedIn = !!user;
 
   return (
-    <motion.nav
+    <nav
       id="navbar"
-      initial={{ opacity: 0, y: -20 }}
-      animate={{ opacity: 1, y: 0 }}
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -108,29 +125,19 @@ export default function Navbar() {
           {/* Right: auth actions */}
           <div className="hidden md:flex items-center gap-3">
             {!forceGuest && isLoggedIn ? (
-              <motion.div
-                className="flex items-center gap-3"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-              >
+              <div className="flex items-center gap-3">
                 <Link href="/member" className={linkClass}>
                   Members
                 </Link>
-                <motion.button
+                <button
                   onClick={handleSignOut}
                   className={linkClass}
-                  whileHover={{ scale: 1.03 }}
-                  whileTap={{ scale: 0.97 }}
                 >
                   Sign Out
-                </motion.button>
-              </motion.div>
+                </button>
+              </div>
             ) : (
-              <motion.div
-                className="flex items-center gap-3"
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-              >
+              <div className="flex items-center gap-3">
                 <Link
                   href="/login"
                   className={linkClass}
@@ -147,24 +154,22 @@ export default function Navbar() {
                 >
                   Join WildLife Hub
                 </Link>
-              </motion.div>
+              </div>
             )}
           </div>
 
           {/* Mobile menu button */}
           <div className="md:hidden">
-            <motion.button
+            <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white scrolled:text-gray-700"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
             >
               {isMenuOpen ? (
                 <X className="h-6 w-6" />
               ) : (
                 <Menu className="h-6 w-6" />
               )}
-            </motion.button>
+            </button>
           </div>
         </div>
 
@@ -244,6 +249,6 @@ export default function Navbar() {
           )}
         </AnimatePresence>
       </div>
-    </motion.nav>
+    </nav>
   );
 }
