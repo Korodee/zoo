@@ -447,15 +447,6 @@ export default function MemberContent() {
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
                 <a
-                  href="#winners"
-                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
-                >
-                  <div className="flex items-center gap-3 text-gray-800">
-                    <Crown className="h-5 w-5 text-yellow-500" /> Past winners
-                  </div>
-                  <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
-                </a>
-                <a
                   href="#resources"
                   className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
                 >
