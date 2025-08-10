@@ -27,10 +27,10 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Enhanced Effects */}
       <div
-        className="absolute inset-0 bg-cover bg-center z-0"
+        className="absolute inset-0 bg-cover bg-center z-0 blur-"
         style={{ backgroundImage: "url('/hero-img.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/40" />
 
       {/* Floating Elements */}
       <div className="absolute inset-0 z-5">
