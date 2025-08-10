@@ -42,9 +42,9 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Your gateway to the wild world. Experience the magic of wildlife
-              conservation, education, and unforgettable encounters with
-              nature's most incredible creatures.
+              Votre porte d'entrée vers le monde sauvage. Vivez la magie de la conservation de la faune sauvage,
+              de l'éducation, et des rencontres inoubliables avec
+              les créatures les plus incroyables de la nature.
             </p>
             <div className="flex space-x-4">
               {["f", "in", "t", "yt"].map((label) => (
@@ -64,7 +64,7 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-bold mb-6 text-white">Quick Links</h4>
+            <h4 className="text-xl font-bold mb-6 text-white">Liens Rapides</h4>
             <ul className="space-y-4">
               <li>
                 <Link
@@ -72,7 +72,7 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
-                  Home
+                  Accueil
                 </Link>
               </li>
               <li>
@@ -81,7 +81,7 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
-                  About Us
+                  À propos
                 </Link>
               </li>
               <li>
@@ -90,7 +90,7 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
-                  Gallery
+                  Galerie
                 </Link>
               </li>
               <li>
@@ -108,21 +108,21 @@ export default function Footer() {
                   className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
-                  Member Area
+                  Espace Membre
                 </Link>
               </li>
             </ul>
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-bold mb-6 text-white">Our Services</h4>
+            <h4 className="text-xl font-bold mb-6 text-white">Nos Services</h4>
             <ul className="space-y-4">
               {[
-                "Wildlife Tours",
-                "Educational Programs",
-                "Conservation Projects",
-                "Photography Workshops",
-                "VIP Memberships",
+                "Visites Faune Sauvage",
+                "Programmes Éducatifs",
+                "Projets de Conservation",
+                "Ateliers Photographie",
+                "Adhésions VIP",
               ].map((s) => (
                 <li
                   key={s}
@@ -143,15 +143,15 @@ export default function Footer() {
           transition={{ duration: 0.8 }}
         >
           <div className="text-center">
-            <h4 className="text-2xl font-bold text-white mb-4">Stay Updated</h4>
+            <h4 className="text-2xl font-bold text-white mb-4">Restez Informé</h4>
             <p className="text-gray-300 mb-6 max-w-md mx-auto">
-              Subscribe to our newsletter for the latest wildlife news,
-              exclusive content, and special offers.
+              Abonnez-vous à notre newsletter pour les dernières nouvelles sur la faune sauvage,
+              du contenu exclusif, et des offres spéciales.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Entrez votre email"
                 className="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
               />
               <motion.button
@@ -159,7 +159,7 @@ export default function Footer() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                Subscribe
+                S'abonner
               </motion.button>
             </div>
           </div>
@@ -181,19 +181,19 @@ export default function Footer() {
               href="#"
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >
-              Privacy Policy
+              Politique de Confidentialité
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >
-              Terms of Service
+              Conditions d'Utilisation
             </Link>
             <Link
               href="#"
               className="text-gray-400 hover:text-white transition-colors text-sm"
             >
-              Cookie Policy
+              Politique des Cookies
             </Link>
           </div>
         </motion.div>

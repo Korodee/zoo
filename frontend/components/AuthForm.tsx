@@ -98,7 +98,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              {mode === "signup" ? "Join WildLife Hub" : "Access Members Area"}
+              {mode === "signup" ? "Rejoindre WildLife Hub" : "Accéder à l'Espace Membre"}
             </motion.h2>
             <motion.p
               className="text-gray-600"
@@ -108,26 +108,26 @@ export default function AuthForm({ mode }: AuthFormProps) {
             >
               {mode === "signup" ? (
                 <>
-                  Create your account to access exclusive wildlife content and
-                  photography contests
+                  Créez votre compte pour accéder au contenu exclusif de faune sauvage et
+                  aux concours de photographie
                   <br />
                   <a
                     href="/login"
                     className="font-medium text-primary-600 hover:text-primary-500 transition-colors"
                   >
-                    Already have an account? Sign in
+                    Vous avez déjà un compte ? Connectez-vous
                   </a>
                 </>
               ) : (
                 <>
-                  Sign in to access your exclusive members content and
-                  photography contests
+                  Connectez-vous pour accéder à votre contenu exclusif de membre et
+                  aux concours de photographie
                   <br />
                   <a
                     href="/signup"
                     className="font-medium text-primary-600 hover:text-primary-500 transition-colors"
                   >
-                    Don't have an account? Join us
+                    Vous n'avez pas de compte ? Rejoignez-nous
                   </a>
                 </>
               )}
@@ -165,7 +165,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   htmlFor="name"
                   className="block text-sm font-medium text-gray-700 mb-2"
                 >
-                  Full name
+                  Nom complet
                 </label>
                 <input
                   id="name"
@@ -174,7 +174,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   value={name}
                   onChange={(e) => setName(e.target.value)}
                   className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Your full name"
+                  placeholder="Votre nom complet"
                 />
               </motion.div>
             )}
@@ -187,7 +187,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 htmlFor="email"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                Email address
+                Adresse email
               </label>
               <div className="relative">
                 <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -200,7 +200,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                   className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your email"
+                  placeholder="Entrez votre email"
                 />
               </div>
             </motion.div>
@@ -214,7 +214,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 htmlFor="password"
                 className="block text-sm font-medium text-gray-700 mb-2"
               >
-                Password
+                Mot de passe
               </label>
               <div className="relative">
                 <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
@@ -229,7 +229,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
-                  placeholder="Enter your password"
+                  placeholder="Entrez votre mot de passe"
                 />
                 <motion.button
                   type="button"
@@ -266,8 +266,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 <div className="flex items-center space-x-2">
                   <span>
                     {mode === "signup"
-                      ? "Join WildLife Hub"
-                      : "Access Members Area"}
+                      ? "Rejoindre WildLife Hub"
+                      : "Accéder à l'Espace Membre"}
                   </span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </div>
@@ -281,7 +281,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 href="/forgot-password"
                 className="text-primary-600 hover:text-primary-700 font-medium"
               >
-                Forgot password?
+                Mot de passe oublié ?
               </a>
               <button
                 type="button"
@@ -296,7 +296,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   }
                 }}
               >
-                Resend verification
+                Renvoyer la vérification
               </button>
             </div>
           )}

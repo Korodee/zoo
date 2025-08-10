@@ -45,7 +45,7 @@ export default function CTA() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Unlock Exclusive Wildlife Content
+            Débloquez du Contenu Exclusif sur la Faune
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -53,9 +53,9 @@ export default function CTA() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-white/90 mb-8 max-w-3xl mx-auto"
           >
-            Join our VIP membership and get access to exclusive wildlife
-            photography, behind-the-scenes content, and participate in our
-            monthly photography contests with amazing prizes.
+            Rejoignez notre adhésion VIP et obtenez l'accès à la photographie exclusive de la faune sauvage,
+            du contenu en coulisses, et participez à nos
+            concours de photographie mensuels avec des prix incroyables.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,28 +66,28 @@ export default function CTA() {
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Camera className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Exclusive Photography
+                Photographie Exclusive
               </h3>
               <p className="text-white/80">
-                Access to premium wildlife shots and behind-the-scenes content
+                Accès aux clichés premium de faune sauvage et au contenu en coulisses
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Trophy className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Monthly Contests
+                Concours Mensuels
               </h3>
               <p className="text-white/80">
-                Participate in photography contests with amazing prizes
+                Participez aux concours de photographie avec des prix incroyables
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Users className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Community Access
+                Accès Communautaire
               </h3>
               <p className="text-white/80">
-                Connect with fellow wildlife enthusiasts and photographers
+                Connectez-vous avec d'autres passionnés de faune sauvage et photographes
               </p>
             </div>
           </motion.div>
@@ -103,7 +103,7 @@ export default function CTA() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Join VIP Membership</span>
+                <span>Rejoindre l'Adhésion VIP</span>
                 <ArrowRight className="h-5 w-5" />
               </motion.button>
             </Link>
@@ -113,7 +113,7 @@ export default function CTA() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Already a Member?</span>
+                <span>Déjà Membre ?</span>
                 <ArrowRight className="h-5 w-5" />
               </motion.button>
             </Link>
@@ -125,8 +125,7 @@ export default function CTA() {
             className="mt-8 text-white/70 text-sm"
           >
             <p>
-              Starting at $9.99/month • Cancel anytime • 30-day money-back
-              guarantee
+              À partir de 9,99€/mois • Annulez à tout moment • Garantie de remboursement de 30 jours
             </p>
           </motion.div>
         </motion.div>

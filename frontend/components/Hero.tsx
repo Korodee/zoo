@@ -80,18 +80,18 @@ export default function Hero() {
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           variants={itemVariants}
         >
-          Discover the
+          Découvrez le
           <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-            Wild World
+            Monde Sauvage
           </span>
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-200 leading-relaxed"
           variants={itemVariants}
         >
-          Experience the magic of wildlife up close. From majestic lions to
-          playful penguins, embark on an unforgettable journey through nature's
-          most incredible creatures.
+          Vivez la magie de la faune sauvage de près. Des lions majestueux aux
+          pingouins joueurs, embarquez pour un voyage inoubliable à travers les
+          créatures les plus incroyables de la nature.
         </motion.p>
 
         <motion.div
@@ -104,7 +104,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Start Your Adventure</span>
+              <span>Commencer l'Aventure</span>
               <ArrowRight className="h-5 w-5" />
             </motion.button>
           </Link>
@@ -114,7 +114,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
           >
             <Play className="h-5 w-5" />
-            <span>Watch Trailer</span>
+            <span>Voir la Bande Annonce</span>
           </motion.button>
         </motion.div>
 
@@ -127,17 +127,17 @@ export default function Hero() {
         >
           <div className="text-center">
             <div className="text-2xl font-bold text-yellow-400">500+</div>
-            <div className="text-xs">Wildlife Photos</div>
+            <div className="text-xs">Photos Faune</div>
           </div>
           <div className="w-px h-6 bg-white/30" />
           <div className="text-center">
             <div className="text-2xl font-bold text-yellow-400">50+</div>
-            <div className="text-xs">Species Covered</div>
+            <div className="text-xs">Espèces Couvertes</div>
           </div>
           <div className="w-px h-6 bg-white/30" />
           <div className="text-center">
             <div className="text-2xl font-bold text-yellow-400">10K+</div>
-            <div className="text-xs">Happy Members</div>
+            <div className="text-xs">Membres Satisfaits</div>
           </div>
         </motion.div>
       </motion.div>

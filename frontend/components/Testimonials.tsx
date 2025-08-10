@@ -16,20 +16,20 @@ export default function Testimonials() {
   const testimonials = [
     {
       name: "Sarah Johnson",
-      role: "Wildlife Photographer",
-      text: "The WildLife Hub is absolutely incredible! I've captured some of my best wildlife shots here. The animals are well-cared for.",
+      role: "Photographe Faune Sauvage",
+      text: "Le WildLife Hub est absolument incroyable ! J'ai capturé certains de mes meilleurs clichés de faune sauvage ici. Les animaux sont bien soignés.",
       rating: 5,
     },
     {
       name: "Mike Chen",
-      role: "Conservationist",
-      text: "As a conservationist, I appreciate how WildLife Hub prioritizes animal welfare and education. It's a model for responsible wildlife tourism.",
+      role: "Conservationniste",
+      text: "En tant que conservationniste, j'apprécie comment WildLife Hub priorise le bien-être animal et l'éducation. C'est un modèle pour le tourisme responsable de la faune sauvage.",
       rating: 5,
     },
     {
       name: "Emily Davis",
-      role: "Family Visitor",
-      text: "My kids love visiting the zoo! The interactive exhibits and educational programs make learning about animals fun and engaging.",
+      role: "Visiteur Familial",
+      text: "Mes enfants adorent visiter le zoo ! Les expositions interactives et les programmes éducatifs rendent l'apprentissage des animaux amusant et engageant.",
       rating: 5,
     },
   ];
@@ -64,13 +64,13 @@ export default function Testimonials() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            What Our Visitors Say
+            Ce que Disent Nos Visiteurs
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Hear from our amazing visitors who have experienced the magic of
+            Écoutez nos incroyables visiteurs qui ont vécu la magie de
             WildLife Hub.
           </motion.p>
         </motion.div>

@@ -46,14 +46,14 @@ export default function Contact() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            Get in Touch
+            Contactez-nous
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Have questions? We'd love to hear from you. Send us a message and
-            we'll respond as soon as possible.
+            Des questions ? Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et
+            nous répondrons dès que possible.
           </motion.p>
         </motion.div>
 
@@ -68,7 +68,7 @@ export default function Contact() {
           <motion.div variants={itemVariants} className="space-y-4">
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Contact Information
+                Informations de Contact
               </h3>
               <div className="space-y-6">
                 <motion.div
@@ -93,7 +93,7 @@ export default function Contact() {
                     <Phone className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Phone</p>
+                    <p className="font-semibold text-gray-900">Téléphone</p>
                     <p className="text-gray-600">(555) 123-4567</p>
                   </div>
                 </motion.div>
@@ -106,7 +106,7 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Address</p>
+                    <p className="font-semibold text-gray-900">Adresse</p>
                     <p className="text-gray-600">
                       123 Wildlife Drive, Nature City, NC 12345
                     </p>
@@ -117,22 +117,22 @@ export default function Contact() {
 
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <h4 className="text-xl font-bold text-gray-900 mb-6">
-                Opening Hours
+                Heures d'Ouverture
               </h4>
               <div className="space-y-4">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="font-medium text-gray-900">
-                    Monday - Friday
+                    Lundi - Vendredi
                   </span>
-                  <span className="text-gray-600">9:00 AM - 6:00 PM</span>
+                  <span className="text-gray-600">9h00 - 18h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
-                  <span className="font-medium text-gray-900">Saturday</span>
-                  <span className="text-gray-600">8:00 AM - 7:00 PM</span>
+                  <span className="font-medium text-gray-900">Samedi</span>
+                  <span className="text-gray-600">8h00 - 19h00</span>
                 </div>
                 <div className="flex justify-between items-center py-2">
-                  <span className="font-medium text-gray-900">Sunday</span>
-                  <span className="text-gray-600">10:00 AM - 5:00 PM</span>
+                  <span className="font-medium text-gray-900">Dimanche</span>
+                  <span className="text-gray-600">10h00 - 17h00</span>
                 </div>
               </div>
             </div>
@@ -142,7 +142,7 @@ export default function Contact() {
           <motion.div variants={itemVariants}>
             <div className="bg-white rounded-2xl p-8 shadow-lg border border-gray-100">
               <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Send us a Message
+                Envoyez-nous un Message
               </h3>
               <form className="space-y-6">
                 <div>
@@ -150,13 +150,13 @@ export default function Contact() {
                     htmlFor="name"
                     className="block text-sm font-semibold text-gray-700 mb-2"
                   >
-                    Name
+                    Nom
                   </label>
                   <input
                     type="text"
                     id="name"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300"
-                    placeholder="Your name"
+                    placeholder="Votre nom"
                   />
                 </div>
                 <div>
@@ -170,7 +170,7 @@ export default function Contact() {
                     type="email"
                     id="email"
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300"
-                    placeholder="your@email.com"
+                    placeholder="votre@email.com"
                   />
                 </div>
                 <div>
@@ -184,7 +184,7 @@ export default function Contact() {
                     id="message"
                     rows={5}
                     className="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 resize-none"
-                    placeholder="Your message..."
+                    placeholder="Votre message..."
                   />
                 </div>
                 <motion.button
@@ -194,7 +194,7 @@ export default function Contact() {
                   whileTap={{ scale: 0.98 }}
                 >
                   <Mail className="h-5 w-5" />
-                  <span>Send Message</span>
+                  <span>Envoyer le Message</span>
                 </motion.button>
               </form>
             </div>

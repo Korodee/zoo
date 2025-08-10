@@ -18,94 +18,94 @@ export default function Gallery() {
   const router = useRouter();
   const zooImages = [
     {
-      name: "African Lion",
-      category: "Big Cats",
+      name: "Lion d'Afrique",
+      category: "Grands Félins",
       image:
         "https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop",
-      description: "Majestic king of the jungle",
-      status: "Active",
-      age: "8 years",
-      location: "Savanna Habitat",
+      description: "Majestueux roi de la jungle",
+      status: "Actif",
+      age: "8 ans",
+      location: "Habitat Savane",
     },
     {
-      name: "Elephant Family",
-      category: "Mammals",
+      name: "Famille d'Éléphants",
+      category: "Mammifères",
       image:
         "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=600&h=400&fit=crop",
-      description: "Gentle giants of the savanna",
-      status: "Active",
-      age: "15 years",
-      location: "African Plains",
+      description: "Géants doux de la savane",
+      status: "Actif",
+      age: "15 ans",
+      location: "Plaines Africaines",
     },
     {
-      name: "Giraffe",
-      category: "Mammals",
+      name: "Girafe",
+      category: "Mammifères",
       image:
         "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=600&h=400&fit=crop",
-      description: "Tallest land animal",
-      status: "Active",
-      age: "12 years",
-      location: "Savanna Habitat",
+      description: "Plus grand animal terrestre",
+      status: "Actif",
+      age: "12 ans",
+      location: "Habitat Savane",
     },
     {
-      name: "Penguin Colony",
-      category: "Birds",
+      name: "Colonie de Pingouins",
+      category: "Oiseaux",
       image:
         "https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?w=600&h=400&fit=crop",
-      description: "Adorable waddling friends",
-      status: "Active",
-      age: "5 years",
-      location: "Polar Zone",
+      description: "Adorables amis qui se dandinent",
+      status: "Actif",
+      age: "5 ans",
+      location: "Zone Polaire",
     },
     {
-      name: "Bengal Tiger",
-      category: "Big Cats",
+      name: "Tigre du Bengale",
+      category: "Grands Félins",
       image:
         "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Striped beauty of the wild",
-      status: "Active",
-      age: "10 years",
-      location: "Tiger Territory",
+      description: "Beauté rayée de la nature sauvage",
+      status: "Actif",
+      age: "10 ans",
+      location: "Territoire des Tigres",
     },
     {
-      name: "Mountain Gorilla",
+      name: "Gorille des Montagnes",
       category: "Primates",
       image:
         "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Intelligent and powerful",
-      status: "Active",
-      age: "18 years",
-      location: "Gorilla Sanctuary",
+      description: "Intelligent et puissant",
+      status: "Actif",
+      age: "18 ans",
+      location: "Sanctuaire des Gorilles",
     },
     {
-      name: "Red Panda",
-      category: "Mammals",
+      name: "Panda Roux",
+      category: "Mammifères",
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      description: "Adorable bamboo lover",
-      status: "Active",
-      age: "6 years",
-      location: "Bamboo Forest",
+      description: "Adorable amateur de bambou",
+      status: "Actif",
+      age: "6 ans",
+      location: "Forêt de Bambou",
     },
     {
-      name: "Snow Leopard",
-      category: "Big Cats",
+      name: "Léopard des Neiges",
+      category: "Grands Félins",
       image:
         "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Ghost of the mountains",
-      status: "Active",
-      age: "9 years",
-      location: "Mountain Habitat",
+      description: "Fantôme des montagnes",
+      status: "Actif",
+      age: "9 ans",
+      location: "Habitat Montagneux",
     },
     {
-      name: "Meerkat Family",
-      category: "Mammals",
+      name: "Famille de Suricates",
+      category: "Mammifères",
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      description: "Curious desert dwellers",
-      status: "Active",
-      age: "4 years",
-      location: "Desert Zone",
+      description: "Curieux habitants du désert",
+      status: "Actif",
+      age: "4 ans",
+      location: "Zone Désertique",
     },
   ];
 
@@ -144,15 +144,15 @@ export default function Gallery() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            Meet Our Wildlife
+            Rencontrez Notre Faune Sauvage
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Discover the incredible diversity of animals that call WildLife Hub
-            their home. Each creature has a unique story and plays a vital role
-            in our ecosystem.
+            Découvrez l'incroyable diversité des animaux qui considèrent WildLife Hub
+            comme leur maison. Chaque créature a une histoire unique et joue un rôle vital
+            dans notre écosystème.
           </motion.p>
         </motion.div>
 
@@ -165,11 +165,11 @@ export default function Gallery() {
         >
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
             <div className="text-2xl font-bold text-primary-600 mb-2">9</div>
-            <div className="text-sm text-gray-600">Animal Species</div>
+            <div className="text-sm text-gray-600">Espèces d'Animaux</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
             <div className="text-2xl font-bold text-green-600 mb-2">100%</div>
-            <div className="text-sm text-gray-600">Healthy Animals</div>
+            <div className="text-sm text-gray-600">Animaux en Bonne Santé</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
             <div className="text-2xl font-bold text-blue-600 mb-2">5</div>
@@ -177,7 +177,7 @@ export default function Gallery() {
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
             <div className="text-2xl font-bold text-purple-600 mb-2">24/7</div>
-            <div className="text-sm text-gray-600">Care & Monitoring</div>
+            <div className="text-sm text-gray-600">Soins & Surveillance</div>
           </div>
         </motion.div>
 
@@ -278,7 +278,7 @@ export default function Gallery() {
                     <div className="flex items-center space-x-2">
                       <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
                       <span className="text-sm font-medium text-green-600">
-                        Active & Healthy
+                        Actif & En Bonne Santé
                       </span>
                     </div>
 
@@ -290,7 +290,7 @@ export default function Gallery() {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      Learn More
+                      En Savoir Plus
                     </motion.button>
                   </div>
                 </div>
@@ -311,7 +311,7 @@ export default function Gallery() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>See More Animals</span>
+              <span>Voir Plus d'Animaux</span>
               <svg
                 className="h-5 w-5"
                 viewBox="0 0 24 24"

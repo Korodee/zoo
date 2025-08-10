@@ -48,15 +48,15 @@ export default function About() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            About WildLife Hub
+            À propos de WildLife Hub
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            We're passionate about connecting people with the wonders of
-            wildlife, fostering conservation awareness, and creating
-            unforgettable experiences.
+            Nous sommes passionnés par la connexion des gens avec les merveilles de
+            la faune sauvage, en favorisant la sensibilisation à la conservation, et en créant
+            des expériences inoubliables.
           </motion.p>
         </motion.div>
 
@@ -70,9 +70,9 @@ export default function About() {
           {[
             {
               icon: Heart,
-              title: "Animal Welfare",
+              title: "Bien-être Animal",
               description:
-                "Every animal receives the highest level of care and attention from our experienced veterinary team.",
+                "Chaque animal reçoit le plus haut niveau de soins et d'attention de notre équipe vétérinaire expérimentée.",
               color: "from-red-500 to-pink-500",
               bgColor: "from-red-50 to-pink-50",
               borderColor: "border-red-200",
@@ -81,16 +81,16 @@ export default function About() {
               icon: Globe,
               title: "Conservation",
               description:
-                "We're committed to wildlife conservation and education, helping protect endangered species.",
+                "Nous nous engageons pour la conservation de la faune sauvage et l'éducation, en aidant à protéger les espèces menacées.",
               color: "from-green-500 to-blue-500",
               bgColor: "from-green-50 to-blue-50",
               borderColor: "border-green-200",
             },
             {
               icon: Camera,
-              title: "Education",
+              title: "Éducation",
               description:
-                "Interactive exhibits and educational programs make learning about wildlife engaging and fun.",
+                "Les expositions interactives et les programmes éducatifs rendent l'apprentissage de la faune sauvage engageant et amusant.",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",

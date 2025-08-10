@@ -107,7 +107,7 @@ export default function MemberContent() {
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 to-blue-50">
         <div className="flex flex-col items-center gap-3">
           <motion.div className="animate-spin rounded-full h-16 w-16 border-b-2 border-primary-600" />
-          <div className="text-sm text-gray-600">Loading…</div>
+          <div className="text-sm text-gray-600">Chargement…</div>
         </div>
       </div>
     );
@@ -122,16 +122,16 @@ export default function MemberContent() {
             <LogIn className="h-7 w-7" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Please log in
+            Veuillez vous connecter
           </h1>
           <p className="text-gray-600 mb-6">
-            You need to be signed in to access the Members Hub.
+            Vous devez être connecté pour accéder à l'Espace Membre.
           </p>
           <a
             href="/login"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-3 rounded-xl font-semibold"
           >
-            <LogIn className="h-5 w-5" /> Go to login
+            <LogIn className="h-5 w-5" /> Aller à la connexion
           </a>
         </div>
       </div>
@@ -147,20 +147,20 @@ export default function MemberContent() {
             <CreditCard className="h-7 w-7" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Complete your membership
+            Complétez votre adhésion
           </h1>
           <p className="text-gray-600 mb-6">
-            Join the community to participate in monthly contests and view
-            exclusive content.
+            Rejoignez la communauté pour participer aux concours mensuels et voir
+            du contenu exclusif.
           </p>
           <a
             href="/payment"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg"
           >
-            <CreditCard className="h-5 w-5" /> Go to payment
+            <CreditCard className="h-5 w-5" /> Aller au paiement
           </a>
           <p className="text-xs text-gray-500 mt-3">
-            Already paid in another tab? Refresh this page.
+            Déjà payé dans un autre onglet ? Actualisez cette page.
           </p>
         </div>
       </div>
@@ -178,18 +178,18 @@ export default function MemberContent() {
 
   // Active contest data (mock)
   const activeContest = {
-    title: "Wildlife Portraits — June 2025",
-    theme: "Close-up portraits that reveal emotion and character",
-    prize: "$1,000 + Feature Interview",
-    deadline: "June 30, 2025",
+    title: "Portraits Faune Sauvage — Juin 2025",
+    theme: "Portraits en gros plan qui révèlent l'émotion et le caractère",
+    prize: "1000€ + Interview en Vedette",
+    deadline: "30 Juin 2025",
     entries: 328,
     banner:
       "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1600&auto=format&fit=crop",
     rules: [
-      "One photo per member · RAW or high-res JPG",
-      "No AI‑generated images · Basic edits allowed",
-      "Include title and 1–2 sentence story",
-      "You must own full rights to the photo",
+      "Une photo par membre · RAW ou JPG haute résolution",
+      "Pas d'images générées par IA · Éditions de base autorisées",
+      "Inclure un titre et une histoire de 1-2 phrases",
+      "Vous devez posséder tous les droits sur la photo",
     ],
   };
 
@@ -253,15 +253,15 @@ export default function MemberContent() {
               </div>
               <div className="flex-1">
                 <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2">
-                  Welcome{firstName ? `, ${firstName}` : ""}
+                  Bienvenue{firstName ? `, ${firstName}` : ""}
                 </h1>
                 <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[13px]">
                   <div className="flex items-center gap-2">
                     <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 font-medium">
-                      <ShieldCheck className="h-4 w-4" /> Active member
+                      <ShieldCheck className="h-4 w-4" /> Membre actif
                     </span>
                     <span className="text-gray-500 font-medium">
-                      Member since {memberSinceLabel}
+                      Membre depuis {memberSinceLabel}
                     </span>
                   </div>
                 </div>
@@ -272,13 +272,13 @@ export default function MemberContent() {
                 href="#resources"
                 className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white/90 backdrop-blur-sm px-5 py-3 text-sm font-medium text-gray-700 shadow-sm hover:shadow-md hover:bg-white transition-all duration-200"
               >
-                <BookOpen className="h-4 w-4" /> Resources
+                <BookOpen className="h-4 w-4" /> Ressources
               </a>
               <a
                 href="#submit"
                 className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
-                <Camera className="h-4 w-4" /> Submit entry
+                <Camera className="h-4 w-4" /> Soumettre une participation
                 <ArrowUpRight className="h-4 w-4" />
               </a>
             </div>
@@ -290,23 +290,23 @@ export default function MemberContent() {
             className="mt-8 grid grid-cols-2 md:grid-cols-4 gap-4"
           >
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
-              <div className="text-xs text-gray-500">Status</div>
+              <div className="text-xs text-gray-500">Statut</div>
               <div className="mt-1 flex items-center gap-2 text-gray-900 font-semibold">
-                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Active
+                <ShieldCheck className="h-4 w-4 text-emerald-600" /> Actif
               </div>
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
-              <div className="text-xs text-gray-500">Member since</div>
+              <div className="text-xs text-gray-500">Membre depuis</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {memberSinceLabel}
               </div>
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
-              <div className="text-xs text-gray-500">This month entries</div>
+              <div className="text-xs text-gray-500">Participations ce mois</div>
               <div className="mt-1 text-gray-900 font-semibold">0/1</div>
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
-              <div className="text-xs text-gray-500">Community points</div>
+              <div className="text-xs text-gray-500">Points communauté</div>
               <div className="mt-1 flex items-center gap-2 text-gray-900 font-semibold">
                 <Star className="h-4 w-4 text-amber-500" /> 120
               </div>
@@ -345,19 +345,19 @@ export default function MemberContent() {
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div>
                     <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 border border-gray-200">
-                      <Trophy className="h-4 w-4 text-primary-600" /> Monthly
-                      contest
+                      <Trophy className="h-4 w-4 text-primary-600" /> Concours
+                      mensuel
                     </div>
                     <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
                       {activeContest.title}
                     </h2>
                     <p className="text-primary-50 font-medium text-sm sm:text-base">
-                      Theme: {activeContest.theme}
+                      Thème : {activeContest.theme}
                     </p>
                   </div>
                   <div className="text-left sm:text-right text-white">
                     <div className="text-sm flex items-center sm:justify-end gap-2 opacity-90">
-                      <CalendarDays className="h-4 w-4" /> Deadline
+                      <CalendarDays className="h-4 w-4" /> Date limite
                     </div>
                     <div className="text-lg font-semibold">
                       {activeContest.deadline}
@@ -375,13 +375,13 @@ export default function MemberContent() {
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Users className="h-4 w-4 text-blue-600" />
                     <span className="text-sm font-medium text-gray-900">
-                      {activeContest.entries.toLocaleString()} so far
+                      {activeContest.entries.toLocaleString()} jusqu'à présent
                     </span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Clock className="h-4 w-4 text-emerald-600" />
                     <span className="text-sm font-medium text-gray-900">
-                      Open for submissions
+                      Ouvert aux participations
                     </span>
                   </div>
                 </div>
@@ -391,7 +391,7 @@ export default function MemberContent() {
             <div className="p-4 sm:p-6 md:p-8">
               <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Rules</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">Règles</h3>
                   <ul className="space-y-2 text-sm text-gray-700">
                     {activeContest.rules.map((r, i) => (
                       <li key={i} className="flex items-start gap-2">
@@ -403,26 +403,26 @@ export default function MemberContent() {
                 </div>
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">
-                    How to participate
+                    Comment participer
                   </h3>
                   <ol className="space-y-2 text-sm text-gray-700 list-decimal list-inside">
                     <li>
-                      Pick your best wildlife portrait that fits the theme
+                      Choisissez votre meilleur portrait de faune sauvage qui correspond au thème
                     </li>
-                    <li>Ensure it meets the rules above</li>
-                    <li>Submit your entry (title + short story)</li>
+                    <li>Assurez-vous qu'il respecte les règles ci-dessus</li>
+                    <li>Soumettez votre participation (titre + histoire courte)</li>
                   </ol>
                   <div className="mt-4">
                     <a
                       href="#"
                       className="inline-flex my-3 md:my-0 items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg w-full sm:w-auto"
                     >
-                      <Camera className="h-5 w-5" /> Submit your entry{" "}
+                      <Camera className="h-5 w-5" /> Soumettre votre participation{" "}
                       <ArrowRight className="h-5 w-5" />
                     </a>
                     <p className="text-xs text-gray-500 mt-2">
-                      Submissions close on {activeContest.deadline}. One winner
-                      only. Good luck!
+                      Les participations se ferment le {activeContest.deadline}. Un seul gagnant.
+                      Bonne chance !
                     </p>
                   </div>
                 </div>
@@ -434,7 +434,7 @@ export default function MemberContent() {
           <motion.div variants={item} className="space-y-6 order-first lg:order-last">
             <div className="bg-white rounded-2xl shadow-xl border border-white/60 p-4 sm:p-6">
               <h3 className="font-semibold text-gray-900 mb-4">
-                Quick actions
+                Actions rapides
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
                 <a
@@ -442,7 +442,7 @@ export default function MemberContent() {
                   className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
-                    <Camera className="h-5 w-5 text-primary-600" /> Submit entry
+                    <Camera className="h-5 w-5 text-primary-600" /> Soumettre participation
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
@@ -451,7 +451,7 @@ export default function MemberContent() {
                   className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
-                    <BookOpen className="h-5 w-5 text-purple-600" /> Resources
+                    <BookOpen className="h-5 w-5 text-purple-600" /> Ressources
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
@@ -460,8 +460,8 @@ export default function MemberContent() {
                   className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
-                    <CreditCard className="h-5 w-5 text-emerald-600" /> Manage
-                    membership
+                    <CreditCard className="h-5 w-5 text-emerald-600" /> Gérer
+                    l'adhésion
                   </div>
                   <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
@@ -469,7 +469,7 @@ export default function MemberContent() {
             </div>
 
             <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4 sm:p-6">
-              <h3 className="font-semibold text-gray-900 mb-2">Need help?</h3>
+              <h3 className="font-semibold text-gray-900 mb-2">Besoin d'aide ?</h3>
               <p className="text-sm text-gray-600">
                 We’re here for you. Reach us at{" "}
                 <span className="font-medium">support@wildlifehub.com</span>

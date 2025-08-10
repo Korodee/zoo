@@ -120,13 +120,13 @@ export default function Navbar() {
           {/* Center: nav links (md+) */}
           <nav className="hidden md:flex items-center gap-6 absolute left-1/2 -translate-x-1/2 top-1/2 -translate-y-1/2">
             <Link href="/" className={linkClass}>
-              Home
+              Accueil
             </Link>
             <Link href="#about" className={linkClass}>
-              About
+              À propos
             </Link>
             <Link href="#gallery" className={linkClass}>
-              Gallery
+              Galerie
             </Link>
             <Link href="#contact" className={linkClass}>
               Contact
@@ -138,10 +138,10 @@ export default function Navbar() {
             {!forceGuest && isLoggedIn ? (
               <div className="flex items-center gap-3">
                 <Link href="/member" className={linkClass}>
-                  Members
+                  Membres
                 </Link>
                 <button onClick={handleSignOut} className={linkClass}>
-                  Sign Out
+                  Se déconnecter
                 </button>
               </div>
             ) : (
@@ -152,7 +152,7 @@ export default function Navbar() {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Access Members
+                  Accès Membres
                 </Link>
                 <Link
                   href="/signup"
@@ -160,7 +160,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="text-sm md:text-base px-4 py-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white font-medium shadow-sm hover:bg-white/20 transition-all duration-200 scrolled:bg-primary-600 scrolled:border-primary-600 scrolled:text-white scrolled:hover:bg-primary-700"
                 >
-                  Join WildLife Hub
+                  Rejoindre WildLife Hub
                 </Link>
               </div>
             )}
@@ -201,7 +201,7 @@ export default function Navbar() {
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                       <Home className="h-5 w-5 text-blue-600 group-hover:text-blue-700" />
                     </div>
-                    <span className="font-semibold text-base">Home</span>
+                    <span className="font-semibold text-base">Accueil</span>
                   </Link>
                   <Link
                     href="#about"
@@ -210,7 +210,7 @@ export default function Navbar() {
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                       <Info className="h-5 w-5 text-green-600 group-hover:text-green-700" />
                     </div>
-                    <span className="font-semibold text-base">About</span>
+                    <span className="font-semibold text-base">À propos</span>
                   </Link>
                   <Link
                     href="#gallery"
@@ -219,7 +219,7 @@ export default function Navbar() {
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
                       <ImageIcon className="h-5 w-5 text-purple-600 group-hover:text-purple-700" />
                     </div>
-                    <span className="font-semibold text-base">Gallery</span>
+                    <span className="font-semibold text-base">Galerie</span>
                   </Link>
                   <Link
                     href="#contact"
@@ -239,52 +239,52 @@ export default function Navbar() {
                 <div className="space-y-3">
                   {!forceGuest && isLoggedIn ? (
                     <>
-                      <Link
-                        href="/member"
-                        className="group flex items-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-amber-50 hover:text-amber-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <Crown className="h-5 w-5 text-yellow-600 group-hover:text-yellow-700" />
-                        </div>
-                        <span className="font-semibold text-base">
-                          Member Hub
-                        </span>
-                      </Link>
-                      <button
-                        onClick={handleSignOut}
-                        className="group w-full flex items-center gap-4 py-2 rounded-xl text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                      >
-                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                          <LogOut className="h-5 w-5 text-red-600 group-hover:text-red-700" />
-                        </div>
-                        <span className="font-semibold text-base">
-                          Sign Out
-                        </span>
-                      </button>
+                                              <Link
+                          href="/member"
+                          className="group flex items-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-amber-50 hover:text-amber-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                            <Crown className="h-5 w-5 text-yellow-600 group-hover:text-yellow-700" />
+                          </div>
+                          <span className="font-semibold text-base">
+                            Espace Membre
+                          </span>
+                        </Link>
+                                              <button
+                          onClick={handleSignOut}
+                          className="group w-full flex items-center gap-4 py-2 rounded-xl text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                        >
+                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                            <LogOut className="h-5 w-5 text-red-600 group-hover:text-red-700" />
+                          </div>
+                          <span className="font-semibold text-base">
+                            Se déconnecter
+                          </span>
+                        </button>
                     </>
                   ) : (
                     <>
-                      <Link
-                        href="/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                      >
-                        <span className="font-semibold text-base">
-                          Access Members
-                        </span>
-                      </Link>
-                      <Link
-                        href="/signup"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <span className="font-bold text-base relative">
-                          Join WildLife Hub
-                        </span>
-                      </Link>
+                                              <Link
+                          href="/login"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                        >
+                          <span className="font-semibold text-base">
+                            Accès Membres
+                          </span>
+                        </Link>
+                                              <Link
+                          href="/signup"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
+                        >
+                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                          <span className="font-bold text-base relative">
+                            Rejoindre WildLife Hub
+                          </span>
+                        </Link>
                     </>
                   )}
                 </div>
