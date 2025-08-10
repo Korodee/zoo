@@ -19,12 +19,33 @@ export const connectDB = async (): Promise<void> => {
       return;
     }
     
+    console.log("Attempting to connect to MongoDB...");
+    
     await mongoose.connect(MONGODB_URI, {
-      serverSelectionTimeoutMS: 5000, // 5 seconds
+      serverSelectionTimeoutMS: 30000, // 30 seconds
       socketTimeoutMS: 45000, // 45 seconds
-      connectTimeoutMS: 10000, // 10 seconds
+      connectTimeoutMS: 30000, // 30 seconds
+      maxPoolSize: 10,
+      minPoolSize: 1,
+      maxIdleTimeMS: 30000,
+      retryWrites: true,
+      retryReads: true,
     });
     console.log("MongoDB connected successfully");
+    
+    // Monitor connection events
+    mongoose.connection.on('error', (err) => {
+      console.error('MongoDB connection error:', err);
+    });
+    
+    mongoose.connection.on('disconnected', () => {
+      console.log('MongoDB disconnected');
+    });
+    
+    mongoose.connection.on('reconnected', () => {
+      console.log('MongoDB reconnected');
+    });
+    
   } catch (error) {
     console.error("MongoDB connection error:", error);
     // Don't exit process in serverless environment

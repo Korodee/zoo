@@ -3,10 +3,12 @@ import cors from "cors";
 import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
+import mongoose from "mongoose";
 
 // Import database and swagger
 import { connectDB } from "./config/database";
 import { setupSwagger } from "./config/swagger";
+import { validateEnv } from "./config/validateEnv";
 
 // Import routes
 import authRoutes from "./routes/auth";
@@ -16,12 +18,15 @@ import userRoutes from "./routes/users";
 // Load environment variables
 dotenv.config();
 
+// Validate environment variables
+validateEnv();
+
 const app = express();
 const PORT = process.env.PORT || 5001;
 const NODE_ENV = process.env.NODE_ENV || "development";
 const DISABLE_SECURITY = process.env.DISABLE_SECURITY === "true";
 
-// Trust proxy for Vercel
+// Trust proxy for Vercel and rate limiting
 app.set('trust proxy', 1);
 
 // Log environment for debugging
@@ -83,11 +88,17 @@ setupSwagger(app);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
+  const dbStatus = mongoose.connection.readyState === 1 ? "connected" : "disconnected";
+  
   res.json({
-    status: "OK",
+    status: dbStatus === "connected" ? "OK" : "WARNING",
     timestamp: new Date().toISOString(),
     environment: NODE_ENV,
-    database: "MongoDB",
+    database: {
+      type: "MongoDB",
+      status: dbStatus,
+      readyState: mongoose.connection.readyState,
+    },
     version: "1.0.0",
   });
 });

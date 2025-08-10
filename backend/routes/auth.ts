@@ -2,6 +2,7 @@ import express from "express";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import crypto from "crypto";
+import mongoose from "mongoose";
 import { User } from "../models/User";
 import { sendEmail } from "../config/mailer";
 import {
@@ -48,6 +49,11 @@ const router = express.Router();
 // Typed JWT helper to avoid overload confusion
 const JWT_SECRET = process.env.JWT_SECRET as unknown as jwt.Secret;
 const JWT_EXPIRES_IN = process.env.JWT_EXPIRES_IN ?? "7d";
+
+if (!JWT_SECRET) {
+  throw new Error('JWT_SECRET environment variable is required');
+}
+
 const signJwt = (payload: object) =>
   jwt.sign(payload, JWT_SECRET, {
     expiresIn: JWT_EXPIRES_IN,
@@ -285,6 +291,12 @@ router.post("/auth/login", async (req, res) => {
     const { email, password } = req.body;
     if (!email || !password)
       return res.status(400).json({ error: "Email and password are required" });
+
+    // Check database connection
+    if (mongoose.connection.readyState !== 1) {
+      console.error("Database not connected, readyState:", mongoose.connection.readyState);
+      return res.status(503).json({ error: "Database connection unavailable" });
+    }
 
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user) return res.status(401).json({ error: "Invalid credentials" });
