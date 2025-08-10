@@ -19,7 +19,11 @@ export const connectDB = async (): Promise<void> => {
       return;
     }
     
-    await mongoose.connect(MONGODB_URI);
+    await mongoose.connect(MONGODB_URI, {
+      serverSelectionTimeoutMS: 5000, // 5 seconds
+      socketTimeoutMS: 45000, // 45 seconds
+      connectTimeoutMS: 10000, // 10 seconds
+    });
     console.log("MongoDB connected successfully");
   } catch (error) {
     console.error("MongoDB connection error:", error);
