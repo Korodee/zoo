@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, PawPrint } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -27,10 +28,13 @@ export default function Hero() {
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Enhanced Effects */}
       <div className="absolute inset-0 z-0">
-        <img
+        <Image
           src="/hero-img.jpg"
           alt="Wildlife background"
-          className="w-full h-full object-cover transform scale-110"
+          fill
+          priority
+          className="object-cover transform scale-110"
+          sizes="100vw"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
       </div>
