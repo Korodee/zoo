@@ -1,4 +1,4 @@
-WildLife Hub is a full‑stack monorepo for a wildlife photography community with paid membership. The frontend is built with Next.js 14 and Tailwind CSS. The backend is an Express API using MongoDB, JWT authentication, and Stripe payments. Swagger is provided for API documentation. The app is designed to deploy on Vercel (frontend) and Railway (backend).
+WildLife Hub is a full‑stack monorepo for a wildlife photography community with paid membership. The frontend is built with Next.js 14 and Tailwind CSS. The backend is an Express API using MongoDB, JWT authentication, and Stripe payments. Swagger is provided for API documentation. The app is designed to deploy on Vercel (frontend) and Vercel (backend).
 
 Table of contents
 - Overview
