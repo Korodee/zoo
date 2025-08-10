@@ -30,7 +30,7 @@ export default function About() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-20"
+          className="text-center mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

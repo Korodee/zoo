@@ -3,7 +3,18 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, X, LogOut, PawPrint } from "lucide-react";
+import {
+  Menu,
+  X,
+  LogOut,
+  PawPrint,
+  Home,
+  Info,
+  Image as ImageIcon,
+  Mail,
+  Crown,
+  LogIn,
+} from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { logout, getProfile } from "@/utils/api";
 
@@ -18,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMounted(true);
-    
+
     const init = async () => {
       // On the landing page, keep buttons as guest and skip fetching auth
       if (pathname === "/") {
@@ -129,10 +140,7 @@ export default function Navbar() {
                 <Link href="/member" className={linkClass}>
                   Members
                 </Link>
-                <button
-                  onClick={handleSignOut}
-                  className={linkClass}
-                >
+                <button onClick={handleSignOut} className={linkClass}>
                   Sign Out
                 </button>
               </div>
@@ -177,71 +185,107 @@ export default function Navbar() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div
-              initial={{ opacity: 0, height: 0 }}
-              animate={{ opacity: 1, height: "auto" }}
-              exit={{ opacity: 0, height: 0 }}
-              className="md:hidden bg-white/95 backdrop-blur-md rounded-lg mt-2 shadow-lg"
+              initial={{ opacity: 0, y: -20, scale: 0.95 }}
+              animate={{ opacity: 1, y: 0, scale: 1 }}
+              exit={{ opacity: 0, y: -20, scale: 0.95 }}
+              transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              className="md:hidden bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-xl rounded-2xl mt-3 shadow-2xl border border-white/50 overflow-hidden"
             >
-              <div className="px-4 py-6 space-y-4">
-                <Link
-                  href="/"
-                  className="block text-gray-700 hover:text-primary-600 font-medium"
-                >
-                  Home
-                </Link>
-                <Link
-                  href="#about"
-                  className="block text-gray-700 hover:text-primary-600 font-medium"
-                >
-                  About
-                </Link>
-                <Link
-                  href="#gallery"
-                  className="block text-gray-700 hover:text-primary-600 font-medium"
-                >
-                  Gallery
-                </Link>
-                <Link
-                  href="#contact"
-                  className="block text-gray-700 hover:text-primary-600 font-medium"
-                >
-                  Contact
-                </Link>
-                <div className="pt-4 border-t border-gray-200">
+              <div className="p-6 space-y-4">
+                {/* Main Navigation */}
+                <div className="space-y-3">
+                  <Link
+                    href="/"
+                    className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-primary-50 hover:to-blue-50 hover:text-primary-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-100 to-blue-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <Home className="h-5 w-5 text-blue-600 group-hover:text-blue-700" />
+                    </div>
+                    <span className="font-semibold text-base">Home</span>
+                  </Link>
+                  <Link
+                    href="#about"
+                    className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-green-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <Info className="h-5 w-5 text-green-600 group-hover:text-green-700" />
+                    </div>
+                    <span className="font-semibold text-base">About</span>
+                  </Link>
+                  <Link
+                    href="#gallery"
+                    className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <ImageIcon className="h-5 w-5 text-purple-600 group-hover:text-purple-700" />
+                    </div>
+                    <span className="font-semibold text-base">Gallery</span>
+                  </Link>
+                  <Link
+                    href="#contact"
+                    className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-100 to-red-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <Mail className="h-5 w-5 text-orange-600 group-hover:text-orange-700" />
+                    </div>
+                    <span className="font-semibold text-base">Contact</span>
+                  </Link>
+                </div>
+
+                {/* Divider */}
+                <div className="border-t border-gray-500/50" />
+
+                {/* User Actions */}
+                <div className="space-y-3">
                   {!forceGuest && isLoggedIn ? (
-                    <div className="space-y-3">
+                    <>
                       <Link
                         href="/member"
-                        className="block text-gray-700 hover:text-primary-600 font-medium"
+                        className="group flex items-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-amber-50 hover:text-amber-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                       >
-                        Members
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <Crown className="h-5 w-5 text-yellow-600 group-hover:text-yellow-700" />
+                        </div>
+                        <span className="font-semibold text-base">
+                          Member Hub
+                        </span>
                       </Link>
                       <button
                         onClick={handleSignOut}
-                        className="text-gray-700 hover:text-primary-600 font-medium"
+                        className="group w-full flex items-center gap-4 py-2 rounded-xl text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                       >
-                        Sign Out
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <LogOut className="h-5 w-5 text-red-600 group-hover:text-red-700" />
+                        </div>
+                        <span className="font-semibold text-base">
+                          Sign Out
+                        </span>
                       </button>
-                    </div>
+                    </>
                   ) : (
-                    <div className="space-y-3">
+                    <>
                       <Link
                         href="/login"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block text-gray-700 hover:text-primary-600 font-medium"
+                        className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                       >
-                        Access Members
+                        <span className="font-semibold text-base">
+                          Access Members
+                        </span>
                       </Link>
                       <Link
                         href="/signup"
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="block bg-primary-600 text-white px-4 py-2 rounded-lg font-medium"
+                        className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
                       >
-                        Join WildLife Hub
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <span className="font-bold text-base relative">
+                          Join WildLife Hub
+                        </span>
                       </Link>
-                    </div>
+                    </>
                   )}
                 </div>
               </div>
