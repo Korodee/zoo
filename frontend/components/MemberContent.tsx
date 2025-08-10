@@ -161,7 +161,7 @@ export default function MemberContent() {
           </a>
           <p className="text-xs text-gray-500 mt-3">
             Already paid in another tab? Refresh this page.
-          </p> 
+          </p>
         </div>
       </div>
     );
@@ -236,10 +236,15 @@ export default function MemberContent() {
           animate="visible"
           className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8"
         >
-          <motion.div variants={item} className="flex items-center justify-between gap-6">
+          <motion.div
+            variants={item}
+            className="flex items-center justify-between gap-6"
+          >
             <div className="flex items-center gap-4">
               <div className="h-14 w-14 rounded-2xl bg-white shadow-inner grid place-items-center border border-white/80">
-                <span className="text-lg font-bold text-primary-700">{initials}</span>
+                <span className="text-lg font-bold text-primary-700">
+                  {initials}
+                </span>
               </div>
               <div>
                 <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
@@ -249,7 +254,9 @@ export default function MemberContent() {
                   <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1">
                     <ShieldCheck className="h-4 w-4" /> Active member
                   </span>
-                  <span className="text-gray-500">Member since {memberSinceLabel}</span>
+                  <span className="text-gray-500">
+                    Member since {memberSinceLabel}
+                  </span>
                 </div>
               </div>
             </div>
@@ -283,7 +290,9 @@ export default function MemberContent() {
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
               <div className="text-xs text-gray-500">Member since</div>
-              <div className="mt-1 text-gray-900 font-semibold">{memberSinceLabel}</div>
+              <div className="mt-1 text-gray-900 font-semibold">
+                {memberSinceLabel}
+              </div>
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-4 shadow-sm">
               <div className="text-xs text-gray-500">This month entries</div>
@@ -301,7 +310,7 @@ export default function MemberContent() {
 
       {/* Main content */}
       <motion.div
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        className="max-w-7xl mt-6 mx-auto px-4 sm:px-6 lg:px-8 pb-16"
         variants={container}
         initial="hidden"
         animate="visible"
@@ -313,46 +322,60 @@ export default function MemberContent() {
             variants={item}
             className="lg:col-span-2 overflow-hidden rounded-2xl shadow-xl border border-white/60 bg-white"
           >
-            <div className="relative">
-              <div className="absolute inset-0">
-                <img
-                  src={activeContest.banner}
-                  alt="Contest banner"
-                  className="w-full h-64 md:h-72 object-cover"
+            <div className="relative p-6 md:p-8 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-2xl overflow-hidden">
+              {/* Background Image */}
+              <div className="absolute inset-0 z-0">
+                <img 
+                  src="https://images.unsplash.com/photo-1557050543-4d5f2e07c5b9?q=80&w=1200&auto=format&fit=crop" 
+                  alt="Wildlife photography background"
+                  className="w-full h-full object-cover opacity-20"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary-600/90 via-primary-700/85 to-primary-800/90"></div>
               </div>
-              <div className="relative p-6 md:p-8">
+              
+              {/* Content */}
+              <div className="relative z-10">
                 <div className="flex items-start justify-between gap-4">
                   <div>
                     <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 border border-gray-200">
-                      <Trophy className="h-4 w-4 text-primary-600" /> Monthly contest
+                      <Trophy className="h-4 w-4 text-primary-600" /> Monthly
+                      contest
                     </div>
                     <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-white">
                       {activeContest.title}
                     </h2>
-                    <p className="text-primary-50 font-medium">Theme: {activeContest.theme}</p>
+                    <p className="text-primary-50 font-medium">
+                      Theme: {activeContest.theme}
+                    </p>
                   </div>
                   <div className="text-right text-white">
                     <div className="text-sm flex items-center justify-end gap-2 opacity-90">
                       <CalendarDays className="h-4 w-4" /> Deadline
                     </div>
-                    <div className="text-lg font-semibold">{activeContest.deadline}</div>
+                    <div className="text-lg font-semibold">
+                      {activeContest.deadline}
+                    </div>
                   </div>
                 </div>
                 {/* Overlay metrics */}
-                <div className="absolute bottom-5 left-6 right-6 flex flex-wrap gap-3">
+                <div className="mt-4 flex flex-wrap gap-2">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
-                    <span className="text-sm font-medium text-gray-900">{activeContest.prize}</span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {activeContest.prize}
+                    </span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Users className="h-4 w-4 text-blue-600" />
-                    <span className="text-sm font-medium text-gray-900">{activeContest.entries.toLocaleString()} so far</span>
+                    <span className="text-sm font-medium text-gray-900">
+                      {activeContest.entries.toLocaleString()} so far
+                    </span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Clock className="h-4 w-4 text-emerald-600" />
-                    <span className="text-sm font-medium text-gray-900">Open for submissions</span>
+                    <span className="text-sm font-medium text-gray-900">
+                      Open for submissions
+                    </span>
                   </div>
                 </div>
               </div>
@@ -365,15 +388,20 @@ export default function MemberContent() {
                   <ul className="space-y-2 text-sm text-gray-700">
                     {activeContest.rules.map((r, i) => (
                       <li key={i} className="flex items-start gap-2">
-                        <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> {r}
+                        <CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" />{" "}
+                        {r}
                       </li>
                     ))}
                   </ul>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">How to participate</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    How to participate
+                  </h3>
                   <ol className="space-y-2 text-sm text-gray-700 list-decimal list-inside">
-                    <li>Pick your best wildlife portrait that fits the theme</li>
+                    <li>
+                      Pick your best wildlife portrait that fits the theme
+                    </li>
                     <li>Ensure it meets the rules above</li>
                     <li>Submit your entry (title + short story)</li>
                   </ol>
@@ -382,10 +410,12 @@ export default function MemberContent() {
                       href="#"
                       className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg"
                     >
-                      <Camera className="h-5 w-5" /> Submit your entry <ArrowRight className="h-5 w-5" />
+                      <Camera className="h-5 w-5" /> Submit your entry{" "}
+                      <ArrowRight className="h-5 w-5" />
                     </a>
                     <p className="text-xs text-gray-500 mt-2">
-                      Submissions close on {activeContest.deadline}. One winner only. Good luck!
+                      Submissions close on {activeContest.deadline}. One winner
+                      only. Good luck!
                     </p>
                   </div>
                 </div>
@@ -396,29 +426,44 @@ export default function MemberContent() {
           {/* Sidebar: Quick actions and help */}
           <motion.div variants={item} className="space-y-6">
             <div className="bg-white rounded-2xl shadow-xl border border-white/60 p-6">
-              <h3 className="font-semibold text-gray-900 mb-4">Quick actions</h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                <a href="#submit" className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50">
+              <h3 className="font-semibold text-gray-900 mb-4">
+                Quick actions
+              </h3>
+              <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
+                <a
+                  href="#submit"
+                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                >
                   <div className="flex items-center gap-3 text-gray-800">
                     <Camera className="h-5 w-5 text-primary-600" /> Submit entry
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
-                <a href="#winners" className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50">
+                <a
+                  href="#winners"
+                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                >
                   <div className="flex items-center gap-3 text-gray-800">
                     <Crown className="h-5 w-5 text-yellow-500" /> Past winners
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
-                <a href="#resources" className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50">
+                <a
+                  href="#resources"
+                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                >
                   <div className="flex items-center gap-3 text-gray-800">
                     <BookOpen className="h-5 w-5 text-purple-600" /> Resources
                   </div>
                   <ArrowUpRight className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
-                <a href="/payment" className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50">
+                <a
+                  href="/payment"
+                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                >
                   <div className="flex items-center gap-3 text-gray-800">
-                    <CreditCard className="h-5 w-5 text-emerald-600" /> Manage membership
+                    <CreditCard className="h-5 w-5 text-emerald-600" /> Manage
+                    membership
                   </div>
                   <ExternalLink className="h-4 w-4 text-gray-400 group-hover:text-gray-600" />
                 </a>
@@ -427,7 +472,10 @@ export default function MemberContent() {
 
             <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Need help?</h3>
-              <p className="text-sm text-gray-600">We’re here for you. Reach us at <span className="font-medium">support@wildlifehub.com</span></p>
+              <p className="text-sm text-gray-600">
+                We’re here for you. Reach us at{" "}
+                <span className="font-medium">support@wildlifehub.com</span>
+              </p>
             </div>
           </motion.div>
         </div>
@@ -455,16 +503,26 @@ export default function MemberContent() {
                 tag: "Tutorial",
               },
             ].map((r, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow border border-white/60">
+              <div
+                key={i}
+                className="bg-white rounded-2xl overflow-hidden shadow border border-white/60"
+              >
                 <div className="relative h-40">
-                  <img src={r.img} alt={r.title} className="w-full h-full object-cover" />
+                  <img
+                    src={r.img}
+                    alt={r.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full border border-gray-200">
                     {r.tag}
                   </div>
                 </div>
                 <div className="p-4">
                   <div className="font-semibold text-gray-900">{r.title}</div>
-                  <a href="#" className="mt-2 inline-flex items-center gap-1 text-sm text-primary-700 font-medium">
+                  <a
+                    href="#"
+                    className="mt-2 inline-flex items-center gap-1 text-sm text-primary-700 font-medium"
+                  >
                     Read more <ArrowUpRight className="h-4 w-4" />
                   </a>
                 </div>
@@ -480,9 +538,16 @@ export default function MemberContent() {
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             {winners.map((w, i) => (
-              <div key={i} className="bg-white rounded-2xl overflow-hidden shadow border border-white/60">
+              <div
+                key={i}
+                className="bg-white rounded-2xl overflow-hidden shadow border border-white/60"
+              >
                 <div className="relative h-48">
-                  <img src={w.img} alt={w.title} className="w-full h-full object-cover" />
+                  <img
+                    src={w.img}
+                    alt={w.title}
+                    className="w-full h-full object-cover"
+                  />
                   <div className="absolute top-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full border border-gray-200">
                     {w.month}
                   </div>

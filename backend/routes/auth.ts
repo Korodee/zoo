@@ -137,17 +137,19 @@ router.post("/auth/register", async (req, res) => {
 
     const token = signJwt({ userId: user._id, email: user.email });
 
-    res.status(201).json({
-      message: "User created. Verification email sent.",
-      token,
-      user: {
-        id: user._id,
-        email: user.email,
-        name: user.name || "",
-        is_member: user.is_member,
-        is_verified: user.is_verified,
-      },
-    });
+    res
+      .status(201)
+      .json({
+        message: "User created. Verification email sent.",
+        token,
+        user: {
+          id: user._id,
+          email: user.email,
+          name: user.name || "",
+          is_member: user.is_member,
+          is_verified: user.is_verified,
+        },
+      });
   } catch (error) {
     console.error("Registration error:", error);
     res.status(500).json({ error: "Failed to create user" });
@@ -218,8 +220,8 @@ router.post("/auth/verify-email", async (req, res) => {
     }
 
     user.is_verified = true;
-    user.email_verification_token = null;
-    user.email_verification_expires = null;
+    user.email_verification_token = undefined;
+    user.email_verification_expires = undefined;
     await user.save();
 
     res.json({ message: "Email verified successfully" });
@@ -289,10 +291,12 @@ router.post("/auth/login", async (req, res) => {
 
     // Enforce verified email
     if (!user.is_verified)
-      return res.status(403).json({
-        error:
-          "Email not verified. Please verify your email before logging in.",
-      });
+      return res
+        .status(403)
+        .json({
+          error:
+            "Email not verified. Please verify your email before logging in.",
+        });
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid)
@@ -500,8 +504,8 @@ router.post("/auth/reset-password", async (req, res) => {
       return res.status(400).json({ error: "Token expired" });
 
     user.password = await bcrypt.hash(newPassword, 12);
-    user.reset_password_token = null;
-    user.reset_password_expires = null;
+    user.reset_password_token = undefined;
+    user.reset_password_expires = undefined;
     await user.save();
 
     res.json({ message: "Password has been reset" });

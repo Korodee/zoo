@@ -18,31 +18,33 @@ dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 5001;
+const NODE_ENV = process.env.NODE_ENV || "development";
 const DISABLE_SECURITY = process.env.DISABLE_SECURITY === "true";
 
 // Connect to MongoDB
 connectDB();
 
-// Security middleware (can be disabled via env for debugging on hosts)
+// Security middleware (can be disabled via env for debugging)
 if (!DISABLE_SECURITY) {
   app.use(helmet());
-}
-
-// Rate limiting (can be disabled via env)
-if (!DISABLE_SECURITY) {
+  
+  // Rate limiting
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
     message: "Too many requests from this IP, please try again later.",
+    standardHeaders: true,
+    legacyHeaders: false,
   });
   app.use(limiter);
 }
 
-// CORS configuration with support for multiple origins (prod, preview, local)
+// CORS configuration with support for multiple origins
 const allowedOrigins = [
   process.env.FRONTEND_URL || "http://localhost:3000",
   "http://localhost:3000",
 ];
+
 app.use(
   cors({
     origin(origin, callback) {
@@ -56,6 +58,8 @@ app.use(
       return callback(new Error("Not allowed by CORS"));
     },
     credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: ["Content-Type", "Authorization"],
   })
 );
 
@@ -71,8 +75,9 @@ app.get("/health", (req, res) => {
   res.json({
     status: "OK",
     timestamp: new Date().toISOString(),
-    environment: process.env.NODE_ENV || "development",
+    environment: NODE_ENV,
     database: "MongoDB",
+    version: "1.0.0",
   });
 });
 
@@ -88,7 +93,11 @@ app.use("/api", userRoutes);
 
 // 404 handler
 app.use("*", (req, res) => {
-  res.status(404).json({ error: "Route not found" });
+  res.status(404).json({ 
+    error: "Route not found",
+    path: req.originalUrl,
+    method: req.method,
+  });
 });
 
 // Error handling middleware
@@ -105,16 +114,24 @@ app.use(
       return res.status(400).json({ error: "Invalid JSON" });
     }
 
-    res.status(500).json({ error: "Internal server error" });
+    if (err.message === "Not allowed by CORS") {
+      return res.status(403).json({ error: "CORS policy violation" });
+    }
+
+    res.status(500).json({ 
+      error: "Internal server error",
+      ...(NODE_ENV === "development" && { details: err.message }),
+    });
   }
 );
 
-// Start server (explicit host to avoid binding issues)
+// Start server
 app.listen(Number(PORT), "0.0.0.0", () => {
   console.log(`Server running on port ${PORT}`);
   console.log(`Health check: http://localhost:${PORT}/health`);
   console.log(`API Docs: http://localhost:${PORT}/api-docs`);
-  console.log(`Environment: ${process.env.NODE_ENV || "development"}`);
+  console.log(`Environment: ${NODE_ENV}`);
+  console.log(`Security: ${DISABLE_SECURITY ? "DISABLED" : "ENABLED"}`);
 });
 
 export default app;

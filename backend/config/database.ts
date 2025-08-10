@@ -3,8 +3,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 
-const MONGODB_URI =
-  process.env.MONGODB_URI || "mongodb://localhost:27017/wildlife-hub";
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost:27017/wildlife-hub";
 
 export const connectDB = async (): Promise<void> => {
   try {
@@ -24,3 +23,16 @@ export const disconnectDB = async (): Promise<void> => {
     console.error("MongoDB disconnection error:", error);
   }
 };
+
+// Graceful shutdown
+process.on("SIGINT", async () => {
+  console.log("Received SIGINT, shutting down gracefully...");
+  await disconnectDB();
+  process.exit(0);
+});
+
+process.on("SIGTERM", async () => {
+  console.log("Received SIGTERM, shutting down gracefully...");
+  await disconnectDB();
+  process.exit(0);
+});

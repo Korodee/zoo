@@ -7,8 +7,7 @@ const options = {
     info: {
       title: "WildLife Hub API",
       version: "1.0.0",
-      description:
-        "REST API for authentication, membership, and payments in the WildLife Hub application.",
+      description: "REST API for authentication, membership, and payments in the WildLife Hub application.",
       contact: {
         name: "WildLife Hub Team",
         email: "support@wildlifehub.com",
@@ -24,7 +23,7 @@ const options = {
         description: "Development server",
       },
       {
-        url: "https://your-production-domain.com",
+        url: "https://zoo-production.up.railway.app",
         description: "Production server",
       },
     ],
@@ -52,6 +51,9 @@ export const setupSwagger = (app: Express): void => {
   app.use(
     "/api-docs",
     require("swagger-ui-express").serve,
-    require("swagger-ui-express").setup(specs)
+    require("swagger-ui-express").setup(specs, {
+      customCss: ".swagger-ui .topbar { display: none }",
+      customSiteTitle: "WildLife Hub API Documentation",
+    })
   );
 };
