@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, PawPrint } from "lucide-react";
+import { Camera, PawPrint, Heart, Star } from "lucide-react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -14,6 +15,7 @@ const itemVariants = {
 };
 
 export default function Gallery() {
+  const router = useRouter();
   const zooImages = [
     {
       name: "African Lion",
@@ -191,16 +193,17 @@ export default function Gallery() {
               key={index}
               className="group cursor-pointer"
               variants={itemVariants}
-              whileHover={{ y: -8, scale: 1.02 }}
-              transition={{ type: "spring", stiffness: 400, damping: 20 }}
+              whileHover={{ y: -12, scale: 1.03 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-2xl transition-all duration-500 group-hover:scale-105 relative">
+              <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 group-hover:shadow-primary-500/10 relative">
+                {/* Image Container with Enhanced Effects */}
                 <div className="relative overflow-hidden">
-                  <div className="w-full h-64 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
+                  <div className="w-full h-56 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">
                     <img
                       src={animal.image}
                       alt={animal.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover group-hover:scale-125 transition-transform duration-1000 ease-out"
                       onError={(e) => {
                         const img = e.currentTarget;
                         img.style.display = "none";
@@ -212,50 +215,83 @@ export default function Gallery() {
                     />
                     <div className="hidden w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 items-center justify-center">
                       <div className="text-center">
-                        <PawPrint className="h-12 w-12 text-primary-600 mx-auto mb-2" />
-                        <p className="text-primary-700 font-semibold">
+                        <PawPrint className="h-16 w-16 text-primary-600 mx-auto mb-3 animate-pulse" />
+                        <p className="text-primary-700 font-bold text-lg">
                           {animal.name}
                         </p>
                       </div>
                     </div>
                   </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                  {/* Enhanced Gradient Overlay */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+                  {/* Floating Badges with Enhanced Design */}
                   <div className="absolute top-3 left-3">
-                    <span className="bg-white/95 backdrop-blur-sm px-3 py-1 rounded-full text-xs font-medium text-gray-700 shadow-sm">
+                    <span className="bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full text-xs font-semibold text-gray-800 shadow-md border border-white/50">
                       {animal.category}
                     </span>
                   </div>
                   <div className="absolute top-3 right-3">
-                    <div className="bg-green-500/90 backdrop-blur-sm px-2 py-1 rounded-full text-xs font-medium text-white shadow-sm">
+                    <div className="bg-gradient-to-r from-green-500 to-emerald-600 backdrop-blur-md px-2.5 py-1.5 rounded-full text-xs font-semibold text-white shadow-md">
                       {animal.status}
                     </div>
                   </div>
-                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <div className="bg-white/95 backdrop-blur-sm p-2 rounded-full shadow-sm">
+
+                  {/* Enhanced Camera Icon */}
+                  <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white/95 backdrop-blur-md p-2 rounded-full shadow-md border border-white/50 hover:bg-white transition-colors duration-300">
                       <Camera className="h-4 w-4 text-gray-700" />
                     </div>
                   </div>
+
+                  {/* New: Heart Icon for Favorites */}
+                  <div className="absolute bottom-3 left-3 opacity-0 group-hover:opacity-100 transition-all duration-500 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="bg-white/95 backdrop-blur-md p-2 rounded-full shadow-md border border-white/50 hover:bg-red-50 transition-colors duration-300">
+                      <Heart className="h-4 w-4 text-gray-700 hover:text-red-500 transition-colors duration-300" />
+                    </div>
+                  </div>
                 </div>
+
+                {/* Enhanced Content Section */}
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {animal.name}
-                  </h3>
-                  <p className="text-gray-600 text-sm leading-relaxed mb-3">
+                  <div className="flex items-center justify-between">
+                    <h3 className="text-xl font-bold text-gray-900 group-hover:text-primary-600 transition-colors duration-300">
+                      {animal.name}
+                    </h3>
+                    <div className="flex space-x-1">
+                      {[...Array(5)].map((_, i) => (
+                        <Star
+                          key={i}
+                          className="h-5 w-5 text-yellow-400 fill-current"
+                        />
+                      ))}
+                    </div>
+                  </div>
+
+                  <p className="text-gray-600 text-sm leading-relaxed mb-2 line-clamp-2">
                     {animal.description}
                   </p>
-                  <div className="space-y-2">
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>Age:</span>
-                      <span className="font-medium">{animal.age}</span>
+
+                  {/* Enhanced Status Indicator */}
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
+                      <span className="text-sm font-medium text-green-600">
+                        Active & Healthy
+                      </span>
                     </div>
-                    <div className="flex items-center justify-between text-xs text-gray-500">
-                      <span>Location:</span>
-                      <span className="font-medium">{animal.location}</span>
-                    </div>
-                    <div className="flex items-center text-xs text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-green-500 rounded-full mr-2" />
-                      <span>Active & Healthy</span>
-                    </div>
+
+                    <motion.button
+                      onClick={() => {
+                        router.push("/signup");
+                      }}
+                      className="bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-1.5 rounded-full text-xs font-semibold shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      Learn More
+                    </motion.button>
                   </div>
                 </div>
               </div>
