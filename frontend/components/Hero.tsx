@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play, PawPrint } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -26,10 +27,16 @@ export default function Hero() {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Enhanced Effects */}
-      <div
-        className="absolute inset-0 bg-cover bg-center z-0 blur-"
-        style={{ backgroundImage: "url('/hero-img.jpg')" }}
-      />
+      <div className="absolute inset-0 z-0">
+        <Image
+          src="https://images.unsplash.com/photo-1494947665470-20322015e3a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Wildlife background"
+          fill
+          priority
+          className="object-cover"
+          sizes="100vw"
+        />
+      </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/40" />
 
       {/* Floating Elements */}
