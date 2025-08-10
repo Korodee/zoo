@@ -6,8 +6,17 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 relative overflow-hidden">
-      <div className="absolute inset-0 opacity-10">
+    <section className="py-20 relative overflow-hidden">
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          alt="Zoo animals background"
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/70 to-black/50" />
+      </div>
+      <div className="absolute inset-0 opacity-10 z-10">
         <div
           className="absolute inset-0"
           style={{
@@ -15,7 +24,7 @@ export default function CTA() {
           }}
         />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

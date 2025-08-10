@@ -173,8 +173,9 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-sm">
-            © 2024 WildLife Hub. All rights reserved.
+            © 2025 WildLife Hub. All rights reserved.
           </p>
+
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link
               href="#"
