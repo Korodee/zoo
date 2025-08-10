@@ -4,6 +4,10 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
 
+// Import database and swagger
+import { connectDB } from "../config/database";
+import { setupSwagger } from "../config/swagger";
+
 // Load environment variables
 dotenv.config();
 
@@ -54,9 +58,15 @@ app.use(
   })
 );
 
+// Connect to MongoDB
+connectDB();
+
 // Body parsing middleware
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
+
+// Setup Swagger documentation
+setupSwagger(app);
 
 // Health check endpoint
 app.get("/health", (req, res) => {
@@ -73,7 +83,17 @@ app.get("/", (_req, res) => {
   res.type("text/plain").send("WildLife Hub API is running");
 });
 
-// API routes (basic endpoints for now)
+// Import routes
+import authRoutes from "../routes/auth";
+import stripeRoutes from "../routes/stripe";
+import userRoutes from "../routes/users";
+
+// API routes
+app.use("/api", authRoutes);
+app.use("/api", stripeRoutes);
+app.use("/api", userRoutes);
+
+// Test endpoint
 app.get("/api/test", (req, res) => {
   res.json({
     message: "API is working!",
