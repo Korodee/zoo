@@ -415,7 +415,7 @@ export default function MemberContent() {
                   <div className="mt-4">
                     <a
                       href="#"
-                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg w-full sm:w-auto"
+                      className="inline-flex my-3 md:my-0 items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg w-full sm:w-auto"
                     >
                       <Camera className="h-5 w-5" /> Submit your entry{" "}
                       <ArrowRight className="h-5 w-5" />
