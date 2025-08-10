@@ -25,7 +25,7 @@ const heroVariants = {
 
 export default function Hero() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative h-[92vh] md:h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Enhanced Effects */}
       <div className="absolute inset-0 z-0">
         <Image
