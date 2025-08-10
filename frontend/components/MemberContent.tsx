@@ -234,42 +234,49 @@ export default function MemberContent() {
           variants={container}
           initial="hidden"
           animate="visible"
-          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-8"
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 sm:pt-12 pb-6 sm:pb-8"
         >
           <motion.div
             variants={item}
-            className="flex items-center justify-between gap-6"
+            className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6"
           >
-            <div className="flex items-center gap-4">
-              <div className="h-14 w-14 rounded-2xl bg-white shadow-inner grid place-items-center border border-white/80">
-                <span className="text-lg font-bold text-primary-700">
-                  {initials}
-                </span>
+            <div className="flex items-center gap-5">
+              <div className="relative">
+                <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-white shadow-lg grid place-items-center border border-white/80">
+                  <span className="text-2xl sm:text-3xl font-bold text-primary-700">
+                    {initials}
+                  </span>
+                </div>
+                <div className="absolute -bottom-1 -right-1 h-6 w-6 bg-emerald-500 rounded-full border-2 border-white flex items-center justify-center">
+                  <ShieldCheck className="h-3 w-3 text-white" />
+                </div>
               </div>
-              <div>
-                <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900">
+              <div className="flex-1">
+                <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-gray-900 mb-2">
                   Welcome{firstName ? `, ${firstName}` : ""}
                 </h1>
-                <div className="mt-1 flex flex-wrap items-center gap-2 text-sm">
-                  <span className="inline-flex items-center gap-1 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-1">
-                    <ShieldCheck className="h-4 w-4" /> Active member
-                  </span>
-                  <span className="text-gray-500">
-                    Member since {memberSinceLabel}
-                  </span>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 text-[13px]">
+                  <div className="flex items-center gap-2">
+                    <span className="hidden sm:inline-flex items-center gap-2 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 px-3 py-1.5 font-medium">
+                      <ShieldCheck className="h-4 w-4" /> Active member
+                    </span>
+                    <span className="text-gray-500 font-medium">
+                      Member since {memberSinceLabel}
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>
-            <div className="flex items-center gap-3">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 lg:gap-4">
               <a
                 href="#resources"
-                className="hidden sm:inline-flex items-center gap-2 rounded-xl border border-gray-200 bg-white px-4 py-2 text-sm font-medium text-gray-700 shadow-sm hover:shadow"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white/90 backdrop-blur-sm px-5 py-3 text-sm font-medium text-gray-700 shadow-sm hover:shadow-md hover:bg-white transition-all duration-200"
               >
                 <BookOpen className="h-4 w-4" /> Resources
               </a>
               <a
                 href="#submit"
-                className="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white px-4 py-2 text-sm font-semibold shadow hover:shadow-lg"
+                className="inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 text-sm font-semibold shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-200"
               >
                 <Camera className="h-4 w-4" /> Submit entry
                 <ArrowUpRight className="h-4 w-4" />
@@ -310,12 +317,12 @@ export default function MemberContent() {
 
       {/* Main content */}
       <motion.div
-        className="max-w-7xl mt-6 mx-auto px-4 sm:px-6 lg:px-8 pb-16"
+        className="max-w-7xl mt-4 sm:mt-6 mx-auto px-4 sm:px-6 lg:px-8 pb-12 sm:pb-16"
         variants={container}
         initial="hidden"
         animate="visible"
       >
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-6 lg:gap-8">
           {/* Active contest card */}
           <motion.div
             id="submit"
@@ -335,21 +342,21 @@ export default function MemberContent() {
               
               {/* Content */}
               <div className="relative z-10">
-                <div className="flex items-start justify-between gap-4">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div>
                     <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 border border-gray-200">
                       <Trophy className="h-4 w-4 text-primary-600" /> Monthly
                       contest
                     </div>
-                    <h2 className="mt-3 text-2xl md:text-3xl font-extrabold text-white">
+                    <h2 className="mt-3 text-xl sm:text-2xl md:text-3xl font-extrabold text-white">
                       {activeContest.title}
                     </h2>
-                    <p className="text-primary-50 font-medium">
+                    <p className="text-primary-50 font-medium text-sm sm:text-base">
                       Theme: {activeContest.theme}
                     </p>
                   </div>
-                  <div className="text-right text-white">
-                    <div className="text-sm flex items-center justify-end gap-2 opacity-90">
+                  <div className="text-left sm:text-right text-white">
+                    <div className="text-sm flex items-center sm:justify-end gap-2 opacity-90">
                       <CalendarDays className="h-4 w-4" /> Deadline
                     </div>
                     <div className="text-lg font-semibold">
@@ -358,7 +365,7 @@ export default function MemberContent() {
                   </div>
                 </div>
                 {/* Overlay metrics */}
-                <div className="mt-4 flex flex-wrap gap-2">
+                <div className="mt-4 flex flex-col sm:flex-row flex-wrap gap-2">
                   <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
@@ -381,8 +388,8 @@ export default function MemberContent() {
               </div>
             </div>
 
-            <div className="p-6 md:p-8">
-              <div className="mt-6 grid md:grid-cols-2 gap-6">
+            <div className="p-4 sm:p-6 md:p-8">
+              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
                 <div>
                   <h3 className="font-semibold text-gray-900 mb-2">Rules</h3>
                   <ul className="space-y-2 text-sm text-gray-700">
@@ -408,7 +415,7 @@ export default function MemberContent() {
                   <div className="mt-4">
                     <a
                       href="#"
-                      className="inline-flex items-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg"
+                      className="inline-flex items-center justify-center gap-2 bg-gradient-to-r from-primary-600 to-primary-700 text-white px-5 py-3 rounded-xl font-semibold shadow hover:shadow-lg w-full sm:w-auto"
                     >
                       <Camera className="h-5 w-5" /> Submit your entry{" "}
                       <ArrowRight className="h-5 w-5" />
@@ -424,8 +431,8 @@ export default function MemberContent() {
           </motion.div>
 
           {/* Sidebar: Quick actions and help */}
-          <motion.div variants={item} className="space-y-6">
-            <div className="bg-white rounded-2xl shadow-xl border border-white/60 p-6">
+          <motion.div variants={item} className="space-y-6 order-first lg:order-last">
+            <div className="bg-white rounded-2xl shadow-xl border border-white/60 p-4 sm:p-6">
               <h3 className="font-semibold text-gray-900 mb-4">
                 Quick actions
               </h3>
@@ -470,7 +477,7 @@ export default function MemberContent() {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-6">
+            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4 sm:p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Need help?</h3>
               <p className="text-sm text-gray-600">
                 We’re here for you. Reach us at{" "}
@@ -480,86 +487,6 @@ export default function MemberContent() {
           </motion.div>
         </div>
 
-        {/* Featured resources */}
-        <motion.div id="resources" variants={item} className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <BookOpen className="h-6 w-6 text-purple-600" /> Featured resources
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {[
-              {
-                title: "Mastering Natural Light",
-                img: "https://images.unsplash.com/photo-1501706362039-c06b2d715385?q=80&w=1200&auto=format&fit=crop",
-                tag: "Guide",
-              },
-              {
-                title: "Field Gear Checklist 2025",
-                img: "https://images.unsplash.com/photo-1472214103451-9374bd1c798e?q=80&w=1200&auto=format&fit=crop",
-                tag: "Checklist",
-              },
-              {
-                title: "Post-Processing Basics",
-                img: "https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?q=80&w=1200&auto=format&fit=crop",
-                tag: "Tutorial",
-              },
-            ].map((r, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl overflow-hidden shadow border border-white/60"
-              >
-                <div className="relative h-40">
-                  <img
-                    src={r.img}
-                    alt={r.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full border border-gray-200">
-                    {r.tag}
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="font-semibold text-gray-900">{r.title}</div>
-                  <a
-                    href="#"
-                    className="mt-2 inline-flex items-center gap-1 text-sm text-primary-700 font-medium"
-                  >
-                    Read more <ArrowUpRight className="h-4 w-4" />
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
-
-        {/* Winners */}
-        <motion.div id="winners" variants={item} className="mt-12">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 flex items-center gap-2">
-            <Crown className="h-6 w-6 text-yellow-500" /> Past winners
-          </h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            {winners.map((w, i) => (
-              <div
-                key={i}
-                className="bg-white rounded-2xl overflow-hidden shadow border border-white/60"
-              >
-                <div className="relative h-48">
-                  <img
-                    src={w.img}
-                    alt={w.title}
-                    className="w-full h-full object-cover"
-                  />
-                  <div className="absolute top-3 left-3 bg-white/90 text-gray-800 text-xs font-semibold px-2 py-1 rounded-full border border-gray-200">
-                    {w.month}
-                  </div>
-                </div>
-                <div className="p-4">
-                  <div className="text-sm text-gray-500">Winner: {w.name}</div>
-                  <div className="font-semibold text-gray-900">{w.title}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </motion.div>
       </motion.div>
     </div>
   );
