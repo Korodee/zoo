@@ -4,15 +4,6 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
 
-// Import database and swagger
-import { connectDB } from "./config/database";
-import { setupSwagger } from "./config/swagger";
-
-// Import routes
-import authRoutes from "./routes/auth";
-import stripeRoutes from "./routes/stripe";
-import userRoutes from "./routes/users";
-
 // Load environment variables
 dotenv.config();
 
@@ -20,14 +11,6 @@ const app = express();
 const PORT = process.env.PORT || 5001;
 const NODE_ENV = process.env.NODE_ENV || "development";
 const DISABLE_SECURITY = process.env.DISABLE_SECURITY === "true";
-
-// Log environment for debugging
-console.log("Environment:", NODE_ENV);
-console.log("Port:", PORT);
-console.log("Security disabled:", DISABLE_SECURITY);
-
-// Connect to MongoDB
-connectDB();
 
 // Security middleware (can be disabled via env for debugging)
 if (!DISABLE_SECURITY) {
@@ -44,17 +27,17 @@ if (!DISABLE_SECURITY) {
   app.use(limiter);
 }
 
-// CORS configuration with support for multiple origins
-const allowedOrigins = [
-  process.env.FRONTEND_URL || "http://localhost:3000",
-  "http://localhost:3000",
-];
-
+// CORS configuration
 app.use(
   cors({
     origin(origin, callback) {
       // Allow all origins in development or if no origin
       if (!origin || NODE_ENV === "development") return callback(null, true);
+      
+      const allowedOrigins = [
+        process.env.FRONTEND_URL || "http://localhost:3000",
+        "http://localhost:3000",
+      ];
       
       if (
         allowedOrigins.includes(origin) ||
@@ -75,16 +58,12 @@ app.use(
 app.use(express.json({ limit: "10mb" }));
 app.use(express.urlencoded({ extended: true }));
 
-// Setup Swagger documentation
-setupSwagger(app);
-
 // Health check endpoint
 app.get("/health", (req, res) => {
   res.json({
     status: "OK",
     timestamp: new Date().toISOString(),
     environment: NODE_ENV,
-    database: "MongoDB",
     version: "1.0.0",
   });
 });
@@ -94,10 +73,14 @@ app.get("/", (_req, res) => {
   res.type("text/plain").send("WildLife Hub API is running");
 });
 
-// API routes
-app.use("/api", authRoutes);
-app.use("/api", stripeRoutes);
-app.use("/api", userRoutes);
+// API routes (basic endpoints for now)
+app.get("/api/test", (req, res) => {
+  res.json({
+    message: "API is working!",
+    timestamp: new Date().toISOString(),
+    environment: NODE_ENV,
+  });
+});
 
 // 404 handler
 app.use("*", (req, res) => {
@@ -132,16 +115,5 @@ app.use(
     });
   }
 );
-
-// Start server (only in non-serverless environments)
-if (process.env.VERCEL !== '1') {
-  app.listen(Number(PORT), "0.0.0.0", () => {
-    console.log(`Server running on port ${PORT}`);
-    console.log(`Health check: http://localhost:${PORT}/health`);
-    console.log(`API Docs: http://localhost:${PORT}/api-docs`);
-    console.log(`Environment: ${NODE_ENV}`);
-    console.log(`Security: ${DISABLE_SECURITY ? "DISABLED" : "ENABLED"}`);
-  });
-}
 
 export default app;

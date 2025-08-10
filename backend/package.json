@@ -7,6 +7,7 @@
     "dev": "ts-node-dev --respawn --transpile-only server.ts",
     "build": "tsc",
     "start": "node dist/server.js",
+    "vercel-build": "tsc",
     "lint": "eslint . --ext .ts",
     "lint:fix": "eslint . --ext .ts --fix",
     "type-check": "tsc --noEmit"
@@ -49,6 +50,9 @@
     "wildlife",
     "photography"
   ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
   "author": "WildLife Hub Team",
   "license": "MIT"
 }
