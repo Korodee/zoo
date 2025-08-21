@@ -26,16 +26,19 @@ const heroVariants = {
 export default function Hero() {
   return (
     <section className="relative h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Enhanced Effects */}
+      {/* Background Video with Enhanced Effects */}
       <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1494947665470-20322015e3a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-          alt="Wildlife background"
-          fill
-          priority
-          className="object-cover"
-          sizes="100vw"
-        />
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="object-cover w-full h-full"
+        >
+          <source src="/hero-vid.mov" type="video/quicktime" />
+          <source src="/hero-vid.mov" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/40" />
 

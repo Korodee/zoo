@@ -35,7 +35,7 @@ export default function Testimonials() {
   ];
 
   return (
-    <section className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section className="pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div
           className="absolute inset-0"

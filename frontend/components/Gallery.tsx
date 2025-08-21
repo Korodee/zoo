@@ -18,14 +18,14 @@ export default function Gallery() {
   const router = useRouter();
   const zooImages = [
     {
-      name: "Lion d'Afrique",
-      category: "Grands Félins",
+      name: "Cerf Élégant",
+      category: "Mammifères",
       image:
-        "https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop",
-      description: "Majestueux roi de la jungle",
+        "https://plus.unsplash.com/premium_photo-1661819541230-034d07819c9b?fm=jpg&q=60&w=600&h=400&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      description: "Gracieux habitant de la forêt",
       status: "Actif",
-      age: "8 ans",
-      location: "Habitat Savane",
+      age: "6 ans",
+      location: "Forêt Tempérée",
     },
     {
       name: "Famille d'Éléphants",
@@ -47,72 +47,72 @@ export default function Gallery() {
       age: "12 ans",
       location: "Habitat Savane",
     },
-    {
-      name: "Colonie de Pingouins",
-      category: "Oiseaux",
-      image:
-        "https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?w=600&h=400&fit=crop",
-      description: "Adorables amis qui se dandinent",
-      status: "Actif",
-      age: "5 ans",
-      location: "Zone Polaire",
-    },
-    {
-      name: "Tigre du Bengale",
-      category: "Grands Félins",
-      image:
-        "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Beauté rayée de la nature sauvage",
-      status: "Actif",
-      age: "10 ans",
-      location: "Territoire des Tigres",
-    },
-    {
-      name: "Gorille des Montagnes",
-      category: "Primates",
-      image:
-        "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Intelligent et puissant",
-      status: "Actif",
-      age: "18 ans",
-      location: "Sanctuaire des Gorilles",
-    },
-    {
-      name: "Panda Roux",
-      category: "Mammifères",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      description: "Adorable amateur de bambou",
-      status: "Actif",
-      age: "6 ans",
-      location: "Forêt de Bambou",
-    },
-    {
-      name: "Léopard des Neiges",
-      category: "Grands Félins",
-      image:
-        "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-      description: "Fantôme des montagnes",
-      status: "Actif",
-      age: "9 ans",
-      location: "Habitat Montagneux",
-    },
-    {
-      name: "Famille de Suricates",
-      category: "Mammifères",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-      description: "Curieux habitants du désert",
-      status: "Actif",
-      age: "4 ans",
-      location: "Zone Désertique",
-    },
+    // {
+    //   name: "Colonie de Pingouins",
+    //   category: "Oiseaux",
+    //   image:
+    //     "https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?w=600&h=400&fit=crop",
+    //   description: "Adorables amis qui se dandinent",
+    //   status: "Actif",
+    //   age: "5 ans",
+    //   location: "Zone Polaire",
+    // },
+    // {
+    //   name: "Tigre du Bengale",
+    //   category: "Grands Félins",
+    //   image:
+    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
+    //   description: "Beauté rayée de la nature sauvage",
+    //   status: "Actif",
+    //   age: "10 ans",
+    //   location: "Territoire des Tigres",
+    // },
+    // {
+    //   name: "Gorille des Montagnes",
+    //   category: "Primates",
+    //   image:
+    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
+    //   description: "Intelligent et puissant",
+    //   status: "Actif",
+    //   age: "18 ans",
+    //   location: "Sanctuaire des Gorilles",
+    // },
+    // {
+    //   name: "Panda Roux",
+    //   category: "Mammifères",
+    //   image:
+    //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    //   description: "Adorable amateur de bambou",
+    //   status: "Actif",
+    //   age: "6 ans",
+    //   location: "Forêt de Bambou",
+    // },
+    // {
+    //   name: "Léopard des Neiges",
+    //   category: "Grands Félins",
+    //   image:
+    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
+    //   description: "Fantôme des montagnes",
+    //   status: "Actif",
+    //   age: "9 ans",
+    //   location: "Habitat Montagneux",
+    // },
+    // {
+    //   name: "Famille de Suricates",
+    //   category: "Mammifères",
+    //   image:
+    //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
+    //   description: "Curieux habitants du désert",
+    //   status: "Actif",
+    //   age: "4 ans",
+    //   location: "Zone Désertique",
+    // },
   ];
 
   return (
     <section
       id="gallery"
-      className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="p4-10 pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -156,30 +156,8 @@ export default function Gallery() {
           </motion.p>
         </motion.div>
 
-        {/* Stats Bar */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-primary-600 mb-2">9</div>
-            <div className="text-sm text-gray-600">Espèces d'Animaux</div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-green-600 mb-2">100%</div>
-            <div className="text-sm text-gray-600">Animaux en Bonne Santé</div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-blue-600 mb-2">5</div>
-            <div className="text-sm text-gray-600">Habitats</div>
-          </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-purple-600 mb-2">24/7</div>
-            <div className="text-sm text-gray-600">Soins & Surveillance</div>
-          </div>
-        </motion.div>
+        {/* Animal Spotlight */}
+
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
@@ -299,7 +277,7 @@ export default function Gallery() {
           ))}
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -326,7 +304,7 @@ export default function Gallery() {
               </svg>
             </motion.button>
           </Link>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

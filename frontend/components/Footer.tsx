@@ -136,7 +136,7 @@ export default function Footer() {
           </motion.div>
         </motion.div>
 
-        <motion.div
+        {/* <motion.div
           className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 mb-12 border border-white/10"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -163,10 +163,10 @@ export default function Footer() {
               </motion.button>
             </div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         <motion.div
-          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center"
+          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center"
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
@@ -175,27 +175,6 @@ export default function Footer() {
           <p className="text-gray-400 text-sm">
             © 2025 WildLife Hub. All rights reserved.
           </p>
-
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <Link
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-            >
-              Politique de Confidentialité
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-            >
-              Conditions d'Utilisation
-            </Link>
-            <Link
-              href="#"
-              className="text-gray-400 hover:text-white transition-colors text-sm"
-            >
-              Politique des Cookies
-            </Link>
-          </div>
         </motion.div>
       </div>
     </footer>
