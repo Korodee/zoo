@@ -81,7 +81,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Email</p>
-                    <p className="text-gray-600">hello@wildlifehub.com</p>
+                    <p className="text-gray-600">[Votre email]</p>
                   </div>
                 </motion.div>
                 <motion.div
@@ -94,7 +94,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900">Téléphone</p>
-                    <p className="text-gray-600">(555) 123-4567</p>
+                    <p className="text-gray-600">819-329-6264</p>
                   </div>
                 </motion.div>
                 <motion.div
@@ -106,9 +106,9 @@ export default function Contact() {
                     <MapPin className="h-6 w-6 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Adresse</p>
+                    <p className="font-semibold text-gray-900">Nom</p>
                     <p className="text-gray-600">
-                      123 Wildlife Drive, Nature City, NC 12345
+                      Domaine du Chevreuil Blanc
                     </p>
                   </div>
                 </motion.div>

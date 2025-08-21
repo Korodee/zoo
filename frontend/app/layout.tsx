@@ -6,9 +6,9 @@ import { ToastProvider } from "@/components/Toast";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Pet Store - Your Furry Friends Paradise",
+  title: "Domaine du Chevreuil Blanc - Parc Animalier",
   description:
-    "Discover amazing pets and become a member for exclusive content",
+    "Découvrez notre parc animalier diversifié avec des chevreuils blancs rares, des cervidés majestueux, des bisons et des lamas. Cartes de membres disponibles.",
   viewport: "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
 };
 

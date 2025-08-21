@@ -38,13 +38,13 @@ export default function Footer() {
                 <PawPrint className="h-8 w-8 text-white" />
               </div>
               <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                WildLife Hub
+                Domaine du Chevreuil Blanc
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Votre porte d'entrée vers le monde sauvage. Vivez la magie de la conservation de la faune sauvage,
-              de l'éducation, et des rencontres inoubliables avec
-              les créatures les plus incroyables de la nature.
+              Notre parc animalier diversifié offre une expérience unique dans un environnement 
+              naturel et sécuritaire. Découvrez des chevreuils blancs rares, des cervidés majestueux, 
+              des bisons imposants et nos amis les lamas et alpagas.
             </p>
             <div className="flex space-x-4">
               {["f", "in", "t", "yt"].map((label) => (
@@ -115,14 +115,14 @@ export default function Footer() {
           </motion.div>
 
           <motion.div variants={itemVariants}>
-            <h4 className="text-xl font-bold mb-6 text-white">Nos Services</h4>
+            <h4 className="text-xl font-bold mb-6 text-white">Nos Animaux</h4>
             <ul className="space-y-4">
               {[
-                "Visites Faune Sauvage",
-                "Programmes Éducatifs",
-                "Projets de Conservation",
-                "Ateliers Photographie",
-                "Adhésions VIP",
+                "Chevreuils Blancs",
+                "Cerfs de Virginie",
+                "Bisons",
+                "Lamas & Alpagas",
+                "Animaux de Ferme",
               ].map((s) => (
                 <li
                   key={s}
@@ -173,7 +173,7 @@ export default function Footer() {
           viewport={{ once: true }}
         >
           <p className="text-gray-400 text-sm">
-            © 2025 WildLife Hub. All rights reserved.
+            © 2025 Domaine du Chevreuil Blanc. All rights reserved.
           </p>
         </motion.div>
       </div>

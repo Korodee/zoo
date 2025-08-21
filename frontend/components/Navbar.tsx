@@ -75,7 +75,7 @@ export default function Navbar() {
               <div className="flex items-center gap-2">
                 <PawPrint className="h-7 w-7 text-white" />
                 <span className="text-xl font-semibold tracking-tight text-white">
-                  WildLife Hub
+                  Domaine du Chevreuil Blanc
                 </span>
               </div>
             </div>
@@ -112,7 +112,7 @@ export default function Navbar() {
             <Link href="/" className="flex items-center gap-2">
               <PawPrint className="h-7 w-7 text-white transition-colors duration-300 scrolled:text-primary-600" />
               <span className="text-xl font-semibold tracking-tight text-white transition-colors duration-300 scrolled:text-gray-900">
-                WildLife Hub
+                Domaine du Chevreuil Blanc
               </span>
             </Link>
           </div>
@@ -160,7 +160,7 @@ export default function Navbar() {
                   rel="noopener noreferrer"
                   className="text-sm md:text-base px-4 py-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white font-medium shadow-sm hover:bg-white/20 hover:text-gray-900 transition-all duration-200 scrolled:bg-primary-600 scrolled:border-primary-600 scrolled:text-white scrolled:hover:bg-primary-700"
                 >
-                  Rejoindre WildLife Hub
+                  Obtenir ma Carte
                 </Link>
               </div>
             )}
@@ -282,7 +282,7 @@ export default function Navbar() {
                         >
                           <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                           <span className="font-bold text-base relative">
-                            Rejoindre WildLife Hub
+                            Obtenir ma Carte
                           </span>
                         </Link>
                     </>

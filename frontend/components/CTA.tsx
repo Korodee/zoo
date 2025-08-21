@@ -45,7 +45,7 @@ export default function CTA() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-4xl md:text-5xl font-bold text-white mb-6"
           >
-            Débloquez du Contenu Exclusif sur la Faune
+            Obtenez Votre Carte de Membre
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 30 }}
@@ -53,9 +53,9 @@ export default function CTA() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-white/90 mb-8 max-w-3xl mx-auto"
           >
-            Rejoignez notre adhésion VIP et obtenez l'accès à la photographie exclusive de la faune sauvage,
-            du contenu en coulisses, et participez à nos
-            concours de photographie mensuels avec des prix incroyables.
+            Rejoignez le Domaine du Chevreuil Blanc et profitez de 6 mois gratuits ! 
+            Les cartes sont limitées et obligatoires pour participer aux concours. 
+            Découvrez nos animaux dans un environnement naturel et sécuritaire.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -66,28 +66,28 @@ export default function CTA() {
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Camera className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Photographie Exclusive
+                Cartes Adultes
               </h3>
               <p className="text-white/80">
-                Accès aux clichés premium de faune sauvage et au contenu en coulisses
+                30$ incluant 6 mois gratuits - Objectif 500 000 cartes
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Trophy className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Concours Mensuels
+                Cartes Enfants
               </h3>
               <p className="text-white/80">
-                Participez aux concours de photographie avec des prix incroyables
+                20$ incluant 6 mois gratuits - Objectif 300 000 cartes
               </p>
             </div>
             <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 text-center">
               <Users className="h-8 w-8 text-yellow-300 mb-4 mx-auto" />
               <h3 className="text-xl font-semibold text-white mb-2">
-                Accès Communautaire
+                Cartes Limitées
               </h3>
               <p className="text-white/80">
-                Connectez-vous avec d'autres passionnés de faune sauvage et photographes
+                Obligatoires pour participer aux concours - Réservez vite !
               </p>
             </div>
           </motion.div>
@@ -103,7 +103,7 @@ export default function CTA() {
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span>Rejoindre l'Adhésion VIP</span>
+                <span>Obtenir ma Carte</span>
                 <ArrowRight className="h-5 w-5" />
               </motion.button>
             </Link>
@@ -125,7 +125,7 @@ export default function CTA() {
             className="mt-8 text-white/70 text-sm"
           >
             <p>
-              À partir de 9,99€/mois • Annulez à tout moment • Garantie de remboursement de 30 jours
+              Cartes limitées • 6 mois gratuits inclus • Participation aux concours obligatoire
             </p>
           </motion.div>
         </motion.div>

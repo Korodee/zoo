@@ -18,34 +18,34 @@ export default function Gallery() {
   const router = useRouter();
   const zooImages = [
     {
-      name: "Cerf Élégant",
-      category: "Mammifères",
+      name: "Chevreuil Blanc",
+      category: "Cervidés",
       image:
-        "https://plus.unsplash.com/premium_photo-1661819541230-034d07819c9b?fm=jpg&q=60&w=600&h=400&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "Gracieux habitant de la forêt",
+        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+      description: "Majestueux cerf blanc rare",
       status: "Actif",
-      age: "6 ans",
-      location: "Forêt Tempérée",
+      age: "4 ans",
+      location: "Domaine du Chevreuil Blanc",
     },
     {
-      name: "Famille d'Éléphants",
-      category: "Mammifères",
+      name: "Cerf de Virginie",
+      category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=600&h=400&fit=crop",
-      description: "Géants doux de la savane",
+        "https://images.unsplash.com/photo-1518837695005-2083093e35b?w=600&h=400&fit=crop",
+      description: "Élégant habitant de nos forêts",
       status: "Actif",
-      age: "15 ans",
-      location: "Plaines Africaines",
+      age: "3 ans",
+      location: "Domaine du Chevreuil Blanc",
     },
     {
-      name: "Girafe",
-      category: "Mammifères",
+      name: "Bison",
+      category: "Grands Animaux",
       image:
-        "https://images.unsplash.com/photo-1547721064-da6cfb341d50?w=600&h=400&fit=crop",
-      description: "Plus grand animal terrestre",
+        "https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop",
+      description: "Imposant géant des plaines",
       status: "Actif",
-      age: "12 ans",
-      location: "Habitat Savane",
+      age: "8 ans",
+      location: "Domaine du Chevreuil Blanc",
     },
     // {
     //   name: "Colonie de Pingouins",
@@ -144,16 +144,41 @@ export default function Gallery() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            Rencontrez Notre Faune Sauvage
+            Découvrez Nos Animaux
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Découvrez l'incroyable diversité des animaux qui considèrent WildLife Hub
-            comme leur maison. Chaque créature a une histoire unique et joue un rôle vital
-            dans notre écosystème.
+            Explorez notre parc animalier diversifié avec des cervidés majestueux, 
+            des bisons imposants, des lamas et alpagas amicaux, et nos animaux de ferme. 
+            Chaque espèce trouve sa place dans notre environnement naturel et sécuritaire.
           </motion.p>
+        </motion.div>
+
+        {/* Stats Bar */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+            <div className="text-2xl font-bold text-primary-600 mb-2">6</div>
+            <div className="text-sm text-gray-600">Espèces de Cervidés</div>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+            <div className="text-2xl font-bold text-green-600 mb-2">30$</div>
+            <div className="text-sm text-gray-600">Carte Adulte</div>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+            <div className="text-2xl font-bold text-blue-600 mb-2">20$</div>
+            <div className="text-sm text-gray-600">Carte Enfant</div>
+          </div>
+          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+            <div className="text-2xl font-bold text-purple-600 mb-2">6</div>
+            <div className="text-sm text-gray-600">Mois Gratuits</div>
+          </div>
         </motion.div>
 
         {/* Animal Spotlight */}

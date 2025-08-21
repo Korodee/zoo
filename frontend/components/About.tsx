@@ -48,15 +48,15 @@ export default function About() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            À propos de WildLife Hub
+            À propos du Domaine du Chevreuil Blanc
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Nous sommes passionnés par la connexion des gens avec les merveilles de
-            la faune sauvage, en favorisant la sensibilisation à la conservation, et en créant
-            des expériences inoubliables.
+            Notre parc animalier diversifié offre une expérience unique dans un environnement 
+            naturel et sécuritaire. Découvrez des chevreuils blancs rares, des cervidés majestueux, 
+            des bisons imposants et nos amis les lamas et alpagas.
           </motion.p>
         </motion.div>
 
@@ -70,27 +70,27 @@ export default function About() {
           {[
             {
               icon: Heart,
-              title: "Bien-être Animal",
+              title: "Environnement Naturel",
               description:
-                "Chaque animal reçoit le plus haut niveau de soins et d'attention de notre équipe vétérinaire expérimentée.",
+                "Nos animaux évoluent dans un environnement naturel et sécuritaire, respectant leurs besoins et comportements.",
               color: "from-red-500 to-pink-500",
               bgColor: "from-red-50 to-pink-50",
               borderColor: "border-red-200",
             },
             {
               icon: Globe,
-              title: "Conservation",
+              title: "Diversité Animale",
               description:
-                "Nous nous engageons pour la conservation de la faune sauvage et l'éducation, en aidant à protéger les espèces menacées.",
+                "Découvrez cervidés, bisons, lamas, alpagas et animaux de ferme dans un parc animalier unique et diversifié.",
               color: "from-green-500 to-blue-500",
               bgColor: "from-green-50 to-blue-50",
               borderColor: "border-green-200",
             },
             {
               icon: Camera,
-              title: "Éducation",
+              title: "Expérience Unique",
               description:
-                "Les expositions interactives et les programmes éducatifs rendent l'apprentissage de la faune sauvage engageant et amusant.",
+                "Vivez une expérience immersive avec nos chevreuils blancs rares et nos nombreuses espèces d'animaux.",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",
