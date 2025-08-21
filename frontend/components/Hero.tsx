@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowRight, Play, PawPrint } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-import VideoBackground from "./VideoBackground";
+
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -29,11 +29,16 @@ export default function Hero() {
     <section className="relative h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
       {/* Background Video with Enhanced Effects */}
       <div className="absolute inset-0 z-0">
-        <VideoBackground
-          videoSrc="/hero-vid.mp4"
-          fallbackImageSrc="https://images.unsplash.com/photo-1494947665470-20322015e3a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
           className="object-cover w-full h-full"
-        />
+        >
+          <source src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/40" />
 
