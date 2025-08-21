@@ -91,7 +91,7 @@ FRONTEND_URL=http://localhost:3000
 
 # Optional (emails via Brevo)
 BREVO_API_KEY=your_brevo_api_key
-MAIL_FROM=no-reply@yourdomain.com
+MAIL_FROM=le.domaine.du.chevreuil.blanc@gmail.com
 ```
 
 2) frontend/.env.local

@@ -162,7 +162,7 @@ export async function getMembership(): Promise<{
   };
 }
 
-export async function createCheckoutSession(userId: string, email: string) {
+export async function createCheckoutSession(userId: string, email: string, cardType: 'adult' | 'child' = 'adult') {
   const headers = new Headers({ "Content-Type": "application/json" });
   const auth = authHeaders();
   if (auth && auth.Authorization) {
@@ -171,7 +171,7 @@ export async function createCheckoutSession(userId: string, email: string) {
   const res = await fetch(`${BASE_URL}/api/create-checkout-session`, {
     method: "POST",
     headers,
-    body: JSON.stringify({ userId, email }),
+    body: JSON.stringify({ userId, email, cardType }),
   });
   if (!res.ok) throw new Error("Failed to create checkout session");
   return (await res.json()) as { sessionId: string; url?: string };
@@ -188,4 +188,21 @@ export async function verifyPayment(sessionId: string) {
   });
   if (!res.ok) throw new Error("Failed to verify payment");
   return (await res.json()) as { success: boolean; message?: string };
+}
+
+export async function submitContactForm(data: {
+  name: string;
+  email: string;
+  message: string;
+}) {
+  const res = await fetch(`${BASE_URL}/api/contact`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+  });
+  if (!res.ok) {
+    const error = await res.json();
+    throw new Error(error.error || "Failed to submit contact form");
+  }
+  return (await res.json()) as { message: string };
 }

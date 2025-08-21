@@ -83,18 +83,18 @@ export default function Hero() {
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           variants={itemVariants}
         >
-          Bienvenue au
+          Découvrez le
           <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-            Domaine du Chevreuil Blanc
+            Monde Sauvage
           </span>
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-200 leading-relaxed"
           variants={itemVariants}
         >
-          Découvrez notre parc animalier diversifié dans un environnement naturel et sécuritaire. 
-          Des chevreuils blancs majestueux aux bisons imposants, en passant par nos amis les lamas 
-          et alpagas, vivez une expérience unique au cœur de la nature.
+          Vivez la magie de la faune sauvage de près. Des lions majestueux aux
+          pingouins joueurs, embarquez pour un voyage inoubliable à travers les
+          créatures les plus incroyables de la nature.
         </motion.p>
 
         <motion.div
@@ -107,7 +107,7 @@ export default function Hero() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Obtenir ma Carte</span>
+              <span>Commencer l'Aventure</span>
               <ArrowRight className="h-5 w-5" />
             </motion.button>
           </Link>
@@ -117,7 +117,7 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
           >
             <Play className="h-5 w-5" />
-            <span>Découvrir nos Animaux</span>
+            <span>Voir la Bande Annonce</span>
           </motion.button>
         </motion.div>
 
@@ -129,18 +129,18 @@ export default function Hero() {
           className="hidden md:flex justify-center items-center space-x-8 text-white/70"
         >
           <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">500K</div>
-            <div className="text-xs">Cartes Adultes</div>
+            <div className="text-2xl font-bold text-yellow-400">500+</div>
+            <div className="text-xs">Photos Faune</div>
           </div>
           <div className="w-px h-6 bg-white/30" />
           <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">300K</div>
-            <div className="text-xs">Cartes Enfants</div>
+            <div className="text-2xl font-bold text-yellow-400">50+</div>
+            <div className="text-xs">Espèces Couvertes</div>
           </div>
           <div className="w-px h-6 bg-white/30" />
           <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">6</div>
-            <div className="text-xs">Mois Gratuits</div>
+            <div className="text-2xl font-bold text-yellow-400">10K+</div>
+            <div className="text-xs">Membres Satisfaits</div>
           </div>
         </motion.div>
       </motion.div>

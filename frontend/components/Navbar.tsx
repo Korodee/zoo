@@ -10,7 +10,7 @@ import {
   PawPrint,
   Home,
   Info,
-  Image as ImageIcon,
+  CreditCard,
   Mail,
   Crown,
   LogIn,
@@ -125,8 +125,8 @@ export default function Navbar() {
             <Link href="#about" className={linkClass}>
               À propos
             </Link>
-            <Link href="#gallery" className={linkClass}>
-              Galerie
+            <Link href="#membership" className={linkClass}>
+              Adhésion
             </Link>
             <Link href="#contact" className={linkClass}>
               Contact
@@ -213,13 +213,13 @@ export default function Navbar() {
                     <span className="font-semibold text-base">À propos</span>
                   </Link>
                   <Link
-                    href="#gallery"
+                    href="#membership"
                     className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                      <ImageIcon className="h-5 w-5 text-purple-600 group-hover:text-purple-700" />
+                      <CreditCard className="h-5 w-5 text-purple-600 group-hover:text-purple-700" />
                     </div>
-                    <span className="font-semibold text-base">Galerie</span>
+                    <span className="font-semibold text-base">Adhésion</span>
                   </Link>
                   <Link
                     href="#contact"

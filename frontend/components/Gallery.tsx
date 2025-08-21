@@ -21,7 +21,7 @@ export default function Gallery() {
       name: "Chevreuil Blanc",
       category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description: "Majestueux cerf blanc rare",
       status: "Actif",
       age: "4 ans",
@@ -31,7 +31,7 @@ export default function Gallery() {
       name: "Cerf de Virginie",
       category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1518837695005-2083093e35b?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1597072466403-de4bc62821e9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description: "Élégant habitant de nos forêts",
       status: "Actif",
       age: "3 ans",
@@ -41,7 +41,7 @@ export default function Gallery() {
       name: "Bison",
       category: "Grands Animaux",
       image:
-        "https://images.unsplash.com/photo-1549366021-9f761d450615?w=600&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1517517938232-02d30ecf9f45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description: "Imposant géant des plaines",
       status: "Actif",
       age: "8 ans",
@@ -150,9 +150,10 @@ export default function Gallery() {
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Explorez notre parc animalier diversifié avec des cervidés majestueux, 
-            des bisons imposants, des lamas et alpagas amicaux, et nos animaux de ferme. 
-            Chaque espèce trouve sa place dans notre environnement naturel et sécuritaire.
+            Explorez notre parc animalier diversifié avec des cervidés
+            majestueux, des bisons imposants, des lamas et alpagas amicaux, et
+            nos animaux de ferme. Chaque espèce trouve sa place dans notre
+            environnement naturel et sécuritaire.
           </motion.p>
         </motion.div>
 
@@ -182,7 +183,6 @@ export default function Gallery() {
         </motion.div>
 
         {/* Animal Spotlight */}
-
 
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"

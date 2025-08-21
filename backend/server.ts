@@ -14,6 +14,7 @@ import { validateEnv } from "./config/validateEnv";
 import authRoutes from "./routes/auth";
 import stripeRoutes from "./routes/stripe";
 import userRoutes from "./routes/users";
+import contactRoutes from "./routes/contact";
 
 // Load environment variables
 dotenv.config();
@@ -105,13 +106,14 @@ app.get("/health", (req, res) => {
 
 // Basic root endpoint for uptime checks
 app.get("/", (_req, res) => {
-  res.type("text/plain").send("WildLife Hub API is running");
+  res.type("text/plain").send("Domaine du Chevreuil Blanc API is running");
 });
 
 // API routes
 app.use("/api", authRoutes);
 app.use("/api", stripeRoutes);
 app.use("/api", userRoutes);
+app.use("/api", contactRoutes);
 
 // 404 handler
 app.use("*", (req, res) => {

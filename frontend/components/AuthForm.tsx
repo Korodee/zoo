@@ -98,7 +98,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              {mode === "signup" ? "Rejoindre WildLife Hub" : "Accéder à l'Espace Membre"}
+              {mode === "signup" ? "Obtenir ma Carte - Domaine du Chevreuil Blanc" : "Accéder à l'Espace Membre"}
             </motion.h2>
             <motion.p
               className="text-gray-600"
@@ -108,8 +108,8 @@ export default function AuthForm({ mode }: AuthFormProps) {
             >
               {mode === "signup" ? (
                 <>
-                  Créez votre compte pour accéder au contenu exclusif de faune sauvage et
-                  aux concours de photographie
+                  Obtenez votre carte de membre pour accéder au parc animalier et
+                  participer aux concours exclusifs
                   <br />
                   <a
                     href="/login"
@@ -120,14 +120,14 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 </>
               ) : (
                 <>
-                  Connectez-vous pour accéder à votre contenu exclusif de membre et
-                  aux concours de photographie
+                  Connectez-vous pour accéder à votre espace membre et
+                  participer aux concours du parc
                   <br />
                   <a
                     href="/signup"
                     className="font-medium text-primary-600 hover:text-primary-500 transition-colors"
                   >
-                    Vous n'avez pas de compte ? Rejoignez-nous
+                    Vous n'avez pas de compte ? Obtenez votre carte
                   </a>
                 </>
               )}
@@ -266,7 +266,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
                 <div className="flex items-center space-x-2">
                   <span>
                     {mode === "signup"
-                      ? "Rejoindre WildLife Hub"
+                      ? "Obtenir ma Carte"
                       : "Accéder à l'Espace Membre"}
                   </span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform duration-200" />

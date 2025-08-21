@@ -21,8 +21,8 @@ export async function sendEmail({
   to,
   subject,
   html,
-  fromName = "WildLife Hub",
-  fromEmail = process.env.MAIL_FROM || "no-reply@wildlifehub.local",
+  fromName = "Domaine du Chevreuil Blanc",
+  fromEmail = process.env.MAIL_FROM || "le.domaine.du.chevreuil.blanc@gmail.com",
 }: {
   to: string;
   subject: string;

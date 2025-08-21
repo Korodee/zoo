@@ -61,7 +61,7 @@ FRONTEND_URL=http://localhost:3000
 
 # Email (optional)
 BREVO_API_KEY=your_brevo_api_key
-MAIL_FROM=no-reply@yourdomain.com
+MAIL_FROM=le.domaine.du.chevreuil.blanc@gmail.com
 
 # Debug (optional)
 DISABLE_SECURITY=false

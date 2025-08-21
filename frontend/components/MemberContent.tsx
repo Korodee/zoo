@@ -147,11 +147,11 @@ export default function MemberContent() {
             <CreditCard className="h-7 w-7" />
           </div>
           <h1 className="text-2xl font-bold text-gray-900 mb-2">
-            Complétez votre adhésion
+            Obtenez votre carte de membre
           </h1>
           <p className="text-gray-600 mb-6">
-            Rejoignez la communauté pour participer aux concours mensuels et voir
-            du contenu exclusif.
+            Rejoignez le Domaine du Chevreuil Blanc pour accéder au parc animalier et
+            participer aux concours exclusifs.
           </p>
           <a
             href="/payment"
@@ -178,16 +178,16 @@ export default function MemberContent() {
 
   // Active contest data (mock)
   const activeContest = {
-    title: "Portraits Faune Sauvage — Juin 2025",
-    theme: "Portraits en gros plan qui révèlent l'émotion et le caractère",
-    prize: "1000€ + Interview en Vedette",
+    title: "Concours Photo — Domaine du Chevreuil Blanc",
+    theme: "Découvrez nos animaux dans leur environnement naturel",
+    prize: "Visite VIP + Carte de membre gratuite",
     deadline: "30 Juin 2025",
-    entries: 328,
+    entries: 156,
     banner:
-      "https://images.unsplash.com/photo-1518791841217-8f162f1e1131?q=80&w=1600&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1600&auto=format&fit=crop",
     rules: [
-      "Une photo par membre · RAW ou JPG haute résolution",
-      "Pas d'images générées par IA · Éditions de base autorisées",
+      "Une photo par membre · Visite au parc obligatoire",
+      "Photos prises au Domaine du Chevreuil Blanc uniquement",
       "Inclure un titre et une histoire de 1-2 phrases",
       "Vous devez posséder tous les droits sur la photo",
     ],
@@ -407,9 +407,9 @@ export default function MemberContent() {
                   </h3>
                   <ol className="space-y-2 text-sm text-gray-700 list-decimal list-inside">
                     <li>
-                      Choisissez votre meilleur portrait de faune sauvage qui correspond au thème
+                      Visitez le Domaine du Chevreuil Blanc et prenez des photos de nos animaux
                     </li>
-                    <li>Assurez-vous qu'il respecte les règles ci-dessus</li>
+                    <li>Assurez-vous que votre photo respecte les règles ci-dessus</li>
                     <li>Soumettez votre participation (titre + histoire courte)</li>
                   </ol>
                   <div className="mt-4">
@@ -472,7 +472,7 @@ export default function MemberContent() {
               <h3 className="font-semibold text-gray-900 mb-2">Besoin d'aide ?</h3>
               <p className="text-sm text-gray-600">
                 We’re here for you. Reach us at{" "}
-                <span className="font-medium">support@wildlifehub.com</span>
+                <span className="font-medium">819-329-6264</span>
               </p>
             </div>
           </motion.div>

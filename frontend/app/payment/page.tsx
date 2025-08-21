@@ -33,6 +33,7 @@ export default function PaymentPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [isProcessing, setIsProcessing] = useState(false);
   const [profile, setProfile] = useState<UserProfile | null>(null);
+  const [selectedCard, setSelectedCard] = useState<"adult" | "child">("adult");
   const router = useRouter();
   const { show } = useToast();
 
@@ -67,7 +68,11 @@ export default function PaymentPage() {
     setIsProcessing(true);
     try {
       show("Redirecting to secure checkout...", "info", 1800);
-      const res = await createCheckoutSession(profile.id, profile.email || "");
+      const res = await createCheckoutSession(
+        profile.id,
+        profile.email || "",
+        selectedCard
+      );
       if (res.url) window.location.href = res.url;
       else throw new Error("Could not start checkout");
     } catch (e: any) {
@@ -99,19 +104,20 @@ export default function PaymentPage() {
             Welcome{firstName ? `, ${firstName}` : ""}
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
-            Complete Your WildLife Hub Membership
+            Obtenez Votre Carte de Membre - Domaine du Chevreuil Blanc
           </h1>
           <p className="text-gray-600 mt-2">
-            Unlock exclusive photography content, contests and the community.
+            Accédez au parc animalier et participez aux concours exclusifs avec
+            6 mois gratuits.
           </p>
 
           {/* Steps */}
           <div className="mt-6 grid grid-cols-4 gap-3 text-sm">
             {[
-              { label: "Sign in", done: true },
-              { label: "Choose plan", done: true },
-              { label: "Pay", done: false },
-              { label: "Access", done: false },
+              { label: "Connexion", done: true },
+              { label: "Choisir carte", done: true },
+              { label: "Paiement", done: false },
+              { label: "Accès", done: false },
             ].map((s, i) => (
               <div
                 key={i}
@@ -139,46 +145,96 @@ export default function PaymentPage() {
             transition={{ duration: 0.5 }}
           >
             <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-full flex flex-col">
-              <div className="flex items-center justify-between">
-                <div>
-                  <h2 className="text-2xl font-bold text-gray-900">
-                    WildLife Hub Membership
-                  </h2>
-                  <p className="text-gray-600">
-                    Lifetime access — one-time payment
-                  </p>
-                </div>
-                <div className="text-right">
-                  <div className="text-3xl font-extrabold text-primary-600">
-                    $19.99
-                  </div>
-                  <div className="text-xs text-gray-500">USD • one-time</div>
-                </div>
+              <div className="mb-6">
+                <h2 className="text-2xl font-bold text-gray-900 mb-2">
+                  Choisissez Votre Carte
+                </h2>
+                <p className="text-gray-600">
+                  Sélectionnez le type de carte qui vous convient
+                </p>
               </div>
 
-              <div className="mt-6 grid sm:grid-cols-2 gap-4 flex-1">
-                {[
-                  {
-                    icon: Camera,
-                    text: "Exclusive wildlife photography & BTS",
-                  },
-                  { icon: Trophy, text: "Monthly contests with prizes" },
-                  { icon: Users, text: "Access to members community" },
-                  { icon: Award, text: "Workshops and expert tips" },
-                ].map((b, i) => (
-                  <div key={i} className="flex items-center gap-3">
-                    <div className="bg-primary-50 text-primary-600 p-2 rounded-lg">
-                      <b.icon className="h-5 w-5" />
+              {/* Card Selection */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                <motion.button
+                  onClick={() => setSelectedCard("adult")}
+                  className={`relative p-6 rounded-xl border-2 transition-all duration-200 ${
+                    selectedCard === "adult"
+                      ? "border-primary-500 bg-primary-50 shadow-lg"
+                      : "border-gray-200 bg-gray-50 hover:border-gray-300"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="text-center">
+                    <div
+                      className={`text-2xl font-bold mb-2 ${
+                        selectedCard === "adult"
+                          ? "text-primary-600"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      30$ CAD
                     </div>
-                    <span className="text-gray-700">{b.text}</span>
+                    <div className="text-lg font-semibold text-gray-900 mb-1">
+                      Carte Adulte
+                    </div>
+                    <div className="text-sm text-gray-600">18 ans et plus</div>
+                    {selectedCard === "adult" && (
+                      <motion.div
+                        className="absolute top-3 right-3"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <CheckCircle className="h-6 w-6 text-primary-600" />
+                      </motion.div>
+                    )}
                   </div>
-                ))}
+                </motion.button>
+
+                <motion.button
+                  onClick={() => setSelectedCard("child")}
+                  className={`relative p-6 rounded-xl border-2 transition-all duration-200 ${
+                    selectedCard === "child"
+                      ? "border-primary-500 bg-primary-50 shadow-lg"
+                      : "border-gray-200 bg-gray-50 hover:border-gray-300"
+                  }`}
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <div className="text-center">
+                    <div
+                      className={`text-2xl font-bold mb-2 ${
+                        selectedCard === "child"
+                          ? "text-primary-600"
+                          : "text-gray-700"
+                      }`}
+                    >
+                      20$ CAD
+                    </div>
+                    <div className="text-lg font-semibold text-gray-900 mb-1">
+                      Carte Enfant
+                    </div>
+                    <div className="text-sm text-gray-600">18 ans et moins</div>
+                    {selectedCard === "child" && (
+                      <motion.div
+                        className="absolute top-3 right-3"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: 1 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
+                        <CheckCircle className="h-6 w-6 text-primary-600" />
+                      </motion.div>
+                    )}
+                  </div>
+                </motion.button>
               </div>
 
-              <div className="mt-6 flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-3">
+              <div className="mt-3 flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-3">
                 <ShieldCheck className="h-5 w-5 text-green-600" />
                 <p className="text-sm text-green-700">
-                  30‑day money‑back guarantee
+                  Cartes limitées — Participation aux concours obligatoire
                 </p>
               </div>
             </div>
@@ -193,30 +249,33 @@ export default function PaymentPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-full flex flex-col">
+            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
-                Order Summary
+                Résumé de la Commande
               </h3>
-              <div className="space-y-3 text-sm flex-1">
+              <div className="space-y-3 text-sm">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Plan</span>
+                  <span className="text-gray-600">Carte</span>
                   <span className="font-medium text-gray-900">
-                    WildLife Hub — Lifetime
+                    Domaine du Chevreuil Blanc —{" "}
+                    {selectedCard === "adult" ? "Adulte" : "Enfant"}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Price</span>
-                  <span className="font-medium text-gray-900">$19.99</span>
+                  <span className="text-gray-600">Prix</span>
+                  <span className="font-medium text-gray-900">
+                    {selectedCard === "adult" ? "30$" : "20$"} CAD
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Name</span>
+                  <span className="text-gray-600">Nom</span>
                   <span className="font-medium text-gray-900 flex items-center gap-2">
                     <UserIcon className="h-4 w-4 text-gray-400" />
                     {profile?.name || "—"}
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-600">Email</span>
+                  <span className="text-gray-600">Courriel</span>
                   <span className="font-medium text-gray-900 flex items-center gap-2">
                     <Mail className="h-4 w-4 text-gray-400" />
                     {profile?.email}
@@ -243,7 +302,9 @@ export default function PaymentPage() {
                   ) : (
                     <>
                       <CreditCard className="h-5 w-5" />
-                      <span>Pay $19.99</span>
+                      <span>
+                        Payer {selectedCard === "adult" ? "30$" : "20$"} CAD
+                      </span>
                       <ArrowRight className="h-5 w-5" />
                     </>
                   )}

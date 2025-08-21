@@ -8,10 +8,10 @@ const options = {
       title: "WildLife Hub API",
       version: "1.0.0",
       description: "REST API for authentication, membership, and payments in the WildLife Hub application.",
-      contact: {
-        name: "WildLife Hub Team",
-        email: "support@wildlifehub.com",
-      },
+              contact: {
+          name: "Domaine du Chevreuil Blanc Team",
+          email: "le.domaine.du.chevreuil.blanc@gmail.com",
+        },
       license: {
         name: "MIT",
         url: "https://opensource.org/licenses/MIT",

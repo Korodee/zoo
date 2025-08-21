@@ -53,7 +53,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
  */
 router.post("/create-checkout-session", async (req, res) => {
   try {
-    const { userId, email } = req.body;
+    const { userId, email, cardType = 'adult' } = req.body;
 
     if (!userId || !email) {
       return res.status(400).json({ error: "User ID and email are required" });
@@ -64,16 +64,19 @@ router.post("/create-checkout-session", async (req, res) => {
       line_items: [
         {
           price_data: {
-            currency: "usd",
+            currency: "cad",
             product_data: {
-              name: "WildLife Hub Membership",
-              description:
-                "Access to exclusive wildlife photography contests and content",
+              name: cardType === 'adult' 
+                ? "Carte de Membre Adulte - Domaine du Chevreuil Blanc"
+                : "Carte de Membre Enfant - Domaine du Chevreuil Blanc",
+              description: cardType === 'adult'
+                ? "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Adulte)"
+                : "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Enfant 18 ans et moins)",
               images: [
-                "https://images.unsplash.com/photo-1557050543-4d5f2e07c5b9?w=400&h=300&fit=crop",
+                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
               ],
             },
-            unit_amount: 1999, // $19.99
+            unit_amount: cardType === 'adult' ? 3000 : 2000, // $30.00 CAD for adult, $20.00 CAD for child
           },
           quantity: 1,
         },
@@ -84,6 +87,19 @@ router.post("/create-checkout-session", async (req, res) => {
       customer_email: email,
       metadata: {
         userId: userId,
+        cardType: cardType,
+        company: "Domaine du Chevreuil Blanc",
+      },
+      billing_address_collection: "required",
+      locale: "fr",
+      submit_type: "pay",
+      allow_promotion_codes: false,
+      payment_intent_data: {
+        metadata: {
+          userId: userId,
+          cardType: cardType,
+          company: "Domaine du Chevreuil Blanc",
+        },
       },
     });
 

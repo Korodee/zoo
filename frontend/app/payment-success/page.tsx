@@ -47,10 +47,10 @@ export default function PaymentSuccessPage() {
         >
           <Loader2 className="h-12 w-12 animate-spin text-primary-600 mx-auto mb-4" />
           <h2 className="text-xl font-semibold text-gray-900">
-            Verifying your payment...
+            Vérification de votre paiement...
           </h2>
           <p className="text-gray-600 mt-2">
-            Please wait while we confirm your membership.
+            Veuillez patienter pendant que nous confirmons votre carte de membre.
           </p>
         </motion.div>
       </div>
@@ -71,10 +71,10 @@ export default function PaymentSuccessPage() {
             <CheckCircle className="h-6 w-6 text-green-600" />
             <div>
               <p className="font-semibold text-gray-900">
-                Membership Activated
+                Carte de Membre Activée
               </p>
               <p className="text-sm text-gray-600">
-                Redirecting to Members Area...
+                Redirection vers l'Espace Membre...
               </p>
             </div>
           </motion.div>

@@ -36,7 +36,7 @@ export default function PaymentCancelledPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
           >
-            Payment Cancelled
+            Paiement Annulé
           </motion.h1>
 
           <motion.p
@@ -45,9 +45,8 @@ export default function PaymentCancelledPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            Your payment was cancelled. No charges were made to your account.
-            You can try again anytime to join our exclusive WildLife Hub
-            community.
+            Votre paiement a été annulé. Aucun montant n'a été débité de votre compte.
+            Vous pouvez réessayer à tout moment pour obtenir votre carte du Domaine du Chevreuil Blanc.
           </motion.p>
         </motion.div>
 
@@ -59,11 +58,11 @@ export default function PaymentCancelledPage() {
         >
           <div className="text-center mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              Don't Miss Out!
+              Ne manquez pas l'occasion !
             </h2>
             <p className="text-gray-600 mb-6">
-              Join thousands of wildlife enthusiasts who are already enjoying
-              exclusive content, monthly contests, and a vibrant community.
+              Rejoignez des centaines de visiteurs qui profitent déjà
+              de notre parc animalier et participent aux concours exclusifs.
             </p>
           </div>
 
@@ -73,11 +72,11 @@ export default function PaymentCancelledPage() {
                 <CreditCard className="h-8 w-8 text-blue-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Secure Payment
+                Paiement Sécurisé
               </h3>
               <p className="text-gray-600 text-sm">
-                Your payment is processed securely through Stripe with
-                bank-level encryption.
+                Votre paiement est traité de manière sécurisée via Stripe avec
+                un chiffrement de niveau bancaire.
               </p>
             </div>
 
@@ -86,11 +85,11 @@ export default function PaymentCancelledPage() {
                 <RefreshCw className="h-8 w-8 text-green-600" />
               </div>
               <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                Try Again
+                Réessayer
               </h3>
               <p className="text-gray-600 text-sm">
-                You can attempt the payment again at any time. No charges were
-                made.
+                Vous pouvez tenter le paiement à nouveau à tout moment. Aucun montant n'a
+                été débité.
               </p>
             </div>
           </div>
@@ -103,7 +102,7 @@ export default function PaymentCancelledPage() {
                 whileTap={{ scale: 0.98 }}
               >
                 <CreditCard className="h-5 w-5" />
-                <span>Try Payment Again</span>
+                <span>Réessayer le Paiement</span>
               </motion.button>
             </Link>
 
@@ -114,7 +113,7 @@ export default function PaymentCancelledPage() {
                 whileTap={{ scale: 0.98 }}
               >
                 <ArrowLeft className="h-5 w-5" />
-                <span>Back to Home</span>
+                <span>Retour à l'Accueil</span>
               </motion.button>
             </Link>
           </div>
@@ -127,24 +126,24 @@ export default function PaymentCancelledPage() {
           transition={{ duration: 0.6, delay: 0.6 }}
         >
           <h3 className="text-xl font-bold text-center text-gray-900 mb-6">
-            Why Join WildLife Hub?
+            Pourquoi rejoindre le Domaine du Chevreuil Blanc ?
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
-                title: "Exclusive Content",
+                title: "Parc Animalier",
                 description:
-                  "Access premium wildlife photography and behind-the-scenes material",
+                  "Accédez à notre parc diversifié avec chevreuils blancs, bisons et lamas",
               },
               {
-                title: "Monthly Contests",
+                title: "Concours Exclusifs",
                 description:
-                  "Participate in photography contests with amazing prizes",
+                  "Participez aux concours photo avec des prix exceptionnels",
               },
               {
-                title: "Community",
+                title: "Environnement Naturel",
                 description:
-                  "Connect with fellow wildlife enthusiasts and share your work",
+                  "Découvrez nos animaux dans un environnement sécuritaire et naturel",
               },
             ].map((feature, index) => (
               <motion.div

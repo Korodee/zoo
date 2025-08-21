@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function CTA() {
   return (
-    <section className="py-20 relative overflow-hidden">
+    <section id="membership" className="py-20 relative overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img

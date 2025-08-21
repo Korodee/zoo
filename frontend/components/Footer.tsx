@@ -24,9 +24,9 @@ export default function Footer() {
           }}
         />
       </div>
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 md:pt-20 md:pb-12">
         <motion.div
-          className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16"
+          className="grid lg:grid-cols-4 md:grid-cols-2 gap-8 md:gap-12 mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -41,12 +41,20 @@ export default function Footer() {
                 Domaine du Chevreuil Blanc
               </h3>
             </div>
-            <p className="text-gray-300 leading-relaxed mb-6 max-w-md">
-              Notre parc animalier diversifié offre une expérience unique dans un environnement 
-              naturel et sécuritaire. Découvrez des chevreuils blancs rares, des cervidés majestueux, 
-              des bisons imposants et nos amis les lamas et alpagas.
+            <p className="text-gray-300 leading-relaxed md:mb-6 max-w-md">
+              Notre parc animalier diversifié offre une expérience unique dans
+              un environnement naturel et sécuritaire. Découvrez des chevreuils
+              blancs rares, des cervidés majestueux, des bisons imposants et nos
+              amis les lamas et alpagas.
             </p>
-            <div className="flex space-x-4">
+            <div className="hidden md:flex pt-2 flex-col md:flex-row items-start">
+              <div className="flex flex-col items-start">
+                <p className="text-gray-400 text-sm">
+                  © 2025 Domaine du Chevreuil Blanc. All rights reserved.
+                </p>
+              </div>
+            </div>
+            {/* <div className="flex space-x-4">
               {["f", "in", "t", "yt"].map((label) => (
                 <motion.a
                   key={label}
@@ -60,7 +68,7 @@ export default function Footer() {
                   </div>
                 </motion.a>
               ))}
-            </div>
+            </div> */}
           </motion.div>
 
           <motion.div variants={itemVariants}>
@@ -166,13 +174,13 @@ export default function Footer() {
         </motion.div> */}
 
         <motion.div
-          className="border-t border-white/10 pt-8 flex flex-col md:flex-row justify-center items-center"
+          className="md:hidden border-t border-white/10 py- flex flex-col md:flex-row justify-center items-center"
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-400 py-12 text-sm">
             © 2025 Domaine du Chevreuil Blanc. All rights reserved.
           </p>
         </motion.div>

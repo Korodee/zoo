@@ -9,7 +9,7 @@ export function verifyEmailTemplate(params: {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Verify your email • WildLife Hub</title>
+    <title>Verify your email • Domaine du Chevreuil Blanc</title>
     <style>
       :root { color-scheme: light dark; supported-color-schemes: light dark; }
       body { margin:0; padding:0; background:#f6f7fb; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,'Apple Color Emoji','Segoe UI Emoji',sans-serif; }
@@ -34,19 +34,19 @@ export function verifyEmailTemplate(params: {
   <body>
     <div class="container">
       <div class="header">
-        <div class="brand">🦁 WildLife Hub</div>
-        <div class="subtitle">Welcome to the community</div>
+        <div class="brand">🦌 Domaine du Chevreuil Blanc</div>
+        <div class="subtitle">Bienvenue dans notre communauté</div>
       </div>
       <div class="content">
-        <h1 class="h1">Hi ${firstName}, confirm your email</h1>
-        <p class="p">Thanks for joining WildLife Hub! Click the button below to verify your email and unlock access to exclusive members content, contests, and more.</p>
+        <h1 class="h1">Bonjour ${firstName}, confirmez votre email</h1>
+        <p class="p">Merci de rejoindre le Domaine du Chevreuil Blanc ! Cliquez sur le bouton ci-dessous pour vérifier votre email et débloquer l'accès au contenu exclusif des membres, aux concours et plus encore.</p>
         <div class="btn-wrap">
           <a class="btn" href="${verifyUrl}">Verify email</a>
         </div>
         <ul class="bullets">
-          <li>Members-only content</li>
-          <li>Monthly contests</li>
-          <li>Expert workshops</li>
+          <li>Contenu exclusif membres</li>
+          <li>Concours mensuels</li>
+          <li>Accès au parc animalier</li>
         </ul>
         <div class="card" style="margin-top:14px">
           If the button doesn’t work, copy and paste this URL into your browser:<br/>
@@ -71,7 +71,7 @@ export function resetPasswordTemplate(params: {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reset your password • WildLife Hub</title>
+    <title>Reset your password • Domaine du Chevreuil Blanc</title>
     <style>
       :root { color-scheme: light dark; supported-color-schemes: light dark; }
       body { margin:0; padding:0; background:#f6f7fb; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
