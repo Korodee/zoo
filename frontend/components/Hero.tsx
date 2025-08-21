@@ -33,12 +33,32 @@ export default function Hero() {
           muted
           loop
           playsInline
+          preload="auto"
           className="object-cover w-full h-full"
+          poster="/hero-vid-poster.jpg"
+          onError={(e) => {
+            // Fallback to background image if video fails
+            const videoElement = e.currentTarget;
+            videoElement.style.display = 'none';
+            const fallbackDiv = videoElement.nextElementSibling as HTMLElement;
+            if (fallbackDiv) {
+              fallbackDiv.style.display = 'block';
+            }
+          }}
         >
+          <source src="/hero-vid.mp4" type="video/mp4" />
+          <source src="/hero-vid.webm" type="video/webm" />
           <source src="/hero-vid.mov" type="video/quicktime" />
           <source src="/hero-vid.mov" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
+        {/* Fallback background image */}
+        <div 
+          className="hidden w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: "url('https://images.unsplash.com/photo-1494947665470-20322015e3a8?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')"
+          }}
+        />
       </div>
       <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/70 to-black/40" />
 
