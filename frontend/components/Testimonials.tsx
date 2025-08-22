@@ -90,14 +90,6 @@ export default function Testimonials() {
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <div className="flex items-center mb-6">
-                {[...Array(t.rating)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className="h-5 w-5 text-yellow-400 fill-current"
-                  />
-                ))}
-              </div>
               <p className="text-gray-700 mb-6 leading-relaxed text-sm">
                 "{t.text}"
               </p>
