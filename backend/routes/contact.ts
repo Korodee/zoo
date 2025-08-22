@@ -49,7 +49,7 @@ const router = express.Router();
  *       500:
  *         description: Server error
  */
-router.post("/", async (req, res) => {
+router.post("/contact", async (req, res) => {
   try {
     const { name, email, message } = req.body;
 
@@ -89,7 +89,7 @@ router.post("/", async (req, res) => {
 
     // Send email to the park's email address
     await sendEmail({
-      to: "le.domaine.du.chevreuil.blanc@gmail.com",
+      to: "koroskki@gmail.com",
       subject,
       html,
     });

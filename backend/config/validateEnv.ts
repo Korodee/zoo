@@ -5,8 +5,7 @@ dotenv.config();
 const requiredEnvVars = [
   'MONGODB_URI',
   'JWT_SECRET',
-  'STRIPE_SECRET_KEY',
-  'STRIPE_WEBHOOK_SECRET'
+  'STRIPE_SECRET_KEY'
 ];
 
 export const validateEnv = (): void => {
