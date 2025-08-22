@@ -2,10 +2,17 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play, Pause, Volume2, VolumeX, PawPrint, X } from "lucide-react";
+import {
+  ArrowRight,
+  Play,
+  Pause,
+  Volume2,
+  VolumeX,
+  PawPrint,
+  X,
+} from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
-
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -37,17 +44,17 @@ export default function Hero() {
     setShowVideoModal(true);
     setIsPlaying(true);
     setIsMuted(false);
-    
+
     // Start soundtrack
     try {
       if (audioRef.current) {
         audioRef.current.volume = 0.5;
         await audioRef.current.play();
         setIsAudioPlaying(true);
-        console.log('Soundtrack started successfully');
+        console.log("Soundtrack started successfully");
       }
     } catch (error) {
-      console.error('Failed to play soundtrack:', error);
+      console.error("Failed to play soundtrack:", error);
       setIsAudioPlaying(false);
     }
   };
@@ -56,13 +63,13 @@ export default function Hero() {
     setShowVideoModal(false);
     setIsPlaying(false);
     setIsAudioPlaying(false);
-    
+
     // Stop video
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
     }
-    
+
     // Stop audio
     if (audioRef.current) {
       audioRef.current.pause();
@@ -99,7 +106,7 @@ export default function Hero() {
           setIsAudioPlaying(false);
         }
       } catch (error) {
-        console.error('Failed to toggle audio:', error);
+        console.error("Failed to toggle audio:", error);
         setIsAudioPlaying(false);
       }
     }
@@ -116,7 +123,10 @@ export default function Hero() {
           playsInline
           className="object-cover w-full h-full"
         >
-          <source src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__" type="video/mp4" />
+          <source
+            src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
       </div>
@@ -127,7 +137,7 @@ export default function Hero() {
         <motion.div
           animate={{ y: [0, -30, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-20 left-10 w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full"
+          className="hidden md:block absolute top-20 left-10 w-24 h-24 bg-white/10 backdrop-blur-sm rounded-full"
         />
         <motion.div
           animate={{ y: [0, 40, 0], rotate: [0, -10, 0] }}
@@ -243,31 +253,91 @@ export default function Hero() {
         loop
         preload="auto"
         className="hidden"
-        onError={(e) => console.error('Soundtrack error:', e)}
-        onLoadStart={() => console.log('Soundtrack loading started')}
-        onCanPlay={() => console.log('Soundtrack can play')}
-        onLoadedData={() => console.log('Soundtrack data loaded')}
+        onError={(e) => console.error("Soundtrack error:", e)}
+        onLoadStart={() => console.log("Soundtrack loading started")}
+        onCanPlay={() => console.log("Soundtrack can play")}
+        onLoadedData={() => console.log("Soundtrack data loaded")}
       >
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-18.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-19.mp3" type="audio/mpeg" />
-        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-20.mp3" type="audio/mpeg" />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-18.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-19.mp3"
+          type="audio/mpeg"
+        />
+        <source
+          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-20.mp3"
+          type="audio/mpeg"
+        />
         Your browser does not support the audio element.
       </audio>
 
@@ -307,7 +377,10 @@ export default function Hero() {
                   playsInline
                   className="w-full h-full object-cover"
                 >
-                  <source src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__" type="video/mp4" />
+                  <source
+                    src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__"
+                    type="video/mp4"
+                  />
                   Your browser does not support the video tag.
                 </video>
 
@@ -318,20 +391,36 @@ export default function Hero() {
                       onClick={toggleVideo}
                       className="p-2 bg-black/50 rounded-full text-white hover:bg-black/70 transition-colors duration-200"
                     >
-                      {isPlaying ? <Pause className="h-5 w-5" /> : <Play className="h-5 w-5" />}
+                      {isPlaying ? (
+                        <Pause className="h-5 w-5" />
+                      ) : (
+                        <Play className="h-5 w-5" />
+                      )}
                     </button>
                     <button
                       onClick={toggleMute}
                       className={`p-2 rounded-full text-white transition-colors duration-200 ${
-                        isMuted ? 'bg-red-500/70 hover:bg-red-500/90' : 'bg-green-500/70 hover:bg-green-500/90'
+                        isMuted
+                          ? "bg-red-500/70 hover:bg-red-500/90"
+                          : "bg-green-500/70 hover:bg-green-500/90"
                       }`}
-                      title={isMuted ? "Activer l'ambiance sonore" : "Couper l'ambiance sonore"}
+                      title={
+                        isMuted
+                          ? "Activer l'ambiance sonore"
+                          : "Couper l'ambiance sonore"
+                      }
                     >
-                      {isMuted ? <VolumeX className="h-5 w-5" /> : <Volume2 className="h-5 w-5" />}
+                      {isMuted ? (
+                        <VolumeX className="h-5 w-5" />
+                      ) : (
+                        <Volume2 className="h-5 w-5" />
+                      )}
                     </button>
                   </div>
                   <div className="text-white text-sm bg-black/50 px-3 py-1 rounded-full">
-                    {isAudioPlaying && !isMuted ? "🦌 Ambiance Faunique" : "Domaine du Chevreuil Blanc"}
+                    {isAudioPlaying && !isMuted
+                      ? "🦌 Ambiance Faunique"
+                      : "Domaine du Chevreuil Blanc"}
                   </div>
                 </div>
               </div>
