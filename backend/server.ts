@@ -28,7 +28,7 @@ const NODE_ENV = process.env.NODE_ENV || "development";
 const DISABLE_SECURITY = process.env.DISABLE_SECURITY === "true";
 
 // Trust proxy for Vercel and rate limiting
-app.set('trust proxy', 1);
+app.set('trust proxy', true);
 
 // Log environment for debugging
 console.log("Environment:", NODE_ENV);
@@ -42,15 +42,17 @@ connectDB();
 if (!DISABLE_SECURITY) {
   app.use(helmet());
   
-  // Rate limiting
-  const limiter = rateLimit({
-    windowMs: 15 * 60 * 1000, // 15 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-    message: "Too many requests from this IP, please try again later.",
-    standardHeaders: true,
-    legacyHeaders: false,
-  });
-  app.use(limiter);
+  // Rate limiting (disabled in production to avoid X-Forwarded-For issues)
+  if (NODE_ENV === "development") {
+    const limiter = rateLimit({
+      windowMs: 15 * 60 * 1000, // 15 minutes
+      max: 100, // limit each IP to 100 requests per windowMs
+      message: "Too many requests from this IP, please try again later.",
+      standardHeaders: true,
+      legacyHeaders: false,
+    });
+    app.use(limiter);
+  }
 }
 
 // CORS configuration with support for multiple origins
@@ -114,6 +116,11 @@ app.use("/api", authRoutes);
 app.use("/api", stripeRoutes);
 app.use("/api", userRoutes);
 app.use("/api", contactRoutes);
+
+// Debug route to test if API is working
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API is working", timestamp: new Date().toISOString() });
+});
 
 // 404 handler
 app.use("*", (req, res) => {

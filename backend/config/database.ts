@@ -48,6 +48,12 @@ export const connectDB = async (): Promise<void> => {
     
   } catch (error) {
     console.error("MongoDB connection error:", error);
+    // In Vercel environment, don't fail the entire app if DB connection fails
+    // The contact form doesn't need database access
+    if (process.env.VERCEL === '1') {
+      console.log("Continuing without database connection in Vercel environment");
+      return;
+    }
     // Don't exit process in serverless environment
     if (process.env.VERCEL !== '1') {
       process.exit(1);
