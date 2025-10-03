@@ -102,11 +102,42 @@ export default function CTA() {
           >
             <div className="rounded-b-xl border-x border-b border-white/20 bg-black/20 backdrop-blur-md p-6 shadow-lg">
               <ul className="space-y-2.5 text-gray-300 text-sm md:text-base">
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Maisons pour adultes – 3 maisons de rêve à 1 000 000 $ chacune; choix du terrain dans n’importe quelle ville du Québec; processus filmé du début à la remise des clés</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Argent comptant – 3 000 000 $ en argent; 1 500 000 $ en lots de 25 000 $ et 1 500 000 $ en lots de 50 000 $</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Véhicules et roulottes – Dodge Ram 1500 Sport (2) valeur 82 450 $; Dodge Challenger SXT V8 (2) valeur 91 980 $; Toyota Sequoia (2) valeur 86 000 $; Roulotte Bolit 2530 RD (2) valeur 64 386 $</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Bateaux et pontons – 2 pontons valeur 68 000 $ chacun</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Voyages – 50 voyages de pêche dans des pourvoiries du Québec</span></li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                  <span>
+                    Maisons pour adultes – 3 maisons de rêve à 1 000 000 $
+                    chacune; choix du terrain dans n’importe quelle ville du
+                    Québec; processus filmé du début à la remise des clés
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                  <span>
+                    Argent comptant – 3 000 000 $ en argent; 1 500 000 $ en lots
+                    de 25 000 $ et 1 500 000 $ en lots de 50 000 $
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                  <span>
+                    Véhicules et roulottes – Dodge Ram 1500 Sport (2) valeur 82
+                    450 $; Dodge Challenger SXT V8 (2) valeur 91 980 $; Toyota
+                    Sequoia (2) valeur 86 000 $; Roulotte Bolit 2530 RD (2)
+                    valeur 64 386 $
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                  <span>
+                    Bateaux et pontons – 2 pontons valeur 68 000 $ chacun
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                  <span>
+                    Voyages – 50 voyages de pêche dans des pourvoiries du Québec
+                  </span>
+                </li>
               </ul>
               <p className="mt-5 text-white">
                 10 millions $ en prix à gagner pour adultes et enfants. • Cartes
@@ -118,19 +149,40 @@ export default function CTA() {
         </div>
 
         {/* Split metrics + info cards, preserving copy blocks */}
-        <div className="mt-10 grid md:grid-cols-2 gap-6">
+        <div className="mt-10 grid md:grid-cols-3 gap-2">
           <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
             <h3 className="text-xl font-semibold text-white mb-3">
               Prix enfants (≈ 3 M$)
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-300">
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 PlayStation 5 (~800 $ chacune)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 Xbox Series X (~800 $ chacune)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>100 scooters (~4 000 $ chacun)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 vélos électriques GT73 (~2 099 $ chacun)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 vélos électriques Jasion EB7 (~899 $ chacun)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 vélos électriques Wyndon E2 (~1 129 $ chacun)</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>200 cartes-cadeaux de 1 000 $</span></li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 PlayStation 5 (~800 $ chacune)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 Xbox Series X (~800 $ chacune)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>100 scooters (~4 000 $ chacun)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 vélos électriques GT73 (~2 099 $ chacun)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 vélos électriques Jasion EB7 (~899 $ chacun)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 vélos électriques Wyndon E2 (~1 129 $ chacun)</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>200 cartes-cadeaux de 1 000 $</span>
+              </li>
             </ul>
           </div>
           <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
@@ -138,13 +190,70 @@ export default function CTA() {
               Total des prix à 100 %
             </h3>
             <ul className="space-y-2.5 text-sm text-gray-300">
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>≈ 10 millions $ remis au public</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Maisons : 3 M$</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Argent comptant : 3 M$</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Véhicules, roulottes, bateaux : 1,2 M$</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Voyages de pêche : 0,15 M$</span></li>
-              <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" /><span>Prix enfants : 2,65 M$</span></li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>≈ 10 millions $ remis au public</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>Maisons : 3 M$</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>Argent comptant : 3 M$</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>Véhicules, roulottes, bateaux : 1,2 M$</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>Voyages de pêche : 0,15 M$</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
+                <span>Prix enfants : 2,65 M$</span>
+              </li>
             </ul>
+          </div>
+          {/* Pyramid of prizes */}
+          <div className="max-w-5xl mx-auto">
+            <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
+              <h3 className="text-xl font-semibold text-white mb-3">
+                Pyramide des prix
+              </h3>
+              <ul className="space-y-2.5 text-gray-300 text-sm">
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span>100 % des cartes vendues → tous les prix remis</span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span>
+                    75 % des cartes vendues → 75 % de la valeur totale des prix
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span>
+                    50 % des cartes vendues → 50 % de la valeur totale des prix
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span>
+                    25 % des cartes vendues → 25 % de la valeur totale des prix
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
+                  <span>
+                    Minimum garanti : certains prix sont toujours remis, même si
+                    le seuil n’est pas atteint
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
 
