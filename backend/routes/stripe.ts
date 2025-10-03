@@ -72,9 +72,9 @@ router.post("/create-checkout-session", async (req, res) => {
               description: cardType === 'adult'
                 ? "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Adulte)"
                 : "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Enfant 18 ans et moins)",
-              images: [
-                "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
-              ],
+              // images: [
+              //   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+              // ],
             },
             unit_amount: cardType === 'adult' ? 3000 : 2000, // $30.00 CAD for adult, $20.00 CAD for child
           },

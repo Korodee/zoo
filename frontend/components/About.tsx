@@ -16,7 +16,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="pt-24 pb-5 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -50,13 +50,21 @@ export default function About() {
           >
             À propos du Domaine du Chevreuil Blanc
           </motion.h2>
+          <motion.h2
+            className="text-xl md:text-xl font-bold text-gray-600 mb-2 text-center"
+            variants={itemVariants}
+          >
+          Le Domaine – Un lieu magique.
+          </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Notre parc animalier diversifié offre une expérience unique dans un environnement 
-            naturel et sécuritaire. Découvrez des chevreuils blancs rares, des cervidés majestueux, 
-            des bisons imposants et nos amis les lamas et alpagas.
+            110 acres de nature sécurisée, un enclos majestueux avec déjà des
+            cerfs de Virginie, y compris des albinos. Seuls les cerfs de
+            Virginie sont présents pour le moment, mais d’autres cervidés
+            arriveront bientôt : chevreuils blancs, wapitis, cerfs rouges, cerfs
+            Sika, daims.
           </motion.p>
         </motion.div>
 
@@ -69,28 +77,28 @@ export default function About() {
         >
           {[
             {
-              icon: Heart,
-              title: "Environnement Naturel",
-              description:
-                "Nos animaux évoluent dans un environnement naturel et sécuritaire, respectant leurs besoins et comportements.",
-              color: "from-red-500 to-pink-500",
-              bgColor: "from-red-50 to-pink-50",
-              borderColor: "border-red-200",
-            },
-            {
               icon: Globe,
-              title: "Diversité Animale",
+              title: "Ferme éducative",
               description:
-                "Découvrez cervidés, bisons, lamas, alpagas et animaux de ferme dans un parc animalier unique et diversifié.",
+                "Plusieurs espèces de chèvres, moutons, poneys pour randonnées, lamas et alpagas, cochons, poules, canards – des rencontres conçues pour émerveiller enfants et familles.",
               color: "from-green-500 to-blue-500",
               bgColor: "from-green-50 to-blue-50",
               borderColor: "border-green-200",
             },
             {
-              icon: Camera,
-              title: "Expérience Unique",
+              icon: Heart,
+              title: "Chalets rustiques",
               description:
-                "Vivez une expérience immersive avec nos chevreuils blancs rares et nos nombreuses espèces d'animaux.",
+                "Séjour immersif au cœur de l’enclos, contact direct avec les cervidés (clôture sécurisée), cuisine équipée avec fumoir, électricité et nuits entouré de nature.",
+              color: "from-red-500 to-pink-500",
+              bgColor: "from-red-50 to-pink-50",
+              borderColor: "border-red-200",
+            },
+            {
+              icon: Camera,
+              title: "Casse-croûte du Domaine",
+              description:
+                "Poutines, pizzas, queues de castor et plus, ambiance conviviale en pleine nature, possibilité de déguster près des animaux pour un moment unique.",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",
@@ -103,8 +111,10 @@ export default function About() {
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
+              {/* Animated gradient border */}
+              <div className="absolute -inset-0.5 rounded-3xl bg-[conic-gradient(var(--tw-gradient-stops))] from-yellow-300 via-orange-400 to-amber-500 opacity-0 group-hover:opacity-60 blur group-hover:blur-md transition duration-500" />
               <div
-                className={`bg-gradient-to-br ${feature.bgColor} rounded-2xl p-6 h-full border ${feature.borderColor} shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-105 relative overflow-hidden`}
+                className={`relative bg-gradient-to-br ${feature.bgColor} rounded-2xl p-6 h-full border ${feature.borderColor} shadow-lg hover:shadow-2xl transition-all duration-500 group-hover:scale-105 overflow-hidden`}
               >
                 <div className="absolute inset-0 opacity-5">
                   <div
@@ -131,6 +141,50 @@ export default function About() {
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          className="mt-24"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <motion.h3
+            className="text-2xl md:text-3xl font-bold text-gray-900 mb-7 text-center"
+            variants={itemVariants}
+          >
+            Expériences exclusives
+          </motion.h3>
+          <motion.div
+            className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6"
+            variants={itemVariants}
+          >
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                L’Aventure de l’Ange Gardien
+              </h4>
+              <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Nom inspiré de la municipalité de l’Ange-Gardien (Outaouais)</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Prix de 200 000 $ pour le gagnant</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Hébergement dans les chalets rustiques</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Épreuves de survie, stratégie et aventure en pleine nature</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Filmée et diffusée sur les réseaux sociaux</span></li>
+              </ul>
+            </div>
+            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+              <h4 className="text-xl font-semibold text-gray-900 mb-2">
+                La Chasse aux Trésors Sauvages
+              </h4>
+              <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Un participant par semaine pour le premier mois</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Achetez tôt votre carte pour augmenter vos chances</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Trésors cachés: argent, clés pour véhicules, 4 roues, bateaux, voitures</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Montant initial (exemple): 2 000 $; augmente chaque jour si non trouvé</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Chaque participation filmée et partagée sur les réseaux sociaux</span></li>
+              </ul>
+            </div>
+          </motion.div>
         </motion.div>
       </div>
     </section>

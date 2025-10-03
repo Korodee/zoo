@@ -13,24 +13,30 @@ const itemVariants = {
 };
 
 export default function Testimonials() {
-  const testimonials = [
+  const items = [
     {
-      name: "Sarah Johnson",
-      role: "Photographe Faune Sauvage",
-      text: "Le WildLife Hub est absolument incroyable ! J'ai capturé certains de mes meilleurs clichés de faune sauvage ici. Les animaux sont bien soignés.",
-      rating: 5,
+      title: "Transparence et communication",
+      list: [
+        "Filmée et partagée quotidiennement sur les réseaux sociaux",
+        "Suivi des travaux, des animaux, du montage des chalets",
+        "Annonces des tirages en direct",
+        "Engagement fort de transparence et de confiance",
+        "Explication détaillée de chaque prix et de chaque tirage",
+      ],
     },
     {
-      name: "Mike Chen",
-      role: "Conservationniste",
-      text: "En tant que conservationniste, j'apprécie comment WildLife Hub priorise le bien-être animal et l'éducation. C'est un modèle pour le tourisme responsable de la faune sauvage.",
-      rating: 5,
+      title: "Vision et pourquoi participer",
+      text:
+        "Le Domaine du Chevreuil Blanc est le premier d’une série de domaines familiaux à travers la province. Chaque carte achetée contribue directement au projet. Expérience unique avec animaux, nature et aventure. Chance de gagner des prix incroyables. Participation à un projet collectif ambitieux et transparent. Tous les participants peuvent suivre le progrès jour après jour sur les réseaux sociaux. En devenant membre, vous soutenez la faune locale et l’aménagement durable du Domaine.",
     },
     {
-      name: "Emily Davis",
-      role: "Visiteur Familial",
-      text: "Mes enfants adorent visiter le zoo ! Les expositions interactives et les programmes éducatifs rendent l'apprentissage des animaux amusant et engageant.",
-      rating: 5,
+      title: "Pourquoi acheter votre carte",
+      list: [
+        "Pour vivre une expérience immersive avec la nature et les animaux",
+        "Pour gagner maisons, argent, véhicules, voyages et prix enfants",
+        "Pour participer à un projet québécois ambitieux, transparent et collectif",
+        "Pour faire partie de l’histoire du Domaine et aider à créer un projet durable pour toutes les familles",
+      ],
     },
   ];
 
@@ -64,14 +70,14 @@ export default function Testimonials() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            Ce que Disent Nos Visiteurs
+            Transparence, Vision et Participation
           </motion.h2>
           <motion.p
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Écoutez nos incroyables visiteurs qui ont vécu la magie de
-            WildLife Hub.
+            Suivez le progrès jour après jour. Participez à un projet collectif
+            ambitieux et transparent.
           </motion.p>
         </motion.div>
 
@@ -82,30 +88,33 @@ export default function Testimonials() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {testimonials.map((t, index) => (
+          {items.map((t, index) => (
             <motion.div
               key={index}
-              className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group"
+              className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group overflow-hidden"
               variants={itemVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <p className="text-gray-700 mb-6 leading-relaxed text-sm">
-                "{t.text}"
-              </p>
-              <div className="flex items-center">
-                <div className="w-12 h-12 rounded-full mr-4 border-2 border-gray-200 bg-gradient-to-br from-primary-100 to-primary-200 flex items-center justify-center">
-                  <span className="text-primary-700 font-bold text-lg">
-                    {t.name
-                      .split(" ")
-                      .map((n) => n[0])
-                      .join("")}
-                  </span>
-                </div>
-                <div>
-                  <p className="font-semibold text-gray-900">{t.name}</p>
-                  <p className="text-sm text-gray-600">{t.role}</p>
-                </div>
+              {/* animated border glow */}
+              <div className="pointer-events-none absolute -inset-0.5 rounded-3xl bg-[conic-gradient(var(--tw-gradient-stops))] from-sky-300 via-indigo-400 to-violet-500 opacity-0 group-hover:opacity-60 blur group-hover:blur-md transition duration-500" />
+              <div className="relative">
+              <h3 className="font-semibold text-gray-900 mb-3">{t.title}</h3>
+              {t.list ? (
+                <ul className="space-y-4 text-gray-700 text-sm">
+                  {t.list.map((li, i) => (
+                    <li key={i} className="relative pl-6">
+                      <span className="absolute left-0 top-2 h-2.5 w-2.5 rounded-full bg-gradient-to-br from-sky-400 to-indigo-500 shadow-[0_0_0_3px_rgba(15,23,42,0.05)]" />
+                      {i < (t.list?.length || 0) - 1 && (
+                        <span className="absolute left-[5px] top-5 w-px h-6 bg-gradient-to-b from-indigo-300/60 to-transparent" />
+                      )}
+                      <span className="block leading-relaxed">{li}</span>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-700 leading-relaxed text-sm">{t.text}</p>
+              )}
               </div>
             </motion.div>
           ))}

@@ -34,7 +34,7 @@ export function verifyEmailTemplate(params: {
   <body>
     <div class="container">
       <div class="header">
-        <div class="brand">🦌 Domaine du Chevreuil Blanc</div>
+        <div class="brand">Domaine du Chevreuil Blanc</div>
         <div class="subtitle">Bienvenue dans notre communauté</div>
       </div>
       <div class="content">

@@ -173,18 +173,18 @@ export default function Hero() {
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           variants={itemVariants}
         >
-          Découvrez le
+          Le Domaine du Chevreuil Blanc
           <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-            Monde Sauvage
+            Votre projet collectif et unique
           </span>
         </motion.h1>
         <motion.p
-          className="text-lg md:text-xl mb-8 max-w-3xl mx-auto text-gray-200 leading-relaxed"
+          className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-200 leading-relaxed"
           variants={itemVariants}
         >
-          Vivez la magie de la faune sauvage de près. Des lions majestueux aux
-          pingouins joueurs, embarquez pour un voyage inoubliable à travers les
-          créatures les plus incroyables de la nature.
+          Bienvenue au Domaine du Chevreuil Blanc — un lieu où chaque membre
+          devient acteur d’un projet collectif unique. Nature grandiose, images
+          cinématographiques et aventures partagées, tout commence ici.
         </motion.p>
 
         <motion.div
@@ -212,26 +212,26 @@ export default function Hero() {
           </motion.button>
         </motion.div>
 
-        {/* Stats */}
+        {/* Subtle stats row for credibility */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.8 }}
-          className="hidden md:flex justify-center items-center space-x-8 text-white/70"
+          className="hidden md:flex justify-center items-center gap-8 text-white/70"
         >
-          <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">500+</div>
-            <div className="text-xs">Photos Faune</div>
+          <div className="flex items-baseline gap-2">
+            <span className="text-2xl font-bold text-yellow-400">500+</span>
+            <span className="text-xs">photos fauniques</span>
           </div>
-          <div className="w-px h-6 bg-white/30" />
-          <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">50+</div>
-            <div className="text-xs">Espèces Couvertes</div>
+          <div className="w-px h-4 bg-white/30" />
+          <div className="flex items-baseline gap-2">
+            <span className="text-2xl font-bold text-yellow-400">50+</span>
+            <span className="text-xs">espèces</span>
           </div>
-          <div className="w-px h-6 bg-white/30" />
-          <div className="text-center">
-            <div className="text-2xl font-bold text-yellow-400">10K+</div>
-            <div className="text-xs">Membres Satisfaits</div>
+          <div className="w-px h-4 bg-white/30" />
+          <div className="flex items-baseline gap-2">
+            <span className="text-2xl font-bold text-yellow-400">10K+</span>
+            <span className="text-xs">membres</span>
           </div>
         </motion.div>
       </motion.div>
@@ -419,7 +419,7 @@ export default function Hero() {
                   </div>
                   <div className="text-white text-sm bg-black/50 px-3 py-1 rounded-full">
                     {isAudioPlaying && !isMuted
-                      ? "🦌 Ambiance Faunique"
+                      ? " Ambiance Faunique"
                       : "Domaine du Chevreuil Blanc"}
                   </div>
                 </div>

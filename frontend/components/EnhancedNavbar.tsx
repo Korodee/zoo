@@ -38,9 +38,9 @@ export default function EnhancedNavbar({
   }, []);
 
   const navItems = [
-    { href: "/", label: "Home", icon: Home },
-    { href: "/#about", label: "About", icon: Info },
-    { href: "/#gallery", label: "Gallery", icon: Image },
+    { href: "/", label: "Accueil", icon: Home },
+    { href: "/#about", label: "À propos", icon: Info },
+    { href: "/#gallery", label: "Galerie", icon: Image },
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
 
@@ -59,13 +59,13 @@ export default function EnhancedNavbar({
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <span className="text-white font-bold text-lg lg:text-xl">WH</span>
+              <span className="text-white font-bold text-lg lg:text-xl">DCB</span>
             </div>
             <div className="hidden sm:block">
               <h1 className={`font-bold text-lg lg:text-xl transition-colors duration-300 ${
                 isScrolled ? 'text-gray-900' : 'text-white'
               }`}>
-                WildLife Hub
+                Domaine du Chevreuil Blanc
               </h1>
             </div>
           </Link>
@@ -98,7 +98,7 @@ export default function EnhancedNavbar({
                     className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                   >
                     <Crown className="h-4 w-4" />
-                    Member Hub
+                    Espace Membre
                   </Link>
                 )}
                 <div className="flex items-center gap-3">
@@ -108,7 +108,7 @@ export default function EnhancedNavbar({
                   <span className={`font-medium transition-colors duration-300 ${
                     isScrolled ? 'text-gray-900' : 'text-white'
                   }`}>
-                    {userName || "Member"}
+                    {userName || "Membre"}
                   </span>
                 </div>
               </>
@@ -123,13 +123,13 @@ export default function EnhancedNavbar({
                   }`}
                 >
                   <LogIn className="h-4 w-4" />
-                  Sign In
+                  Se connecter
                 </Link>
                 <Link
                   href="/signup"
                   className="flex items-center gap-2 px-4 py-2 rounded-lg bg-gradient-to-r from-primary-600 to-primary-700 text-white font-medium shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
                 >
-                  Join Now
+                  Obtenir ma Carte
                 </Link>
               </>
             )}

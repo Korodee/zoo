@@ -52,7 +52,7 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-12 sm:py-16 lg:py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="py-10 sm:py-12 lg:py-16 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
     >
       <div className="absolute inset-0 opacity-5">
         <div
@@ -64,7 +64,7 @@ export default function Contact() {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-6 sm:mb-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -74,7 +74,7 @@ export default function Contact() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full mb-4 sm:mb-6 shadow-lg"
+            className="inline-flex items-center justify-center w-11 h-11 sm:w-14 sm:h-14 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full mb-3 sm:mb-5 shadow-lg"
           >
             <Mail className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
           </motion.div>
@@ -85,7 +85,7 @@ export default function Contact() {
             Contactez-nous
           </motion.h2>
           <motion.p
-            className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed px-4"
+            className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto leading-relaxed px-4"
             variants={itemVariants}
           >
             Des questions ? Nous aimerions avoir de vos nouvelles. Envoyez-nous un message et
@@ -94,29 +94,29 @@ export default function Contact() {
         </motion.div>
 
         <motion.div
-          className="grid lg:grid-cols-2 gap-6 sm:gap-8 lg:gap-12"
+          className="grid lg:grid-cols-2 gap-5 sm:gap-6 lg:gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Contact Information */}
-          <motion.div variants={itemVariants} className="space-y-4 sm:space-y-6">
-            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+          <motion.div variants={itemVariants} className="space-y-3 sm:space-y-5">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Informations de Contact
               </h3>
-              <div className="space-y-4 sm:space-y-6">
+              <div className="space-y-3 sm:space-y-4">
                 <motion.div
                   className="flex items-center group cursor-pointer"
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                                    <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-2 sm:p-3 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
+                  <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-2 sm:p-2.5 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
                     <Mail className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Email</p>
+                    <p className="font-semibold text-gray-900 text-sm">Email</p>
                     <p className="text-gray-600 text-xs sm:text-sm break-all">le.domaine.du.chevreuil.blanc@gmail.com</p>
                   </div>
                 </motion.div>
@@ -125,11 +125,11 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-gradient-to-r from-green-500 to-green-600 p-2 sm:p-3 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
+                  <div className="bg-gradient-to-r from-green-500 to-green-600 p-2 sm:p-2.5 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
                     <Phone className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Téléphone</p>
+                    <p className="font-semibold text-gray-900 text-sm">Téléphone</p>
                     <p className="text-gray-600 text-xs sm:text-sm">819-329-6264</p>
                   </div>
                 </motion.div>
@@ -138,11 +138,11 @@ export default function Contact() {
                   whileHover={{ x: 5 }}
                   transition={{ type: "spring", stiffness: 400 }}
                 >
-                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-2 sm:p-3 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
+                  <div className="bg-gradient-to-r from-purple-500 to-purple-600 p-2 sm:p-2.5 rounded-xl mr-3 sm:mr-4 shadow-lg flex-shrink-0">
                     <MapPin className="h-5 w-5 sm:h-6 sm:w-6 text-white" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-gray-900 text-sm sm:text-base">Nom</p>
+                    <p className="font-semibold text-gray-900 text-sm">Nom</p>
                     <p className="text-gray-600 text-xs sm:text-sm">
                       Domaine du Chevreuil Blanc
                     </p>
@@ -151,11 +151,11 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
-              <h4 className="text-lg sm:text-xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+              <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">
                 Heures d'Ouverture
               </h4>
-              <div className="space-y-3 sm:space-y-4">
+              <div className="space-y-2.5 sm:space-y-3">
                 <div className="flex justify-between items-center py-2 border-b border-gray-100">
                   <span className="font-medium text-gray-900 text-sm sm:text-base">
                     Lundi - Vendredi
@@ -176,11 +176,11 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white rounded-2xl p-4 sm:p-6 lg:p-8 shadow-lg border border-gray-100">
-              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+              <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Envoyez-nous un Message
               </h3>
-              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-3.5 sm:space-y-5">
                 <div>
                   <label
                     htmlFor="name"
@@ -194,7 +194,7 @@ export default function Contact() {
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 text-base"
+                    className="w-full px-3 sm:px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 text-sm sm:text-base"
                     placeholder="Votre nom"
                     required
                   />
@@ -212,7 +212,7 @@ export default function Contact() {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 text-base"
+                    className="w-full px-3 sm:px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 text-sm sm:text-base"
                     placeholder="votre@email.com"
                     required
                   />
@@ -230,7 +230,7 @@ export default function Contact() {
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-3 sm:px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 resize-none text-base"
+                    className="w-full px-3 sm:px-4 py-2.5 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent text-gray-900 placeholder-gray-500 transition-all duration-300 resize-none text-sm sm:text-base"
                     placeholder="Votre message..."
                     required
                   />
@@ -238,7 +238,7 @@ export default function Contact() {
                 <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed text-base"
+                  className="w-full px-4 sm:px-6 py-2.5 sm:py-3.5 bg-gradient-to-r from-primary-600 to-primary-700 text-white rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center space-x-2 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
                   whileHover={!isSubmitting ? { scale: 1.02, y: -2 } : {}}
                   whileTap={!isSubmitting ? { scale: 0.98 } : {}}
                 >

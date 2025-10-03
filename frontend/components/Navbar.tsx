@@ -239,52 +239,52 @@ export default function Navbar() {
                 <div className="space-y-3">
                   {!forceGuest && isLoggedIn ? (
                     <>
-                                              <Link
-                          href="/member"
-                          className="group flex items-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-amber-50 hover:text-amber-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                        >
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                            <Crown className="h-5 w-5 text-yellow-600 group-hover:text-yellow-700" />
-                          </div>
-                          <span className="font-semibold text-base">
-                            Espace Membre
-                          </span>
-                        </Link>
-                                              <button
-                          onClick={handleSignOut}
-                          className="group w-full flex items-center gap-4 py-2 rounded-xl text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                        >
-                          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
-                            <LogOut className="h-5 w-5 text-red-600 group-hover:text-red-700" />
-                          </div>
-                          <span className="font-semibold text-base">
-                            Se déconnecter
-                          </span>
-                        </button>
+                      <Link
+                        href="/member"
+                        className="group flex items-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-yellow-50 hover:to-amber-50 hover:text-amber-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-yellow-100 to-amber-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <Crown className="h-5 w-5 text-yellow-600 group-hover:text-yellow-700" />
+                        </div>
+                        <span className="font-semibold text-base">
+                          Espace Membre
+                        </span>
+                      </Link>
+                      <button
+                        onClick={handleSignOut}
+                        className="group w-full flex items-center gap-4 py-2 rounded-xl text-red-600 hover:bg-gradient-to-r hover:from-red-50 hover:to-pink-50 hover:text-red-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                      >
+                        <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                          <LogOut className="h-5 w-5 text-red-600 group-hover:text-red-700" />
+                        </div>
+                        <span className="font-semibold text-base">
+                          Se déconnecter
+                        </span>
+                      </button>
                     </>
                   ) : (
                     <>
-                                              <Link
-                          href="/login"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
-                        >
-                          <span className="font-semibold text-base">
-                            Accès Membres
-                          </span>
-                        </Link>
-                                              <Link
-                          href="/signup"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
-                        >
-                          <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                          <span className="font-bold text-base relative">
-                            Obtenir ma Carte
-                          </span>
-                        </Link>
+                      <Link
+                        href="/login"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                      >
+                        <span className="font-semibold text-base">
+                          Accès Membres
+                        </span>
+                      </Link>
+                      <Link
+                        href="/signup"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
+                      >
+                        <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <span className="font-bold text-base relative">
+                          Obtenir ma Carte
+                        </span>
+                      </Link>
                     </>
                   )}
                 </div>

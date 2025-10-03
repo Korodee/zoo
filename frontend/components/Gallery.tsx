@@ -37,16 +37,15 @@ export default function Gallery() {
       age: "3 ans",
       location: "Domaine du Chevreuil Blanc",
     },
-    {
-      name: "Bison",
-      category: "Grands Animaux",
-      image:
-        "https://images.unsplash.com/photo-1517517938232-02d30ecf9f45?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "Imposant géant des plaines",
-      status: "Actif",
-      age: "8 ans",
-      location: "Domaine du Chevreuil Blanc",
-    },
+    // {
+    //   name: "Chevreuil Blanc (Albinos)",
+    //   category: "Cervidés",
+    //   image: "/hero-img.jpg",
+    //   description: "Majestueux cerf blanc rare (variante)",
+    //   status: "Actif",
+    //   age: "5 ans",
+    //   location: "Domaine du Chevreuil Blanc",
+    // },
     // {
     //   name: "Colonie de Pingouins",
     //   category: "Oiseaux",
@@ -112,7 +111,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="p4-10 pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="p4-10 mt-10 pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -150,10 +149,8 @@ export default function Gallery() {
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            Explorez notre parc animalier diversifié avec des cervidés
-            majestueux, des bisons imposants, des lamas et alpagas amicaux, et
-            nos animaux de ferme. Chaque espèce trouve sa place dans notre
-            environnement naturel et sécuritaire.
+            🐐 Ferme éducative • Chèvres, moutons, poneys pour randonnées • Lamas et alpagas •
+            Cochons, poules, canards • Et d’autres surprises pour émerveiller les enfants et les familles.
           </motion.p>
         </motion.div>
 
@@ -185,7 +182,7 @@ export default function Gallery() {
         {/* Animal Spotlight */}
 
         <motion.div
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"

@@ -42,10 +42,9 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed md:mb-6 max-w-md">
-              Notre parc animalier diversifié offre une expérience unique dans
-              un environnement naturel et sécuritaire. Découvrez des chevreuils
-              blancs rares, des cervidés majestueux, des bisons imposants et nos
-              amis les lamas et alpagas.
+              🌍 Vision: premier d’une série de domaines familiaux à travers la province.
+              Chaque carte achetée contribue directement au projet. Expérience unique avec
+              animaux, nature et aventure – suivez le progrès au quotidien.
             </p>
             <div className="hidden md:flex pt-2 flex-col md:flex-row items-start">
               <div className="flex flex-col items-start">
