@@ -162,13 +162,21 @@ export default function Hero() {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.2, ease: "easeOut" }}
-          className="mb-8"
+          className="mb-4"
         >
           <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6">
             <PawPrint className="h-10 w-10 text-yellow-400" />
           </div>
         </motion.div>
-
+        {/* Badges: 1 an gratuit + date d'ouverture */}
+        <div className="mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-200 border border-green-400/40 text-xs sm:text-sm">
+            🎉 1 an gratuit à l’achat de la carte
+          </span>
+          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white border border-white/30 text-xs sm:text-sm">
+            📅 Ouverture prévue: 1er janvier 2026 (ou plus tôt)
+          </span>
+        </div>
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           variants={itemVariants}
@@ -213,7 +221,7 @@ export default function Hero() {
         </motion.div>
 
         {/* Subtle stats row for credibility */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.8 }}
@@ -233,7 +241,7 @@ export default function Hero() {
             <span className="text-2xl font-bold text-yellow-400">10K+</span>
             <span className="text-xs">membres</span>
           </div>
-        </motion.div>
+        </motion.div> */}
       </motion.div>
 
       {/* Scroll Indicator */}

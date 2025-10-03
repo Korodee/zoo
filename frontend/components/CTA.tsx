@@ -22,7 +22,7 @@ export default function CTA() {
       {/* Background image layer (restored) */}
       <div className="absolute inset-0 z-0">
         <img
-          src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+          src="https://images.pexels.com/photos/3788554/pexels-photo-3788554.jpeg"
           alt="Zoo animals background"
           className="w-full h-full object-cover"
         />
@@ -40,7 +40,7 @@ export default function CTA() {
           </h2>
           <p className="mt-3 text-lg text-gray-300 max-w-3xl mx-auto">
             Des prix exceptionnels pour adultes et enfants, une expérience
-            filmée et un projet collectif unique au Québec.
+            filmée et un projet collectif unique au Québec. 🎉 1 an gratuit à l’achat de la carte.
           </p>
         </div>
 
@@ -254,23 +254,23 @@ export default function CTA() {
                 </li>
               </ul>
             </div>
-          </div>
-        </div>
+            </div>
+            </div>
 
         {/* CTAs */}
         <div className="mt-10 flex flex-col sm:flex-row justify-center items-center gap-4">
-          <Link href="/signup">
-            <motion.button
+            <Link href="/signup">
+              <motion.button
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-2 rounded-full bg-white/10 backdrop-blur-md px-8 py-4 text-white font-semibold shadow-lg hover:shadow-xl"
             >
               Obtenir ma Carte
-              <ArrowRight className="h-5 w-5" />
-            </motion.button>
-          </Link>
-          <Link href="/login">
-            <motion.button
+                <ArrowRight className="h-5 w-5" />
+              </motion.button>
+            </Link>
+            <Link href="/login">
+              <motion.button
               whileHover={{ y: -2, scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="relative inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-white shadow-lg hover:shadow-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 overflow-hidden"
@@ -278,9 +278,9 @@ export default function CTA() {
               <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 hover:opacity-100 transition-opacity duration-300" />
               <span className="relative">Déjà membre ?</span>
               <ArrowRight className="h-5 w-5 relative" />
-            </motion.button>
-          </Link>
-        </div>
+              </motion.button>
+            </Link>
+            </div>
       </div>
     </section>
   );

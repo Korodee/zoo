@@ -67,6 +67,7 @@ export default function Highlights() {
             </div>
             <p className="text-sm text-neutral-600">
               Chaque carte achetée fait avancer votre rêve et le projet commun.
+              1 an gratuit à l’achat de la carte.
             </p>
           </motion.div>
 

@@ -18,7 +18,7 @@ export default function Gallery() {
   const router = useRouter();
   const zooImages = [
     {
-      name: "Chevreuil Blanc",
+      name: "Cervidés",
       category: "Cervidés",
       image:
         "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -28,10 +28,10 @@ export default function Gallery() {
       location: "Domaine du Chevreuil Blanc",
     },
     {
-      name: "Cerf de Virginie",
+      name: "Chevreuil Blanc",
       category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1597072466403-de4bc62821e9?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+        "https://images.pexels.com/photos/2529406/pexels-photo-2529406.jpeg",
       description: "Élégant habitant de nos forêts",
       status: "Actif",
       age: "3 ans",
@@ -149,8 +149,9 @@ export default function Gallery() {
             className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
             variants={itemVariants}
           >
-            🐐 Ferme éducative • Chèvres, moutons, poneys pour randonnées • Lamas et alpagas •
-            Cochons, poules, canards • Et d’autres surprises pour émerveiller les enfants et les familles.
+            🐐 Ferme éducative • Chèvres, moutons, poneys pour randonnées •
+            Lamas et alpagas • Cochons, poules, canards • Et d’autres surprises
+            pour émerveiller les enfants et les familles.
           </motion.p>
         </motion.div>
 
