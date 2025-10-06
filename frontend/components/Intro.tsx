@@ -23,7 +23,7 @@ export default function Intro() {
               <div>
                 <p className="text-sm text-neutral-500">Fondateur</p>
                 <h3 className="text-lg font-semibold text-neutral-900">
-                  Fondateur du Domaine
+                  Denis Desjardins
                 </h3>
               </div>
             </div>
