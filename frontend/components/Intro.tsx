@@ -53,19 +53,23 @@ export default function Intro() {
             <div className="absolute -inset-0.5 rounded-3xl bg-[conic-gradient(var(--tw-gradient-stops))] from-amber-200 via-yellow-300 to-orange-300 opacity-40 blur-md" />
             <div className="relative rounded-2xl bg-white p-6 sm:p-8 border border-neutral-200 shadow-sm">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-3">
-                Pourquoi je lance ce projet
+                Pourquoi je fais ça
               </h2>
               <p className="leading-relaxed text-sm  text-neutral-700">
-                Le Domaine du Chevreuil Blanc est né d’un rêve simple: créer un
-                lieu où la nature, les familles et la transparence se
-                rencontrent. Je veux bâtir un projet collectif qui redonne à la
-                communauté, tout en protégeant la faune et en partageant chaque
-                étape avec vous. Chaque carte vendue finance l’aménagement du
-                site, l’accueil des animaux et des familles, ainsi que la
-                production de contenus pour suivre l’aventure au jour le jour.
-                Mon objectif est de prouver qu’on peut construire un endroit
-                inspirant, transparent et durable, où chaque membre a un impact
-                réel.
+                Ce projet, je le fais d’abord pour mes enfants, pour leur offrir
+                un lieu où la nature n’est pas un souvenir, mais une expérience
+                vivante. Je le fais aussi pour les familles du Québec, pour
+                qu’elles puissent vivre, rêver et s’émerveiller ensemble. Depuis
+                toujours, ma passion pour les cervidés, la nature et les projets
+                communautaires me pousse à aller plus loin. Le Domaine du
+                Chevreuil Blanc, c’est mon rêve d’enfant devenu ma mission
+                d’adulte. Je veux que ce lieu serve d’exemple : qu’avec de la
+                transparence, du travail et de la solidarité, on peut bâtir un
+                projet québécois qui appartient au peuple. Ici, chaque carte
+                achetée est un geste d’espoir. Un pas vers quelque chose de
+                vrai, de durable, et de beau. Un projet qui redonne à ceux qui y
+                participent, et qui laissera une trace positive pour les
+                générations à venir.
               </p>
             </div>
           </motion.div>
