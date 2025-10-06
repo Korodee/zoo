@@ -108,7 +108,7 @@ export default function PaymentPage() {
           </h1>
           <p className="text-gray-600 mt-2">
             Accédez au parc animalier et participez aux concours exclusifs avec
-            6 mois gratuits.
+            1 an gratuit.
           </p>
 
           {/* Steps */}

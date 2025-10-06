@@ -70,8 +70,8 @@ router.post("/create-checkout-session", async (req, res) => {
                 ? "Carte de Membre Adulte - Domaine du Chevreuil Blanc"
                 : "Carte de Membre Enfant - Domaine du Chevreuil Blanc",
               description: cardType === 'adult'
-                ? "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Adulte)"
-                : "Accès au parc animalier et participation aux concours exclusifs - 6 mois gratuits inclus (Enfant 18 ans et moins)",
+                  ? "Accès au parc animalier et participation aux concours exclusifs - 1 an gratuits inclus (Adulte)"
+                  : "Accès au parc animalier et participation aux concours exclusifs - 1 an gratuits inclus (Enfant 18 ans et moins)",
               // images: [
               //   "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
               // ],
