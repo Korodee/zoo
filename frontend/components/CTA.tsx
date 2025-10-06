@@ -26,7 +26,7 @@ export default function CTA() {
           alt="Zoo animals background"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/35" />
+        <div className="absolute inset-0 bg-black/55" />
       </div>
       <div className="pointer-events-none absolute -top-24 left-1/2 h-72 w-[48rem] -translate-x-1/2 rounded-full bg-yellow-200/25 blur-3xl" />
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
