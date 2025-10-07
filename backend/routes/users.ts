@@ -95,7 +95,7 @@ router.get("/users/membership", authenticateToken, async (req: any, res) => {
   }
 });
 
-export default router;
+// (export moved to bottom to ensure all routes are registered before export)
 
 // Age category spots endpoint
 /**
@@ -226,3 +226,5 @@ router.get("/members/sheet", apiKeyAuth as any, async (req, res) => {
     res.status(500).json({ error: "Failed to fetch members" });
   }
 });
+
+export default router;
