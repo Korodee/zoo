@@ -1,6 +1,9 @@
 import express from "express";
 import { User } from "../models/User";
+import mongoose from "mongoose";
 import { authenticateToken } from "../middleware/auth";
+import { AgeCategory } from "../models/AgeCategory";
+import { apiKeyAuth } from "../middleware/apiKeyAuth";
 
 /**
  * @openapi
@@ -93,3 +96,133 @@ router.get("/users/membership", authenticateToken, async (req: any, res) => {
 });
 
 export default router;
+
+// Age category spots endpoint
+/**
+ * @openapi
+ * /api/age/spots/{age}:
+ *   get:
+ *     tags: [Users]
+ *     summary: Get remaining spots for a specific age (years)
+ *     parameters:
+ *       - in: path
+ *         name: age
+ *         required: true
+ *         schema:
+ *           type: integer
+ *     responses:
+ *       200:
+ *         description: Spots information
+ *       400:
+ *         description: Invalid age
+ */
+router.get("/age/spots/:age", async (req, res) => {
+  const age = Number(req.params.age);
+  if (!Number.isInteger(age) || age < 0 || age > 130) {
+    return res.status(400).json({ error: "Invalid age" });
+  }
+
+  let doc = await AgeCategory.findOne({ age_years: age });
+  let cap = doc?.cap ?? 5000;
+  let count = doc?.count ?? 0;
+  let unlocked = doc?.unlocked ?? false;
+
+  // Fallback to live aggregation if no doc exists or count looks stale
+  if (!doc) {
+    count = await User.countDocuments({ age_years: age });
+    unlocked = count >= cap;
+  }
+
+  res.json({ sold: count, cap, remaining: Math.max(0, cap - count), unlocked });
+});
+
+// Global registrations spots (all users)
+/**
+ * @openapi
+ * /api/stats/spots:
+ *   get:
+ *     tags: [Users]
+ *     summary: Get total number of registered users and remaining spots
+ *     responses:
+ *       200:
+ *         description: Spots information (global)
+ */
+router.get("/stats/spots", async (_req, res) => {
+  const count = await User.countDocuments({});
+  const cap = 5000;
+  const unlocked = count >= cap;
+  res.json({ sold: count, cap, remaining: Math.max(0, cap - count), unlocked });
+});
+
+// Secure members export for Google Sheets with pagination + ETag
+router.get("/members/sheet", apiKeyAuth as any, async (req, res) => {
+  try {
+    const limitRaw = Number(req.query.limit as string) || 1000;
+    const limit = Math.max(1, Math.min(5000, limitRaw));
+    const cursor = (req.query.cursor as string) || undefined;
+
+    const filter: any = {};
+    if (cursor) {
+      try {
+        filter._id = { $gt: new mongoose.Types.ObjectId(cursor) };
+      } catch {}
+    }
+
+    // Compute weak ETag from total count + latest update timestamp
+    const [total, latest] = await Promise.all([
+      User.estimatedDocumentCount(),
+      User.findOne({}, { updated_at: 1 }).sort({ updated_at: -1 }).lean(),
+    ]);
+    const latestIso = latest?.updated_at ? new Date(latest.updated_at).toISOString() : "0";
+    const etag = `W/"${total}-${latestIso}"`;
+
+    const clientETag = req.header("if-none-match");
+    if (clientETag && clientETag === etag && !cursor) {
+      res.setHeader("ETag", etag);
+      return res.status(304).end();
+    }
+
+    const docs = await User.find(filter, {
+      email: 1,
+      name: 1,
+      date_of_birth: 1,
+      age_years: 1,
+      is_member: 1,
+      is_verified: 1,
+      membership_date: 1,
+      member_number: 1,
+    })
+      .sort({ _id: 1 })
+      .limit(limit)
+      .lean();
+
+    let nextCursor: string | undefined;
+    if (docs.length === limit) {
+      const last = docs[docs.length - 1] as any;
+      nextCursor = String(last._id);
+    }
+
+    // Set pagination + ETag headers while keeping body as clean array
+    res.setHeader("ETag", etag);
+    if (nextCursor) res.setHeader("X-Next-Cursor", nextCursor);
+    res.setHeader("X-Page-Limit", String(limit));
+    res.setHeader("Cache-Control", "no-cache");
+
+    // Map out _id from response
+    const payload = docs.map((u: any) => ({
+      email: u.email,
+      name: u.name,
+      date_of_birth: u.date_of_birth,
+      age_years: u.age_years,
+      is_member: u.is_member,
+      is_verified: u.is_verified,
+      membership_date: u.membership_date,
+      member_number: u.member_number,
+    }));
+
+    res.json(payload);
+  } catch (e) {
+    console.error("/members/sheet error", e);
+    res.status(500).json({ error: "Failed to fetch members" });
+  }
+});

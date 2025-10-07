@@ -4,6 +4,7 @@ import jwt from "jsonwebtoken";
 import crypto from "crypto";
 import mongoose from "mongoose";
 import { User } from "../models/User";
+import { AgeCategory } from "../models/AgeCategory";
 import { sendEmail } from "../config/mailer";
 import {
   verifyEmailTemplate,
@@ -109,7 +110,7 @@ const generateToken = (bytes = 32) => crypto.randomBytes(bytes).toString("hex");
  */
 router.post("/auth/register", async (req, res) => {
   try {
-    const { email, password, name } = req.body;
+    const { email, password, name, date_of_birth } = req.body;
     if (!email || !password)
       return res.status(400).json({ error: "Email and password are required" });
 
@@ -120,15 +121,54 @@ router.post("/auth/register", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 12);
     const verificationToken = generateToken(24);
 
+    // Compute age if dob provided
+    let dobDate: Date | undefined = undefined;
+    let ageYears: number | undefined = undefined;
+    if (date_of_birth) {
+      const parsed = new Date(date_of_birth);
+      if (!isNaN(parsed.getTime())) {
+        dobDate = parsed;
+        const now = new Date();
+        let age = now.getFullYear() - parsed.getFullYear();
+        const m = now.getMonth() - parsed.getMonth();
+        if (m < 0 || (m === 0 && now.getDate() < parsed.getDate())) age--;
+        ageYears = Math.max(0, Math.min(130, age));
+      }
+    }
+
     const user = await User.create({
       email: email.toLowerCase(),
       password: hashedPassword,
       name: typeof name === "string" ? name.trim() : undefined,
+      date_of_birth: dobDate,
+      age_years: ageYears,
       is_member: false,
       is_verified: false,
       email_verification_token: verificationToken,
       email_verification_expires: new Date(Date.now() + 1000 * 60 * 60 * 24),
     });
+
+    // If we have a valid age, increment the AgeCategory counter and compute remaining
+    let spots = undefined as undefined | { sold: number; cap: number; remaining: number; unlocked: boolean };
+    if (typeof ageYears === "number") {
+      const doc = await AgeCategory.findOneAndUpdate(
+        { age_years: ageYears },
+        { $setOnInsert: { cap: 5000 }, $inc: { count: 1 } },
+        { new: true, upsert: true }
+      );
+      if (doc) {
+        if (!doc.unlocked && doc.count >= doc.cap) {
+          doc.unlocked = true;
+          await doc.save();
+        }
+        spots = {
+          sold: doc.count,
+          cap: doc.cap,
+          remaining: Math.max(0, doc.cap - doc.count),
+          unlocked: doc.unlocked,
+        };
+      }
+    }
 
     const verifyUrl = `${
       process.env.FRONTEND_URL || "http://localhost:3000"
@@ -152,9 +192,11 @@ router.post("/auth/register", async (req, res) => {
           id: user._id,
           email: user.email,
           name: user.name || "",
+          age_years: user.age_years,
           is_member: user.is_member,
           is_verified: user.is_verified,
         },
+        spots,
       });
   } catch (error) {
     console.error("Registration error:", error);

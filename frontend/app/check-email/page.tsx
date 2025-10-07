@@ -38,24 +38,24 @@ export default function CheckEmailPage() {
           <Mail className="h-8 w-8 text-primary-600" />
         </div>
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
-          Check your email
+          Vérifiez votre courriel
         </h1>
         <p className="text-gray-600 mb-6">
-          We sent a verification link to
+          Nous avons envoyé un lien de vérification à
           <br />
           <span className="font-semibold text-gray-900">
-            {email || "your inbox"}
+            {email || "votre boîte de réception"}
           </span>
         </p>
 
         <div className="bg-gray-50 border border-gray-200 rounded-xl p-4 text-left text-sm text-gray-600 mb-6">
           <ul className="list-disc pl-5 space-y-1">
             <li>
-              Click the <span className="font-medium">Verify email</span> button
-              in the email
+              Cliquez sur le bouton <span className="font-medium">Vérifier l’email</span>
+              dans le courriel
             </li>
-            <li>The link expires in 24 hours</li>
-            <li>Didn’t get it? Check your spam folder</li>
+            <li>Le lien expire dans 24 heures</li>
+            <li>Vous ne l’avez pas reçu ? Vérifiez votre dossier indésirables</li>
           </ul>
         </div>
 
@@ -64,7 +64,7 @@ export default function CheckEmailPage() {
             href="/login"
             className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white px-5 py-3 rounded-lg font-semibold"
           >
-            Continue to login
+            Aller à la connexion
             <ArrowRight className="h-5 w-5" />
           </a>
           <button
@@ -75,12 +75,12 @@ export default function CheckEmailPage() {
             <RefreshCcw
               className={`h-5 w-5 ${sending ? "animate-spin" : ""}`}
             />
-            Resend link
+            Renvoyer le lien
           </button>
         </div>
 
         <div className="mt-6 text-xs text-gray-500">
-          If you created the account by mistake, you can ignore this message.
+          Si vous avez créé le compte par erreur, vous pouvez ignorer ce message.
         </div>
       </motion.div>
     </div>

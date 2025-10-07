@@ -51,6 +51,10 @@ export default function PaymentPage() {
           return;
         }
         setProfile(user);
+        // Auto-select card based on age: 18+ adult, otherwise child
+        if (typeof user.age_years === "number") {
+          setSelectedCard(user.age_years >= 18 ? "adult" : "child");
+        }
         const membership = await getMembership();
         if (membership.is_member) {
           router.push("/member");
@@ -62,6 +66,12 @@ export default function PaymentPage() {
     };
     init();
   }, [router]);
+
+  const isAgeKnown = typeof profile?.age_years === "number";
+  const isEligible = (type: "adult" | "child") => {
+    if (!isAgeKnown) return true;
+    return type === "adult" ? (profile!.age_years! >= 18) : (profile!.age_years! < 18);
+  };
 
   const handlePayment = async () => {
     if (!profile) return;
@@ -158,11 +168,12 @@ export default function PaymentPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                 <motion.button
                   onClick={() => setSelectedCard("adult")}
+                  disabled={isAgeKnown && !isEligible("adult")}
                   className={`relative p-6 rounded-xl border-2 transition-all duration-200 ${
                     selectedCard === "adult"
                       ? "border-primary-500 bg-primary-50 shadow-lg"
                       : "border-gray-200 bg-gray-50 hover:border-gray-300"
-                  }`}
+                  } ${isAgeKnown && !isEligible("adult") ? "opacity-50 cursor-not-allowed" : ""}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -195,11 +206,12 @@ export default function PaymentPage() {
 
                 <motion.button
                   onClick={() => setSelectedCard("child")}
+                  disabled={isAgeKnown && !isEligible("child")}
                   className={`relative p-6 rounded-xl border-2 transition-all duration-200 ${
                     selectedCard === "child"
                       ? "border-primary-500 bg-primary-50 shadow-lg"
                       : "border-gray-200 bg-gray-50 hover:border-gray-300"
-                  }`}
+                  } ${isAgeKnown && !isEligible("child") ? "opacity-50 cursor-not-allowed" : ""}`}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -231,11 +243,16 @@ export default function PaymentPage() {
                 </motion.button>
               </div>
 
-              <div className="mt-3 flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-3">
+                <div className="mt-3 flex items-center gap-3 rounded-xl border border-green-200 bg-green-50 px-4 py-3">
                 <ShieldCheck className="h-5 w-5 text-green-600" />
-                <p className="text-sm text-green-700">
-                  Cartes limitées — Participation aux concours obligatoire
-                </p>
+                  <p className="text-sm text-green-700">
+                    Cartes limitées — Participation aux concours obligatoire
+                    {isAgeKnown && (
+                      <span className="ml-2 text-gray-600">(
+                        {profile!.age_years! >= 18 ? "Âge détecté: Adulte" : "Âge détecté: Enfant"}
+                      )</span>
+                    )}
+                  </p>
               </div>
             </div>
 

@@ -4,6 +4,9 @@ export interface IUser extends Document {
   email: string;
   password: string;
   name?: string;
+  date_of_birth?: Date;
+  age_years?: number; // denormalized current age in years for indexing and queries
+  member_number?: string;
   is_member: boolean;
   is_verified: boolean;
   membership_date?: Date;
@@ -34,6 +37,21 @@ const userSchema = new Schema<IUser>(
       type: String,
       trim: true,
       maxlength: 100,
+    },
+    date_of_birth: {
+      type: Date,
+    },
+    age_years: {
+      type: Number,
+      min: 0,
+      max: 130,
+      index: true,
+    },
+    member_number: {
+      type: String,
+      unique: true,
+      sparse: true,
+      index: true,
     },
     is_member: {
       type: Boolean,

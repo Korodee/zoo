@@ -173,6 +173,17 @@ router.post(
             "Membership activated for user:",
             session.metadata?.userId
           );
+
+          // Generate a member number if not set: CB- + last 5 of _id
+          if (updatedUser && !updatedUser.member_number) {
+            try {
+              const suffix = String(updatedUser._id).slice(-5).toUpperCase();
+              updatedUser.member_number = `CB-${suffix}`;
+              await updatedUser.save();
+            } catch (e) {
+              console.error("Failed to set member_number", e);
+            }
+          }
         } catch (error) {
           console.error("Error processing webhook:", error);
           return res.status(500).json({ error: "Failed to process webhook" });

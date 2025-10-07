@@ -6,6 +6,8 @@ export type UserProfile = {
   name?: string;
   is_member: boolean;
   membership_date?: string;
+  age_years?: number;
+  member_number?: string;
 };
 
 // Normalize to avoid trailing slash issues that cause double slashes in requests
@@ -32,11 +34,11 @@ const authHeaders = () => {
   return token ? { Authorization: `Bearer ${token}` } : {};
 };
 
-export async function register(email: string, password: string, name?: string) {
+export async function register(email: string, password: string, name?: string, date_of_birth?: string) {
   const res = await fetch(`${BASE_URL}/api/auth/register`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ email, password, name }),
+    body: JSON.stringify({ email, password, name, date_of_birth }),
   });
   if (!res.ok)
     throw new Error((await res.json()).error || "Registration failed");
@@ -139,6 +141,8 @@ export async function getProfile(): Promise<UserProfile> {
     name: u.name,
     is_member: u.is_member,
     membership_date: u.membership_date,
+    age_years: u.age_years,
+    member_number: u.member_number,
   } as UserProfile;
 }
 
@@ -160,6 +164,18 @@ export async function getMembership(): Promise<{
     is_member: boolean;
     membership_date?: string | null;
   };
+}
+
+export async function getAgeSpots(age: number): Promise<{ sold: number; cap: number; remaining: number; unlocked: boolean }>{
+  const res = await fetch(`${BASE_URL}/api/age/spots/${age}`);
+  if (!res.ok) throw new Error("Failed to fetch age spots");
+  return (await res.json()) as { sold: number; cap: number; remaining: number; unlocked: boolean };
+}
+
+export async function getGlobalSpots(): Promise<{ sold: number; cap: number; remaining: number; unlocked: boolean }>{
+  const res = await fetch(`${BASE_URL}/api/stats/spots`);
+  if (!res.ok) throw new Error("Failed to fetch global spots");
+  return (await res.json()) as { sold: number; cap: number; remaining: number; unlocked: boolean };
 }
 
 export async function createCheckoutSession(userId: string, email: string, cardType: 'adult' | 'child' = 'adult') {

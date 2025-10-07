@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import {
   Eye,
@@ -12,7 +12,7 @@ import {
   PawPrint,
 } from "lucide-react";
 import { motion } from "framer-motion";
-import { login, register } from "@/utils/api";
+import { login, register, getAgeSpots, getGlobalSpots } from "@/utils/api";
 import { useToast } from "@/components/Toast";
 import { resendVerification } from "@/utils/api";
 
@@ -37,6 +37,10 @@ export default function AuthForm({ mode }: AuthFormProps) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [dob, setDob] = useState<string>("");
+  const [agePreview, setAgePreview] = useState<number | null>(null);
+  const [spots, setSpots] = useState<{ sold: number; cap: number; remaining: number; unlocked: boolean } | null>(null);
+  const [globalSpots, setGlobalSpots] = useState<{ sold: number; cap: number; remaining: number; unlocked: boolean } | null>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
@@ -51,7 +55,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
     try {
       if (mode === "signup") {
         show("Creating your account...", "info", 1500);
-        await register(email, password, name);
+        await register(email, password, name, dob || undefined);
         show("Account created! Please verify your email.", "success");
         // Friendly page: tell the user to check their inbox
         window.open(`/check-email?email=${encodeURIComponent(email)}`, "_self");
@@ -69,6 +73,18 @@ export default function AuthForm({ mode }: AuthFormProps) {
       setIsLoading(false);
     }
   };
+
+  // Fetch global spots on mount so the banner shows real progress regardless of DOB
+  useEffect(() => {
+    (async () => {
+      try {
+        const g = await getGlobalSpots();
+        setGlobalSpots(g);
+      } catch {
+        setGlobalSpots(null);
+      }
+    })();
+  }, []);
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 to-gray-100 px-4 sm:px-6 lg:px-8">
@@ -176,6 +192,56 @@ export default function AuthForm({ mode }: AuthFormProps) {
                   className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
                   placeholder="Votre nom complet"
                 />
+              </motion.div>
+            )}
+            {mode === "signup" && (
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: 0.58 }}
+              >
+                <label
+                  htmlFor="dob"
+                  className="block text-sm font-medium text-gray-700 mb-2"
+                >
+                  Date de naissance
+                </label>
+                <input
+                  id="dob"
+                  name="dob"
+                  type="date"
+                  value={dob}
+                  onChange={async (e) => {
+                    const v = e.target.value;
+                    setDob(v);
+                    if (v) {
+                      const d = new Date(v);
+                      if (!isNaN(d.getTime())) {
+                        const now = new Date();
+                        let age = now.getFullYear() - d.getFullYear();
+                        const m = now.getMonth() - d.getMonth();
+                        if (m < 0 || (m === 0 && now.getDate() < d.getDate())) age--;
+                        setAgePreview(age);
+                        try {
+                          const s = await getAgeSpots(age);
+                          setSpots(s);
+                        } catch {
+                          setSpots(null);
+                        }
+                      }
+                    } else {
+                      setAgePreview(null);
+                      setSpots(null);
+                    }
+                  }}
+                  className="w-full px-3 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-all duration-200"
+                />
+                {agePreview !== null && (
+                  <p className="text-sm text-gray-600 mt-2">
+                    Âge: {agePreview} ans{globalSpots ? ` — ${globalSpots.sold.toLocaleString()} / ${globalSpots.cap.toLocaleString()} cartes vendues (${globalSpots.remaining.toLocaleString()} restantes)` : ""}
+                    {globalSpots?.unlocked ? " — Tirage débloqué" : ""}
+                  </p>
+                )}
               </motion.div>
             )}
             <motion.div
