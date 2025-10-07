@@ -122,6 +122,22 @@ app.get("/api/test", (req, res) => {
   res.json({ message: "API is working", timestamp: new Date().toISOString() });
 });
 
+// Lightweight probe to verify deployed build and env
+app.get("/api/probe", (_req, res) => {
+  res.json({
+    ok: true,
+    timestamp: new Date().toISOString(),
+    env: NODE_ENV,
+    commit: process.env.VERCEL_GIT_COMMIT_SHA || process.env.GIT_COMMIT || null,
+    hasMembersSheet: true,
+    routes: [
+      "/api/members/sheet",
+      "/api/stats/spots",
+      "/api/age/spots/:age",
+    ],
+  });
+});
+
 // 404 handler
 app.use("*", (req, res) => {
   res.status(404).json({ 
