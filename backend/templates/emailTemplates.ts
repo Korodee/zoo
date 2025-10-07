@@ -38,7 +38,7 @@ export function verifyEmailTemplate(params: {
         <div class="subtitle">Bienvenue dans notre communauté</div>
       </div>
       <div class="content">
-        <h1 class="h1">Bonjour ${firstName}, confirmez votre email</h1>
+        <h1 class="h1">Bonjour ${firstName}, confirmez votre email.</h1>
         <p class="p">Merci de rejoindre le Domaine du Chevreuil Blanc ! Cliquez sur le bouton ci-dessous pour vérifier votre email et débloquer l'accès au contenu exclusif des membres, aux concours et plus encore.</p>
         <div class="btn-wrap">
           <a class="btn" href="${verifyUrl}">Verify email</a>
