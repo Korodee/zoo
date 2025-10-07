@@ -155,6 +155,67 @@ router.get("/stats/spots", async (_req, res) => {
 });
 
 // Secure members export for Google Sheets with pagination + ETag
+/**
+ * @openapi
+ * /api/members/sheet:
+ *   get:
+ *     tags: [Users]
+ *     summary: Export members for Google Sheets (API key protected)
+ *     description: |
+ *       Returns a JSON array of members with selected fields. Use `x-api-key` header.
+ *       Supports cursor-based pagination and ETag caching (304 when unchanged).
+ *     parameters:
+ *       - in: header
+ *         name: x-api-key
+ *         required: true
+ *         schema:
+ *           type: string
+ *       - in: query
+ *         name: limit
+ *         required: false
+ *         schema:
+ *           type: integer
+ *           minimum: 1
+ *           maximum: 5000
+ *           default: 1000
+ *       - in: query
+ *         name: cursor
+ *         required: false
+ *         schema:
+ *           type: string
+ *           description: MongoDB ObjectId to paginate from (exclusive)
+ *     responses:
+ *       200:
+ *         description: Array of members
+ *         headers:
+ *           ETag:
+ *             schema:
+ *               type: string
+ *             description: Weak ETag for caching
+ *           X-Next-Cursor:
+ *             schema:
+ *               type: string
+ *             description: Present when more pages are available
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: array
+ *               items:
+ *                 type: object
+ *                 properties:
+ *                   email: { type: string }
+ *                   name: { type: string }
+ *                   date_of_birth: { type: string, format: date-time }
+ *                   age_years: { type: integer }
+ *                   is_member: { type: boolean }
+ *                   is_verified: { type: boolean }
+ *                   membership_date: { type: string, format: date-time }
+ *                   member_number: { type: string }
+ *       304:
+ *         description: Not Modified (ETag matched)
+ *       403:
+ *         description: Forbidden (invalid or missing API key)
+ */
 router.get("/members/sheet", apiKeyAuth as any, async (req, res) => {
   try {
     const limitRaw = Number(req.query.limit as string) || 1000;
