@@ -49,12 +49,12 @@ export function verifyEmailTemplate(params: {
           <li>Accès au parc animalier</li>
         </ul>
         <div class="card" style="margin-top:14px">
-          If the button doesn’t work, copy and paste this URL into your browser:<br/>
+        Si le bouton ne fonctionne pas, copiez et collez cette URL dans votre navigateur :<br/>
           <span style="word-break:break-all">${verifyUrl}</span>
         </div>
-        <p class="p" style="margin-top:16px">This link will expire in 24 hours. If you didn’t create an account, you can safely ignore this email.</p>
+        <p class="p" style="margin-top:16px">Ce lien expirera dans 24 heures. Si vous n’avez pas créé de compte, vous pouvez ignorer ce courriel en toute sécurité.</p>
       </div>
-      <div class="foot">© ${new Date().getFullYear()} WildLife Hub • You’re receiving this because you signed up for an account.</div>
+      <div class="foot">© ${new Date().getFullYear()} WildLife Hub • Vous recevez ce message parce que vous avez créé un compte.</div>
     </div>
   </body>
   </html>`;
@@ -71,7 +71,7 @@ export function resetPasswordTemplate(params: {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Reset your password • Domaine du Chevreuil Blanc</title>
+    <title>Réinitialisez votre mot de passe • Domaine du Chevreuil Blanc</title>
     <style>
       :root { color-scheme: light dark; supported-color-schemes: light dark; }
       body { margin:0; padding:0; background:#f6f7fb; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; }
@@ -95,21 +95,21 @@ export function resetPasswordTemplate(params: {
     <div class="container">
       <div class="header">
         <div class="brand">🦁 WildLife Hub</div>
-        <div class="subtitle">Secure password reset</div>
+        <div class="subtitle">Réinitialisation sécurisée du mot de passe</div>
       </div>
       <div class="content">
-        <h1 class="h1">Hi ${firstName}, reset your password</h1>
-        <p class="p">We received a request to reset your WildLife Hub password. Click the button below to set a new one. If you didn’t request this, you can safely ignore this email.</p>
+        <h1 class="h1">Bonjour ${firstName}, réinitialisez votre mot de passe</h1>
+        <p class="p">Nous avons reçu une demande de réinitialisation de votre mot de passe WildLife Hub. Cliquez sur le bouton ci‑dessous pour en définir un nouveau. Si vous n’êtes pas à l’origine de cette demande, vous pouvez ignorer ce courriel.</p>
         <div class="btn-wrap">
-          <a class="btn" href="${resetUrl}">Reset password</a>
+          <a class="btn" href="${resetUrl}">Réinitialiser le mot de passe</a>
         </div>
         <div class="card">
-          If the button doesn’t work, copy and paste this URL into your browser:<br/>
+          Si le bouton ne fonctionne pas, copiez et collez cette URL dans votre navigateur :<br/>
           <span style="word-break:break-all">${resetUrl}</span>
         </div>
-        <p class="p" style="margin-top:16px">For security, this link expires in 30 minutes.</p>
+        <p class="p" style="margin-top:16px">Pour des raisons de sécurité, ce lien expire dans 30 minutes.</p>
       </div>
-      <div class="foot">© ${new Date().getFullYear()} WildLife Hub • Security first. Need help? Reply to this email.</div>
+      <div class="foot">© ${new Date().getFullYear()} WildLife Hub • La sécurité avant tout. Besoin d’aide ? Répondez à ce courriel.</div>
     </div>
   </body>
   </html>`;
