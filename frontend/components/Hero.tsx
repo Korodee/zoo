@@ -6,8 +6,6 @@ import {
   ArrowRight,
   Play,
   Pause,
-  Volume2,
-  VolumeX,
   PawPrint,
   X,
 } from "lucide-react";
@@ -35,45 +33,21 @@ const heroVariants = {
 export default function Hero() {
   const [showVideoModal, setShowVideoModal] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(false);
-  const [isAudioPlaying, setIsAudioPlaying] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
-  const audioRef = useRef<HTMLAudioElement>(null);
 
   const openVideoModal = async () => {
     setShowVideoModal(true);
     setIsPlaying(true);
-    setIsMuted(false);
-
-    // Start soundtrack
-    try {
-      if (audioRef.current) {
-        audioRef.current.volume = 0.5;
-        await audioRef.current.play();
-        setIsAudioPlaying(true);
-        console.log("Soundtrack started successfully");
-      }
-    } catch (error) {
-      console.error("Failed to play soundtrack:", error);
-      setIsAudioPlaying(false);
-    }
   };
 
   const closeVideoModal = () => {
     setShowVideoModal(false);
     setIsPlaying(false);
-    setIsAudioPlaying(false);
 
     // Stop video
     if (videoRef.current) {
       videoRef.current.pause();
       videoRef.current.currentTime = 0;
-    }
-
-    // Stop audio
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
     }
   };
 
@@ -89,28 +63,6 @@ export default function Hero() {
     }
   };
 
-  const toggleMute = async () => {
-    if (videoRef.current) {
-      videoRef.current.muted = !isMuted;
-      setIsMuted(!isMuted);
-    }
-    // Also toggle ambient audio
-    if (audioRef.current) {
-      try {
-        if (isMuted) {
-          audioRef.current.volume = 0.3;
-          await audioRef.current.play();
-          setIsAudioPlaying(true);
-        } else {
-          audioRef.current.pause();
-          setIsAudioPlaying(false);
-        }
-      } catch (error) {
-        console.error("Failed to toggle audio:", error);
-        setIsAudioPlaying(false);
-      }
-    }
-  };
 
   return (
     <section className="relative h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
@@ -124,7 +76,7 @@ export default function Hero() {
           className="object-cover w-full h-full"
         >
           <source
-            src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__"
+            src="hero-vid2.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -171,10 +123,10 @@ export default function Hero() {
         {/* Badges: 1 an gratuit + date d'ouverture */}
         <div className="mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-200 border border-green-400/40 text-xs sm:text-sm">
-            🎉 1 an gratuit à l’achat de la carte
+            🎉 6 mois d'accès exclusif à 50$ seulement
           </span>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white border border-white/30 text-xs sm:text-sm">
-            📅 Ouverture prévue: 1er janvier 2026 (ou plus tôt)
+            👶 Enfants de 0-17 ans gratuits partout au Québec
           </span>
         </div>
         <motion.h1
@@ -182,17 +134,15 @@ export default function Hero() {
           variants={itemVariants}
         >
           Le Domaine du Chevreuil Blanc
-          <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
-            Votre projet collectif et unique
+          <span className="block bg-gradient-to-r text-2xl md:text-4xl from-yellow-400 via-orange-400 to-yellow-500 bg-clip-text text-transparent">
+            Un projet unique, humain et rassembleur pour tout le Québec
           </span>
         </motion.h1>
         <motion.p
           className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-200 leading-relaxed"
           variants={itemVariants}
         >
-          Bienvenue au Domaine du Chevreuil Blanc — un lieu où chaque membre
-          devient acteur d’un projet collectif unique. Nature grandiose, images
-          cinématographiques et aventures partagées, tout commence ici.
+          Un projet né du cœur, imaginé et fondé par Denis Desjardins, avec un objectif simple mais profondément humain : rassembler les Québécois autour de la nature, des animaux, et du rêve commun d'un avenir meilleur.
         </motion.p>
 
         <motion.div
@@ -255,99 +205,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Hidden Audio Element */}
-      <audio
-        ref={audioRef}
-        loop
-        preload="auto"
-        className="hidden"
-        onError={(e) => console.error("Soundtrack error:", e)}
-        onLoadStart={() => console.log("Soundtrack loading started")}
-        onCanPlay={() => console.log("Soundtrack can play")}
-        onLoadedData={() => console.log("Soundtrack data loaded")}
-      >
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-3.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-4.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-5.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-6.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-7.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-8.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-9.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-10.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-11.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-12.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-13.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-14.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-15.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-16.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-17.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-18.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-19.mp3"
-          type="audio/mpeg"
-        />
-        <source
-          src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-20.mp3"
-          type="audio/mpeg"
-        />
-        Your browser does not support the audio element.
-      </audio>
 
       {/* Video Modal */}
       <AnimatePresence>
@@ -380,13 +237,12 @@ export default function Hero() {
                 <video
                   ref={videoRef}
                   autoPlay
-                  muted={isMuted}
                   loop
                   playsInline
                   className="w-full h-full object-cover"
                 >
                   <source
-                    src="https://cdn-cf-east.streamable.com/video/mp4/pa0ot6.mp4?Expires=1756074294640&Key-Pair-Id=APKAIEYUVEN4EVB2OKEQ&Signature=H2~COOI3e8oL-lKqUn8Niqh6sYZ4H8YuP722cyym6ce0N9Zq91DmeZDHBq6J8-8GXw-D2jd-E4wNLILE4FKnLW8031trJydRaM-eP8OU0Srx-uabkhQndrbxtuMHhRmVNtzayjWHtFS-jqWYzUtV46Blze2sseyaNiu~zS6IS~BTaEJEir7~6zOzQNXEJng8CQVUC-TCXIbY8UpZe8c9tFli1kgEUiRfNtq4XsrUEYQysNueoschPoEcVo3zNIywBYKPngdKQ178EpxDzdfZWmOYQilSpwiRaOTP~7EpWsfgAqJC3ajRGSqKVwufYEfhBMWH7PJqgHxCQdwScu63Lg__"
+                    src="hero-vid2.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.
@@ -405,30 +261,9 @@ export default function Hero() {
                         <Play className="h-5 w-5" />
                       )}
                     </button>
-                    <button
-                      onClick={toggleMute}
-                      className={`p-2 rounded-full text-white transition-colors duration-200 ${
-                        isMuted
-                          ? "bg-red-500/70 hover:bg-red-500/90"
-                          : "bg-green-500/70 hover:bg-green-500/90"
-                      }`}
-                      title={
-                        isMuted
-                          ? "Activer l'ambiance sonore"
-                          : "Couper l'ambiance sonore"
-                      }
-                    >
-                      {isMuted ? (
-                        <VolumeX className="h-5 w-5" />
-                      ) : (
-                        <Volume2 className="h-5 w-5" />
-                      )}
-                    </button>
                   </div>
                   <div className="text-white text-sm bg-black/50 px-3 py-1 rounded-full">
-                    {isAudioPlaying && !isMuted
-                      ? " Ambiance Faunique"
-                      : "Domaine du Chevreuil Blanc"}
+                    Domaine du Chevreuil Blanc
                   </div>
                 </div>
               </div>

@@ -25,11 +25,10 @@ export default function Highlights() {
           className="text-center mb-10"
         >
           <h2 className="text-3xl md:text-4xl font-bold">
-            Ce qui vous attend
+            L'objectif du projet
           </h2>
           <p className="text-neutral-600 mt-3 max-w-3xl mx-auto">
-            Les points clés du projet, présentés simplement. Les détails
-            complets se trouvent plus bas.
+            Créer un lieu unique au Québec où les visiteurs pourront vivre une expérience immersive, entourés d'animaux majestueux et d'une nature vivante, tout en bâtissant une communauté de membres qui participent activement à l'évolution du projet.
           </p>
         </motion.div>
 
@@ -43,41 +42,40 @@ export default function Highlights() {
           <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Gift className="h-6 w-6 text-yellow-600" />
-              <h3 className="font-semibold">≈ 10 M$ en prix</h3>
+              <h3 className="font-semibold">Maison d'1 million $</h3>
             </div>
             <p className="text-sm text-neutral-600">
-              Maisons, argent, véhicules, bateaux, voyages et prix enfants.
+              Grand prix final + 58 prix de 75 000$ par catégorie d'âge + tirages hebdomadaires.
             </p>
           </motion.div>
 
           <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Leaf className="h-6 w-6 text-green-700" />
-              <h3 className="font-semibold">110 acres de nature</h3>
+              <h3 className="font-semibold">Enfants gratuits</h3>
             </div>
             <p className="text-sm text-neutral-600">
-              Aventures au cœur d’un territoire riche en faune et en sentiers.
+              Tous les jeunes de 0-17 ans participent gratuitement partout au Québec avec 2M$ en prix.
             </p>
           </motion.div>
 
           <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Heart className="h-6 w-6 text-pink-700" />
-              <h3 className="font-semibold">Projet collectif</h3>
+              <h3 className="font-semibold">50$ pour 6 mois</h3>
             </div>
             <p className="text-sm text-neutral-600">
-              Chaque carte achetée fait avancer votre rêve et le projet commun.
-              1 an gratuit à l’achat de la carte.
+              Accès exclusif au site et aux suivis du projet. 58 catégories d'âge de 18-75 ans.
             </p>
           </motion.div>
 
           <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Camera className="h-6 w-6 text-blue-700" />
-              <h3 className="font-semibold">Tout est filmé</h3>
+              <h3 className="font-semibold">Transparence totale</h3>
             </div>
             <p className="text-sm text-neutral-600">
-              Progrès partagé au jour le jour avec une approche cinéma.
+              Chaque tirage vérifié par des témoins indépendants, filmé et diffusé.
             </p>
           </motion.div>
         </motion.div>

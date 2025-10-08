@@ -48,23 +48,19 @@ export default function About() {
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"
             variants={itemVariants}
           >
-            À propos du Domaine du Chevreuil Blanc
-          </motion.h2>
-          <motion.h2
-            className="text-xl md:text-xl font-bold text-gray-600 mb-2 text-center"
-            variants={itemVariants}
-          >
-          Le Domaine – Un lieu magique.
+            La Vision
           </motion.h2>
           <motion.p
-            className="text-lg text-gray-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed mb-8"
             variants={itemVariants}
           >
-            110 acres de nature sécurisée, un enclos majestueux avec déjà des
-            cerfs de Virginie, y compris des albinos. Seuls les cerfs de
-            Virginie sont présents pour le moment, mais d’autres cervidés
-            arriveront bientôt : chevreuils blancs, wapitis, cerfs rouges, cerfs
-            Sika, daims.
+            Le Domaine du Chevreuil Blanc est un projet né du cœur, imaginé et fondé par Denis Desjardins, avec un objectif simple mais profondément humain : rassembler les Québécois autour de la nature, des animaux, et du rêve commun d'un avenir meilleur.
+          </motion.p>
+          <motion.p
+            className="text-lg text-gray-600 max-w-4xl mx-auto leading-relaxed"
+            variants={itemVariants}
+          >
+            C'est un projet qui vise à redonner au monde, à faire rêver les familles, et à offrir aux enfants du Québec une expérience accessible, éducative et inspirante. Le Domaine ne cherche pas seulement à divertir : il veut reconnecter les gens à la nature, aux animaux et aux valeurs d'entraide et de partage.
           </motion.p>
         </motion.div>
 
@@ -78,27 +74,27 @@ export default function About() {
           {[
             {
               icon: Globe,
-              title: "Ferme éducative",
+              title: "Le Domaine et ses attraits",
               description:
-                "Plusieurs espèces de chèvres, moutons, poneys pour randonnées, lamas et alpagas, cochons, poules, canards – des rencontres conçues pour émerveiller enfants et familles.",
+                "110 acres de nature sécurisée avec un enclos majestueux abritant des cerfs de Virginie, y compris des albinos. Le site accueillera bientôt chevreuils blancs, wapitis, cerfs rouges, daims, sika, lamas, alpagas, sangliers et canards. Des lacs artificiels permettront la pêche à la truite.",
               color: "from-green-500 to-blue-500",
               bgColor: "from-green-50 to-blue-50",
               borderColor: "border-green-200",
             },
             {
               icon: Heart,
-              title: "Chalets rustiques",
+              title: "Les enfants au centre du projet",
               description:
-                "Séjour immersif au cœur de l’enclos, contact direct avec les cervidés (clôture sécurisée), cuisine équipée avec fumoir, électricité et nuits entouré de nature.",
+                "Tous les jeunes de 0 à 17 ans participent gratuitement partout au Québec. Avec une carte parent de 50$, les enfants ont accès à des tirages de 2 millions de dollars en prix de plein air (équipements de pêche, camping, aventure) adaptés à leur âge.",
               color: "from-red-500 to-pink-500",
               bgColor: "from-red-50 to-pink-50",
               borderColor: "border-red-200",
             },
             {
               icon: Camera,
-              title: "Casse-croûte du Domaine",
+              title: "Le principe des catégories d'âge",
               description:
-                "Poutines, pizzas, queues de castor et plus, ambiance conviviale en pleine nature, possibilité de déguster près des animaux pour un moment unique.",
+                "58 catégories d'âge de 18 à 75 ans, maximum 6 000 membres par catégorie à 50$ chacun. Chaque carte donne 6 mois d'accès exclusif. Dès qu'une catégorie atteint 6 000 membres, un prix de 75 000$ (souvent un camion neuf) est tiré immédiatement.",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",
@@ -154,7 +150,7 @@ export default function About() {
             className="text-2xl md:text-3xl font-bold text-gray-900 mb-7 text-center"
             variants={itemVariants}
           >
-            Expériences exclusives
+            Tirages et récompenses
           </motion.h3>
           <motion.div
             className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6"
@@ -162,26 +158,26 @@ export default function About() {
           >
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                L’Aventure de l’Ange Gardien
+                Le grand prix – Une maison d'un million de dollars
               </h4>
               <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Nom inspiré de la municipalité de l’Ange-Gardien (Outaouais)</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Prix de 200 000 $ pour le gagnant</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Hébergement dans les chalets rustiques</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Épreuves de survie, stratégie et aventure en pleine nature</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Filmée et diffusée sur les réseaux sociaux</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Tirage parmi tous les membres participants</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Le gagnant choisit son terrain et dessine sa maison</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Construction prise en charge jusqu'à 1 million $</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Processus entièrement filmé et partagé</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Si objectif atteint 2 fois en 6 mois : 2 autres maisons</span></li>
               </ul>
             </div>
             <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                La Chasse aux Trésors Sauvages
+                Tirages hebdomadaires
               </h4>
               <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Un participant par semaine pour le premier mois</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Achetez tôt votre carte pour augmenter vos chances</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Trésors cachés: argent, clés pour véhicules, 4 roues, bateaux, voitures</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Montant initial (exemple): 2 000 $; augmente chaque jour si non trouvé</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Chaque participation filmée et partagée sur les réseaux sociaux</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Tirage à toutes les semaines</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Plus vite tu participes, plus vite tu gagnes</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Prix parmi les membres inscrits</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Annoncés sur les réseaux sociaux</span></li>
+                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>5 lots de 100 000$ si objectif complet atteint</span></li>
               </ul>
             </div>
           </motion.div>

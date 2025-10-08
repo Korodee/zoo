@@ -17,7 +17,8 @@ import {
   CreditCard,
   LogOut,
   User,
-  Settings
+  Settings,
+  HelpCircle
 } from "lucide-react";
 
 interface MobileNavProps {
@@ -74,9 +75,10 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
   };
 
   const mainNavItems = [
-    { href: "/", label: "Home", icon: Home },
-    { href: "/#about", label: "About", icon: Info },
-    { href: "/#gallery", label: "Gallery", icon: Image },
+    { href: "/", label: "Accueil", icon: Home },
+    { href: "/#about", label: "À propos", icon: Info },
+    { href: "/#gallery", label: "Galerie", icon: Image },
+    { href: "/#faq", label: "FAQ", icon: HelpCircle },
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
 

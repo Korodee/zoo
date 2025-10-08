@@ -156,7 +156,7 @@ export default function Gallery() {
         </motion.div>
 
         {/* Stats Bar */}
-        <motion.div
+        {/* <motion.div
           className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -167,18 +167,18 @@ export default function Gallery() {
             <div className="text-sm text-gray-600">Espèces de Cervidés</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-green-600 mb-2">30$</div>
-            <div className="text-sm text-gray-600">Carte Adulte</div>
+            <div className="text-2xl font-bold text-green-600 mb-2">50$</div>
+            <div className="text-sm text-gray-600">Carte Adulte (6 mois)</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-blue-600 mb-2">20$</div>
-            <div className="text-sm text-gray-600">Carte Enfant</div>
+            <div className="text-2xl font-bold text-blue-600 mb-2">Gratuit</div>
+            <div className="text-sm text-gray-600">Enfants 0-17 ans</div>
           </div>
           <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
-            <div className="text-2xl font-bold text-purple-600 mb-2">6</div>
-            <div className="text-sm text-gray-600">Mois Gratuits</div>
+            <div className="text-2xl font-bold text-purple-600 mb-2">58</div>
+            <div className="text-sm text-gray-600">Catégories d'âge</div>
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Animal Spotlight */}
 

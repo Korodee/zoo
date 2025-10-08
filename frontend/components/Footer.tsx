@@ -42,9 +42,10 @@ export default function Footer() {
               </h3>
             </div>
             <p className="text-gray-300 leading-relaxed md:mb-6 max-w-md">
-              🌍 Vision: premier d’une série de domaines familiaux à travers la province.
-              Chaque carte achetée contribue directement au projet. Expérience unique avec
-              animaux, nature et aventure – suivez le progrès au quotidien.
+              🌍 Vision: premier d’une série de domaines familiaux à travers la
+              province. Chaque carte achetée contribue directement au projet.
+              Expérience unique avec animaux, nature et aventure – suivez le
+              progrès au quotidien.
             </p>
             <div className="hidden md:flex pt-2 flex-col md:flex-row items-start">
               <div className="flex flex-col items-start">
@@ -102,20 +103,20 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/#faq"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
+                  FAQ
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/#contact"
                   className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
                 >
                   <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
                   Contact
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/member"
-                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
-                >
-                  <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
-                  Espace Membre
                 </Link>
               </li>
             </ul>

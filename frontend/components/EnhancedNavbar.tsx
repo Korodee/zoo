@@ -11,7 +11,8 @@ import {
   Crown, 
   LogIn, 
   User,
-  Menu
+  Menu,
+  HelpCircle
 } from "lucide-react";
 import MobileNav from "./MobileNav";
 
@@ -41,6 +42,7 @@ export default function EnhancedNavbar({
     { href: "/", label: "Accueil", icon: Home },
     { href: "/#about", label: "À propos", icon: Info },
     { href: "/#gallery", label: "Galerie", icon: Image },
+    { href: "/#faq", label: "FAQ", icon: HelpCircle },
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
 

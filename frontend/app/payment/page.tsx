@@ -118,7 +118,7 @@ export default function PaymentPage() {
           </h1>
           <p className="text-gray-600 mt-2">
             Accédez au parc animalier et participez aux concours exclusifs avec
-            1 an gratuit.
+            6 mois d'accès exclusif à 50$ seulement.
           </p>
 
           {/* Steps */}
@@ -185,7 +185,7 @@ export default function PaymentPage() {
                           : "text-gray-700"
                       }`}
                     >
-                      30$ CAD
+                      50$ CAD
                     </div>
                     <div className="text-lg font-semibold text-gray-900 mb-1">
                       Carte Adulte
@@ -223,7 +223,7 @@ export default function PaymentPage() {
                           : "text-gray-700"
                       }`}
                     >
-                      20$ CAD
+                      Gratuit
                     </div>
                     <div className="text-lg font-semibold text-gray-900 mb-1">
                       Carte Enfant
@@ -281,7 +281,7 @@ export default function PaymentPage() {
                 <div className="flex items-center justify-between">
                   <span className="text-gray-600">Prix</span>
                   <span className="font-medium text-gray-900">
-                    {selectedCard === "adult" ? "30$" : "20$"} CAD
+                    {selectedCard === "adult" ? "50$" : "Gratuit"} CAD
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -320,7 +320,7 @@ export default function PaymentPage() {
                     <>
                       <CreditCard className="h-5 w-5" />
                       <span>
-                        Payer {selectedCard === "adult" ? "30$" : "20$"} CAD
+                        Payer {selectedCard === "adult" ? "50$" : "Gratuit"} CAD
                       </span>
                       <ArrowRight className="h-5 w-5" />
                     </>

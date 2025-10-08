@@ -28,9 +28,7 @@ export default function Intro() {
               </div>
             </div>
             <div className="mt-3 text-sm text-neutral-600 leading-relaxed">
-              « La nature, le partage et la transparence sont au cœur de tout ce
-              que nous faisons. Chaque décision, chaque dépense et chaque étape
-              du projet est expliquée et ouverte au public. »
+              « Ensemble, on peut réaliser de grandes choses. Ensemble, on peut redonner le sourire au monde. Ce projet vise à ramener les Québécois à leurs racines, à la nature qui nous a forgés. »
             </div>
             <div className="mt-3 flex items-center gap-3">
               <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-emerald-50 text-emerald-700 border border-emerald-200">

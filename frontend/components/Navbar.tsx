@@ -128,6 +128,9 @@ export default function Navbar() {
             <Link href="#membership" className={linkClass}>
               Adhésion
             </Link>
+            <Link href="#faq" className={linkClass}>
+              FAQ
+            </Link>
             <Link href="#contact" className={linkClass}>
               Contact
             </Link>
