@@ -2,13 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import {
-  ArrowRight,
-  Play,
-  Pause,
-  PawPrint,
-  X,
-} from "lucide-react";
+import { ArrowRight, Play, Pause, PawPrint, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -63,7 +57,6 @@ export default function Hero() {
     }
   };
 
-
   return (
     <section className="relative h-[100svh] md:h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -76,7 +69,7 @@ export default function Hero() {
           className="object-cover w-full h-full"
         >
           <source
-            src="hero-vid2.mp4"
+            src="https://res.cloudinary.com/dzjeufpgy/video/upload/v1759960825/hero-vid2_txguhw.mp4"
             type="video/mp4"
           />
           Your browser does not support the video tag.
@@ -142,7 +135,10 @@ export default function Hero() {
           className="text-lg md:text-xl mb-10 max-w-3xl mx-auto text-gray-200 leading-relaxed"
           variants={itemVariants}
         >
-          Un projet né du cœur, imaginé et fondé par Denis Desjardins, avec un objectif simple mais profondément humain : rassembler les Québécois autour de la nature, des animaux, et du rêve commun d'un avenir meilleur.
+          Un projet né du cœur, imaginé et fondé par Denis Desjardins, avec un
+          objectif simple mais profondément humain : rassembler les Québécois
+          autour de la nature, des animaux, et du rêve commun d'un avenir
+          meilleur.
         </motion.p>
 
         <motion.div
@@ -205,7 +201,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-
       {/* Video Modal */}
       <AnimatePresence>
         {showVideoModal && (
@@ -242,7 +237,7 @@ export default function Hero() {
                   className="w-full h-full object-cover"
                 >
                   <source
-                    src="hero-vid2.mp4"
+                    src="https://res.cloudinary.com/dzjeufpgy/video/upload/v1759960825/hero-vid2_txguhw.mp4"
                     type="video/mp4"
                   />
                   Your browser does not support the video tag.
