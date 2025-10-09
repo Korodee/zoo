@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   X, 
   Menu, 
   Home, 
   Info, 
-  Image, 
   Mail, 
   Users, 
   Crown, 
@@ -77,7 +77,7 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
   const mainNavItems = [
     { href: "/", label: "Accueil", icon: Home },
     { href: "/#about", label: "À propos", icon: Info },
-    { href: "/#gallery", label: "Galerie", icon: Image },
+    { href: "/#gallery", label: "Galerie", icon: Camera },
     { href: "/#faq", label: "FAQ", icon: HelpCircle },
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
@@ -127,11 +127,15 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-100">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">WH</span>
-                </div>
+                <Image
+                  src="/logo.jpg"
+                  alt="Domaine du Chevreuil Blanc"
+                  width={40}
+                  height={40}
+                  className="w-14 h-14 rounded-xl"
+                />
                 <div>
-                  <h2 className="font-bold text-gray-900">WildLife Hub</h2>
+                  <h2 className="font-bold text-gray-900">Domaine du Chevreuil Blanc</h2>
                   {isAuthenticated && (
                     <p className="text-sm text-gray-500">Welcome back</p>
                   )}
@@ -258,10 +262,10 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
                   onClick={() => setIsOpen(false)}
                   className="w-full bg-gradient-to-r from-primary-600 to-primary-700 text-white py-3 px-4 rounded-xl font-semibold text-center block hover:shadow-lg transition-all duration-200"
                 >
-                  Join WildLife Hub
+                  Rejoindre le Domaine
                 </Link>
                 <p className="text-xs text-gray-500 text-center mt-2">
-                  Get exclusive access to wildlife content
+                  Accès exclusif au contenu du parc animalier
                 </p>
               </div>
             )}

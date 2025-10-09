@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Camera, PawPrint, Heart, Star } from "lucide-react";
+import { Camera, Heart, Star } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const containerVariants = {
@@ -216,7 +217,13 @@ export default function Gallery() {
                     />
                     <div className="hidden w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 items-center justify-center">
                       <div className="text-center">
-                        <PawPrint className="h-16 w-16 text-primary-600 mx-auto mb-3 animate-pulse" />
+                        <Image
+                          src="/logo.jpg"
+                          alt="Domaine du Chevreuil Blanc"
+                          width={64}
+                          height={64}
+                          className="mx-auto mb-3 animate-pulse rounded-lg"
+                        />
                         <p className="text-primary-700 font-bold text-lg">
                           {animal.name}
                         </p>

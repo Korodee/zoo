@@ -2,11 +2,12 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { 
   Home, 
   Info, 
-  Image, 
+  Camera, 
   Mail, 
   Crown, 
   LogIn, 
@@ -41,7 +42,7 @@ export default function EnhancedNavbar({
   const navItems = [
     { href: "/", label: "Accueil", icon: Home },
     { href: "/#about", label: "À propos", icon: Info },
-    { href: "/#gallery", label: "Galerie", icon: Image },
+    { href: "/#gallery", label: "Galerie", icon: Camera },
     { href: "/#faq", label: "FAQ", icon: HelpCircle },
     { href: "/#contact", label: "Contact", icon: Mail },
   ];
@@ -60,9 +61,13 @@ export default function EnhancedNavbar({
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 lg:w-12 lg:h-12 rounded-xl bg-gradient-to-br from-primary-600 to-primary-700 flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300">
-              <span className="text-white font-bold text-lg lg:text-xl">DCB</span>
-            </div>
+            <Image
+              src="/logo.jpg"
+              alt="Domaine du Chevreuil Blanc"
+              width={48}
+              height={48}
+              className="w-10 h-10 lg:w-14 lg:h-14 rounded-xl shadow-lg group-hover:shadow-xl transition-all duration-300"
+            />
             <div className="hidden sm:block">
               <h1 className={`font-bold text-lg lg:text-xl transition-colors duration-300 ${
                 isScrolled ? 'text-gray-900' : 'text-white'

@@ -9,9 +9,9 @@ import {
   Mail,
   Lock,
   ArrowRight,
-  PawPrint,
 } from "lucide-react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { login, register, getAgeSpots, getGlobalSpots } from "@/utils/api";
 import { useToast } from "@/components/Toast";
 import { resendVerification } from "@/utils/api";
@@ -106,7 +106,13 @@ export default function AuthForm({ mode }: AuthFormProps) {
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 300 }}
             >
-              <PawPrint className="h-16 w-16 text-primary-600" />
+              <Image
+                src="/logo.jpg"
+                alt="Domaine du Chevreuil Blanc"
+                width={64}
+                height={64}
+                className="rounded-lg"
+              />
             </motion.div>
             <motion.h2
               className="text-3xl font-bold text-gray-900 mb-2"

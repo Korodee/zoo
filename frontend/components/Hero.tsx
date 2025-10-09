@@ -2,7 +2,7 @@
 
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ArrowRight, Play, Pause, PawPrint, X } from "lucide-react";
+import { ArrowRight, Play, Pause, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -109,8 +109,14 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mb-4"
         >
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-white/10 backdrop-blur-sm rounded-full mb-6">
-            <PawPrint className="h-10 w-10 text-yellow-400" />
+          <div className="inline-flex items-center justify-center mb-6">
+            <Image
+              src="/logo.jpg"
+              alt="Domaine du Chevreuil Blanc"
+              width={80}
+              height={80}
+              className="rounded-full"
+            />
           </div>
         </motion.div>
         {/* Badges: 1 an gratuit + date d'ouverture */}

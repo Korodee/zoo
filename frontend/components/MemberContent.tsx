@@ -332,12 +332,12 @@ export default function MemberContent() {
                 🟢 Active — 1 an gratuit
               </div>
             </div>
-            <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            {/* <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Numéro de membre</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {memberNumber}
               </div>
-            </div>
+            </div> */}
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Âge et catégorie</div>
               <div className="mt-1 text-gray-900 font-semibold">
@@ -346,7 +346,7 @@ export default function MemberContent() {
             </div>
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">
-                Progression de votre catégorie
+                Progression de votre catégorie d'âge
               </div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {spots

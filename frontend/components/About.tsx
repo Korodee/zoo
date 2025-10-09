@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PawPrint, Heart, Globe, Camera } from "lucide-react";
+import { Heart, Globe, Camera } from "lucide-react";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -42,7 +43,13 @@ export default function About() {
             transition={{ duration: 0.8 }}
             className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full mb-6 shadow-lg"
           >
-            <PawPrint className="h-8 w-8 text-white" />
+            <Image
+              src="/logo.jpg"
+              alt="Domaine du Chevreuil Blanc"
+              width={32}
+              height={32}
+              className="rounded-full"
+            />
           </motion.div>
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"

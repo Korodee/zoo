@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { PawPrint } from "lucide-react";
 import Link from "next/link";
+import Image from "next/image";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,10 +34,14 @@ export default function Footer() {
         >
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <div className="bg-gradient-to-r from-primary-600 to-primary-700 p-3 rounded-xl">
-                <PawPrint className="h-8 w-8 text-white" />
-              </div>
-              <h3 className="text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+              <Image
+                src="/logo.jpg"
+                alt="Domaine du Chevreuil Blanc"
+                width={46}
+                height={46}
+                className="rounded-xl"
+              />
+              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
                 Domaine du Chevreuil Blanc
               </h3>
             </div>
