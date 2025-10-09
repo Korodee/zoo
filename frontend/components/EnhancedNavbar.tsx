@@ -62,7 +62,7 @@ export default function EnhancedNavbar({
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
             <Image
-              src="/logo.jpg"
+              src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
               alt="Domaine du Chevreuil Blanc"
               width={48}
               height={48}

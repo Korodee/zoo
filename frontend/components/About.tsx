@@ -44,7 +44,7 @@ export default function About() {
             className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full mb-6 shadow-lg"
           >
             <Image
-              src="/logo.jpg"
+              src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
               alt="Domaine du Chevreuil Blanc"
               width={32}
               height={32}

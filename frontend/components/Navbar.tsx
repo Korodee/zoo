@@ -74,7 +74,7 @@ export default function Navbar() {
             <div className="flex items-center">
               <div className="flex items-center gap-2">
                 <Image
-                  src="/logo.jpg"
+                  src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                   alt="Domaine du Chevreuil Blanc"
                   width={40}
                   height={40}
@@ -117,7 +117,7 @@ export default function Navbar() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/logo.jpg"
+                src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                 alt="Domaine du Chevreuil Blanc"
                 width={40}
                 height={40}

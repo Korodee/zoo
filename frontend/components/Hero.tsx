@@ -111,7 +111,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center justify-center mb-6">
             <Image
-              src="/logo.jpg"
+              src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
               alt="Domaine du Chevreuil Blanc"
               width={80}
               height={80}

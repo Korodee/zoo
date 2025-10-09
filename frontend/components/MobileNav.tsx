@@ -128,7 +128,7 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
             <div className="flex items-center justify-between p-6 border-b border-gray-100">
               <div className="flex items-center gap-3">
                 <Image
-                  src="/logo.jpg"
+                  src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                   alt="Domaine du Chevreuil Blanc"
                   width={40}
                   height={40}

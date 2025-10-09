@@ -107,7 +107,7 @@ export default function AuthForm({ mode }: AuthFormProps) {
               transition={{ type: "spring", stiffness: 300 }}
             >
               <Image
-                src="/logo.jpg"
+                src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                 alt="Domaine du Chevreuil Blanc"
                 width={64}
                 height={64}

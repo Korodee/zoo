@@ -218,7 +218,7 @@ export default function Gallery() {
                     <div className="hidden w-full h-full bg-gradient-to-br from-primary-100 to-primary-200 items-center justify-center">
                       <div className="text-center">
                         <Image
-                          src="/logo.jpg"
+                          src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                           alt="Domaine du Chevreuil Blanc"
                           width={64}
                           height={64}

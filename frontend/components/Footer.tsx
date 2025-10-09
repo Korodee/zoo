@@ -35,7 +35,7 @@ export default function Footer() {
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
               <Image
-                src="/logo.jpg"
+                src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
                 alt="Domaine du Chevreuil Blanc"
                 width={46}
                 height={46}
