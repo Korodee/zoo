@@ -19,11 +19,51 @@ export default function Gallery() {
   const router = useRouter();
   const zooImages = [
     {
-      name: "Cervidés",
+      name: "Llama",
+      category: "Camélidés",
+      image:
+        "https://images.unsplash.com/photo-1617096000801-bd71df8d6d8f?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987",
+      description: "Gentil compagnon des Andes",
+      status: "Actif",
+      age: "5 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Alpaga",
+      category: "Camélidés",
+      image:
+        "https://images.unsplash.com/photo-1589182337358-2cb63099350c?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=987",
+      description: "Laine douce et naturelle",
+      status: "Actif",
+      age: "4 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Wapiti",
       category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      description: "Majestueux cerf blanc rare",
+        "https://images.unsplash.com/photo-1603486001734-7d92cedd1d33?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1064",
+      description: "Cerf majestueux d'Amérique du Nord",
+      status: "Actif",
+      age: "6 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Bison",
+      category: "Bovins",
+      image:
+        "https://images.unsplash.com/photo-1668278535123-73de3fecb59e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2940",
+      description: "Géant des plaines nord-américaines",
+      status: "Actif",
+      age: "8 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Cerf Sika",
+      category: "Cervidés",
+      image:
+        "https://plus.unsplash.com/premium_photo-1661819541230-034d07819c9b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072",
+      description: "Élégant cerf d'origine asiatique",
       status: "Actif",
       age: "4 ans",
       location: "Domaine du Chevreuil Blanc",
@@ -32,10 +72,30 @@ export default function Gallery() {
       name: "Chevreuil Blanc",
       category: "Cervidés",
       image:
-        "https://images.pexels.com/photos/2529406/pexels-photo-2529406.jpeg",
-      description: "Élégant habitant de nos forêts",
+        "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072",
+      description: "Rare et magnifique cerf blanc",
       status: "Actif",
       age: "3 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Cerf Rouge",
+      category: "Cervidés",
+      image:
+        "https://images.unsplash.com/photo-1570422593863-bd38ef7ce050?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
+      description: "Majestueux cerf européen",
+      status: "Actif",
+      age: "5 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Moutons",
+      category: "Ovins",
+      image:
+        "https://images.unsplash.com/photo-1554755209-85e44182e019?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1974",
+      description: "Troupeau paisible des prairies",
+      status: "Actif",
+      age: "2-4 ans",
       location: "Domaine du Chevreuil Blanc",
     },
     // {
