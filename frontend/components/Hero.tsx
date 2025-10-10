@@ -109,7 +109,7 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="mb-4"
         >
-          <div className="inline-flex items-center justify-center mb-6">
+          <div className="hidden md:inline-flex items-center justify-center mb-6">
             <Image
               src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
               alt="Domaine du Chevreuil Blanc"

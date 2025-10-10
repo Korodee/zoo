@@ -7,7 +7,7 @@ import Highlights from "@/components/Highlights";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
 import Testimonials from "@/components/Testimonials";
-import CTA from "@/components/CTA";
+// import CTA from "@/components/CTA";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -22,7 +22,7 @@ export default function Home() {
       <Highlights />
       <Gallery />
       <Testimonials />
-      <CTA />
+      {/* <CTA /> */}
       <FAQ />
       <Contact />
       <Footer />
