@@ -119,7 +119,7 @@ export default function Hero() {
             />
           </div>
         </motion.div>
-        {/* Badges: 1 an gratuit + date d'ouverture */}
+        {/* Badges: 6 mois d'essai gratuit + date d'ouverture */}
         <div className="mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-200 border border-green-400/40 text-xs sm:text-sm">
             🎉 6 mois d'accès exclusif à 50$ seulement

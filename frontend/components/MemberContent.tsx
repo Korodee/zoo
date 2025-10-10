@@ -329,7 +329,7 @@ export default function MemberContent() {
             <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Statut de la carte</div>
               <div className="mt-1 text-gray-900 font-semibold">
-                🟢 Active — 1 an gratuit
+                🟢 Actif — 6 mois d’essai gratuit
               </div>
             </div>
             {/* <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
