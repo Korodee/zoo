@@ -51,7 +51,7 @@ export default function PaymentCancelledPage() {
         </motion.div>
 
         <motion.div
-          className="bg-white rounded-2xl shadow-xl border border-gray-100 p-8 mb-8"
+          className="bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/50 p-8 mb-8"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}

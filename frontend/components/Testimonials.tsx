@@ -52,7 +52,7 @@ export default function Testimonials() {
       </div>
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
-          className="text-center mb-10"
+          className="text-center pt-14 mb-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -91,7 +91,7 @@ export default function Testimonials() {
           {items.map((t, index) => (
             <motion.div
               key={index}
-              className="relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100 group overflow-hidden"
+              className="relative bg-stone-50/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border border-amber-200/50 group overflow-hidden"
               variants={itemVariants}
               whileHover={{ y: -8, scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}

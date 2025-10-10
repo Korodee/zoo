@@ -140,7 +140,7 @@ export default function MemberContent() {
   if (state === "unauth") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-blue-50 to-purple-50 px-4">
-        <div className="max-w-lg w-full bg-white rounded-2xl shadow-xl border border-white/60 p-8 text-center">
+        <div className="max-w-lg w-full bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/60 p-8 text-center">
           <div className="mx-auto w-14 h-14 rounded-xl bg-primary-50 text-primary-600 grid place-items-center mb-4">
             <LogIn className="h-7 w-7" />
           </div>
@@ -165,7 +165,7 @@ export default function MemberContent() {
   if (state === "notMember") {
     return (
       <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-primary-50 via-blue-50 to-purple-50 px-4">
-        <div className="max-w-lg w-full bg-white rounded-2xl shadow-xl border border-white/60 p-8 text-center">
+        <div className="max-w-lg w-full bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/60 p-8 text-center">
           <div className="mx-auto w-14 h-14 rounded-xl bg-amber-50 text-amber-600 grid place-items-center mb-4">
             <CreditCard className="h-7 w-7" />
           </div>
@@ -279,7 +279,7 @@ export default function MemberContent() {
           >
             <div className="flex items-center gap-5">
               <div className="relative">
-                <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-white shadow-lg grid place-items-center border border-white/80">
+                <div className="h-16 w-16 sm:h-20 sm:w-20 rounded-2xl bg-stone-50/90 backdrop-blur-sm shadow-lg grid place-items-center border border-amber-200/80">
                   <span className="text-2xl sm:text-3xl font-bold text-primary-700">
                     {initials}
                   </span>
@@ -307,7 +307,7 @@ export default function MemberContent() {
             {/* <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 lg:gap-4">
               <a
                 href="#resources"
-                className="inline-flex items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white/90 backdrop-blur-sm px-5 py-3 text-sm font-medium text-gray-700 shadow-sm hover:shadow-md hover:bg-white transition-all duration-200"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border border-amber-200/50 bg-stone-50/90 backdrop-blur-sm px-5 py-3 text-sm font-medium text-gray-700 shadow-sm hover:shadow-md hover:bg-stone-50/90 backdrop-blur-sm transition-all duration-200"
               >
                 <BookOpen className="h-4 w-4" /> Ressources
               </a>
@@ -326,25 +326,25 @@ export default function MemberContent() {
             variants={item}
             className="mt-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4"
           >
-            <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            <div className="rounded-2xl bg-stone-50/80 backdrop-blur border border-amber-200/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Statut de la carte</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 🟢 Actif — 6 mois d’essai gratuit
               </div>
             </div>
-            {/* <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            {/* <div className="rounded-2xl bg-stone-50/80 backdrop-blur border border-amber-200/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Numéro de membre</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {memberNumber}
               </div>
             </div> */}
-            <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            <div className="rounded-2xl bg-stone-50/80 backdrop-blur border border-amber-200/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Âge et catégorie</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {ageAndCategory}
               </div>
             </div>
-            <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            <div className="rounded-2xl bg-stone-50/80 backdrop-blur border border-amber-200/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">
                 Progression de votre catégorie d'âge
               </div>
@@ -355,7 +355,7 @@ export default function MemberContent() {
               </div>
               {/* <div className="text-xs text-gray-500 mt-1">{spots ? (spots.unlocked ? "🏆 Tirage débloqué !" : "Tirage débloqué à 5 000 membres") : ""}</div> */}
             </div>
-            <div className="rounded-2xl bg-white/80 backdrop-blur border border-white/70 p-3 sm:p-4 shadow-sm">
+            <div className="rounded-2xl bg-stone-50/80 backdrop-blur border border-amber-200/70 p-3 sm:p-4 shadow-sm">
               <div className="text-xs text-gray-500">Progression globale</div>
               <div className="mt-1 text-gray-900 font-semibold">
                 {globalSpots
@@ -379,7 +379,7 @@ export default function MemberContent() {
           <motion.div
             id="submit"
             variants={item}
-            className="lg:col-span-4 overflow-hidden rounded-2xl shadow-xl border border-white/60 bg-white"
+            className="lg:col-span-4 overflow-hidden rounded-2xl shadow-xl border border-white/60 bg-stone-50/90 backdrop-blur-sm"
           >
             <div className="relative p-4 sm:p-6 md:p-8 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 rounded-2xl overflow-hidden">
               {/* Background Image */}
@@ -396,7 +396,7 @@ export default function MemberContent() {
               <div className="relative z-10">
                 <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-4">
                   <div>
-                    <div className="inline-flex items-center gap-2 rounded-full bg-white/90 px-3 py-1 text-xs font-medium text-gray-700 border border-gray-200">
+                    <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/90 backdrop-blur-sm/90 px-3 py-1 text-xs font-medium text-gray-700 border border-amber-200/50">
                       <Trophy className="h-4 w-4 text-primary-600" /> Tirages et
                       récompenses
                     </div>
@@ -419,19 +419,19 @@ export default function MemberContent() {
                 </div>
                 {/* Overlay metrics */}
                 <div className="mt-4 grid grid-cols-1 sm:grid-cols-3 gap-2 md:flex md:flex-row md:flex-wrap">
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
                       🏡 Maison de rêve
                     </span>
                   </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
                       💰 50 000 $ en argent
                     </span>
                   </div>
-                  <div className="inline-flex items-center gap-2 rounded-full bg-white/80 backdrop-blur-sm border border-gray-200 px-3 py-1.5 shadow-sm">
+                  <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
                       🚗 Dodge Ram 1500 Sport
@@ -470,14 +470,14 @@ export default function MemberContent() {
 
           {/* Sidebar: Quick actions and help */}
           {/* <motion.div variants={item} className="space-y-6 order-first lg:order-last">
-            <div className="bg-white rounded-2xl shadow-xl border border-white/60 p-4 sm:p-6">
+            <div className="bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/60 p-4 sm:p-6">
               <h3 className="font-semibold text-gray-900 mb-4">
                 Actions rapides
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-1 gap-3">
                 <a
                   href="#submit"
-                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                  className="group flex items-center justify-between rounded-xl border border-amber-200/50 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
                     <Camera className="h-5 w-5 text-primary-600" /> Soumettre participation
@@ -486,7 +486,7 @@ export default function MemberContent() {
                 </a>
                 <a
                   href="#resources"
-                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                  className="group flex items-center justify-between rounded-xl border border-amber-200/50 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
                     <BookOpen className="h-5 w-5 text-purple-600" /> Ressources
@@ -495,7 +495,7 @@ export default function MemberContent() {
                 </a>
                 <a
                   href="/payment"
-                  className="group flex items-center justify-between rounded-xl border border-gray-200 p-3 hover:bg-gray-50"
+                  className="group flex items-center justify-between rounded-xl border border-amber-200/50 p-3 hover:bg-gray-50"
                 >
                   <div className="flex items-center gap-3 text-gray-800">
                     <CreditCard className="h-5 w-5 text-emerald-600" /> Gérer
@@ -506,7 +506,7 @@ export default function MemberContent() {
               </div>
             </div>
 
-            <div className="bg-gray-50 rounded-2xl border border-gray-200 p-4 sm:p-6">
+            <div className="bg-gray-50 rounded-2xl border border-amber-200/50 p-4 sm:p-6">
               <h3 className="font-semibold text-gray-900 mb-2">Actualités du Domaine</h3>
               <ul className="text-sm text-gray-700 space-y-2">
                 <li>🦌 Arrivée de deux nouveaux chevreuils blancs sur le site.</li>

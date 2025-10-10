@@ -154,7 +154,7 @@ export default function PaymentPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 h-full flex flex-col">
+            <div className="bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/50 p-6 h-full flex flex-col">
               <div className="mb-6">
                 <h2 className="text-2xl font-bold text-gray-900 mb-2">
                   Choisissez Votre Carte
@@ -266,7 +266,7 @@ export default function PaymentPage() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 flex flex-col">
+            <div className="bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/50 p-6 flex flex-col">
               <h3 className="text-lg font-semibold text-gray-900 mb-4">
                 Résumé de la Commande
               </h3>

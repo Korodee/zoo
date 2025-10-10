@@ -122,7 +122,7 @@ export default function MobileNav({ isAuthenticated = false, isMember = false, u
             initial="closed"
             animate="open"
             exit="closed"
-            className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl z-50 lg:hidden"
+            className="fixed top-0 right-0 h-full w-80 max-w-[85vw] bg-stone-50/95 backdrop-blur-md shadow-2xl z-50 lg:hidden"
           >
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-100">

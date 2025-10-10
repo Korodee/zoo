@@ -121,7 +121,7 @@ export default function FAQ() {
   });
 
   return (
-    <section id="faq" className="py-20 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
+    <section id="faq" className="py-14 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
         <div
@@ -168,7 +168,7 @@ export default function FAQ() {
           {visibleFAQs.map((faq, index) => (
             <motion.div
               key={`faq-${faq.id}-${index}`}
-              className="bg-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300"
+              className="bg-stone-50/80 backdrop-blur-sm rounded-2xl border border-amber-200/50 shadow-sm hover:shadow-md transition-all duration-300"
             >
               <button
                 onClick={() => toggleItem(faq.id)}
@@ -219,7 +219,7 @@ export default function FAQ() {
         >
           <motion.button
             onClick={toggleShowAll}
-            className="inline-flex items-center gap-2 px-6 py-3 bg-white border border-gray-300 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-md"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-stone-50/80 backdrop-blur-sm border border-amber-300/50 text-gray-700 font-medium rounded-xl hover:bg-gray-50 hover:border-gray-400 transition-all duration-300 shadow-sm hover:shadow-md"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >

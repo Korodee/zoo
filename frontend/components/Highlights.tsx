@@ -39,7 +39,7 @@ export default function Highlights() {
           viewport={{ once: true, amount: 0.2 }}
           className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+          <motion.div variants={item} className="rounded-xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Gift className="h-6 w-6 text-yellow-600" />
               <h3 className="font-semibold">Maison d'1 million $</h3>
@@ -49,7 +49,7 @@ export default function Highlights() {
             </p>
           </motion.div>
 
-          <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+          <motion.div variants={item} className="rounded-xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Leaf className="h-6 w-6 text-green-700" />
               <h3 className="font-semibold">Enfants gratuits</h3>
@@ -59,7 +59,7 @@ export default function Highlights() {
             </p>
           </motion.div>
 
-          <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+          <motion.div variants={item} className="rounded-xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Heart className="h-6 w-6 text-pink-700" />
               <h3 className="font-semibold">50$ pour 6 mois</h3>
@@ -69,7 +69,7 @@ export default function Highlights() {
             </p>
           </motion.div>
 
-          <motion.div variants={item} className="rounded-xl border border-neutral-200 bg-white p-5 shadow-sm">
+          <motion.div variants={item} className="rounded-xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Camera className="h-6 w-6 text-blue-700" />
               <h3 className="font-semibold">Transparence totale</h3>

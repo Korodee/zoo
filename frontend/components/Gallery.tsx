@@ -112,7 +112,7 @@ export default function Gallery() {
   return (
     <section
       id="gallery"
-      className="p4-10 mt-10 pb-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="py-14 bg-gradient-to-br from-emerald-50 via-stone-50 to-amber-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -163,19 +163,19 @@ export default function Gallery() {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+          <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-primary-600 mb-2">6</div>
             <div className="text-sm text-gray-600">Espèces de Cervidés</div>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+          <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-green-600 mb-2">50$</div>
             <div className="text-sm text-gray-600">Carte Adulte (6 mois)</div>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+          <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-blue-600 mb-2">Gratuit</div>
             <div className="text-sm text-gray-600">Enfants 0-17 ans</div>
           </div>
-          <div className="bg-white rounded-xl p-6 shadow-lg border border-gray-100 text-center">
+          <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-purple-600 mb-2">58</div>
             <div className="text-sm text-gray-600">Catégories d'âge</div>
           </div>
@@ -198,7 +198,7 @@ export default function Gallery() {
               whileHover={{ y: -12, scale: 1.03 }}
               transition={{ type: "spring", stiffness: 300, damping: 25 }}
             >
-              <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-all duration-500 group-hover:shadow-primary-500/10 relative">
+              <div className="bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-lg overflow-hidden border border-emerald-200/50 hover:shadow-xl transition-all duration-500 group-hover:shadow-primary-500/10 relative">
                 {/* Image Container with Enhanced Effects */}
                 <div className="relative overflow-hidden">
                   <div className="w-full h-56 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center">

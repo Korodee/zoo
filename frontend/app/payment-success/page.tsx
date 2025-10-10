@@ -66,7 +66,7 @@ export default function PaymentSuccessPage() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 20, opacity: 0 }}
             transition={{ duration: 0.4 }}
-            className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-white shadow-xl border border-gray-200 rounded-xl px-6 py-4 flex items-center space-x-3"
+            className="fixed bottom-8 left-1/2 -translate-x-1/2 bg-stone-50/90 backdrop-blur-sm shadow-xl border border-emerald-200/50 rounded-xl px-6 py-4 flex items-center space-x-3"
           >
             <CheckCircle className="h-6 w-6 text-green-600" />
             <div>

@@ -17,7 +17,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="pt-24 pb-5 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden"
+      className="pt-24 pb-5 bg-gradient-to-br from-amber-50 via-stone-50 to-emerald-50 relative overflow-hidden"
     >
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -163,7 +163,7 @@ export default function About() {
             className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6"
             variants={itemVariants}
           >
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-amber-200/50">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
                 Le grand prix – Une maison d'un million de dollars
               </h4>
@@ -175,7 +175,7 @@ export default function About() {
                 <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Si objectif atteint 2 fois en 6 mois : 2 autres maisons</span></li>
               </ul>
             </div>
-            <div className="bg-white rounded-2xl p-6 shadow-lg border border-gray-100">
+            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-amber-200/50">
               <h4 className="text-xl font-semibold text-gray-900 mb-2">
                 Tirages hebdomadaires
               </h4>

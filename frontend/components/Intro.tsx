@@ -16,7 +16,7 @@ export default function Intro() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.6 }}
-            className="md:col-span-2 bg-white rounded-2xl border border-neutral-200 shadow-sm p-6 flex flex-col justify-between"
+            className="md:col-span-2 bg-stone-50/80 backdrop-blur-sm rounded-2xl border border-amber-200/50 shadow-sm p-6 flex flex-col justify-between"
           >
             <div className="flex items-center gap-4">
               <div className="h-16 w-16 rounded-full bg-gradient-to-br from-amber-300 to-yellow-500 ring-4 ring-amber-100 shadow-inner" />
@@ -49,7 +49,7 @@ export default function Intro() {
             className="md:col-span-3 relative"
           >
             <div className="absolute -inset-0.5 rounded-3xl bg-[conic-gradient(var(--tw-gradient-stops))] from-amber-200 via-yellow-300 to-orange-300 opacity-40 blur-md" />
-            <div className="relative rounded-2xl bg-white p-6 sm:p-8 border border-neutral-200 shadow-sm">
+            <div className="relative rounded-2xl bg-stone-50/80 backdrop-blur-sm p-6 sm:p-8 border border-amber-200/50 shadow-sm">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-neutral-900 mb-3">
                 Pourquoi je fais ça
               </h2>

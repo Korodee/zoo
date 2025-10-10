@@ -48,7 +48,7 @@ export function ToastProvider({ children }: { children: ReactNode }) {
               animate={{ y: 0, opacity: 1 }}
               exit={{ y: 20, opacity: 0 }}
               transition={{ duration: 0.25 }}
-              className={`flex items-start gap-3 rounded-xl border px-4 py-3 shadow-lg backdrop-blur bg-white/95 ${
+              className={`flex items-start gap-3 rounded-xl border px-4 py-3 shadow-lg backdrop-blur bg-stone-50/95 ${
                 t.type === "success"
                   ? "border-green-200"
                   : t.type === "error"

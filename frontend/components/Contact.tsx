@@ -102,7 +102,7 @@ export default function Contact() {
         >
           {/* Contact Information */}
           <motion.div variants={itemVariants} className="space-y-3 sm:space-y-5">
-            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-emerald-200/50">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Informations de Contact
               </h3>
@@ -151,7 +151,7 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-emerald-200/50">
               <h4 className="text-base sm:text-lg font-bold text-gray-900 mb-3 sm:mb-4">
                 Heures d'Ouverture
               </h4>
@@ -176,7 +176,7 @@ export default function Contact() {
 
           {/* Contact Form */}
           <motion.div variants={itemVariants}>
-            <div className="bg-white rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-gray-100">
+            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-4 sm:p-5 lg:p-6 shadow-md border border-emerald-200/50">
               <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4">
                 Envoyez-nous un Message
               </h3>
