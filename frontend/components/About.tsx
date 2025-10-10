@@ -101,7 +101,7 @@ export default function About() {
               icon: Camera,
               title: "Le principe des catégories d'âge",
               description:
-                "58 catégories d'âge de 18 à 75 ans, maximum 6 000 membres par catégorie à 50$ chacun. Chaque carte donne 6 mois d'accès exclusif. Dès qu'une catégorie atteint 6 000 membres, un prix de 75 000$ (souvent un camion neuf) est tiré immédiatement.",
+                "58 catégories d'âge de 18 à 75 ans, maximum 6 000 membres par catégorie à 50$ chacun. Chaque carte donne 6 mois d'accès exclusif. Dès qu'une catégorie atteint 6 000 membres, un prix de 75 000$",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",
