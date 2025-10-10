@@ -24,18 +24,18 @@ export default function VerifyEmailPage() {
         setTimeout(() => router.replace("/login"), 1500);
       } catch (e: any) {
         setStatus("error");
-        setMessage(e?.message || "Verification failed");
+        setMessage(e?.message || "Échec de la vérification");
       }
     };
     if (token && email) run();
   }, [token, email, router]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-50 px-4">
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-stone-50 to-emerald-50 px-4">
       {status === "loading" && (
         <div className="text-center">
           <Loader2 className="h-10 w-10 animate-spin text-primary-600 mx-auto mb-3" />
-          <p className="text-gray-700">Verifying your email...</p>
+          <p className="text-gray-700">Vérification de votre email...</p>
         </div>
       )}
       {status === "success" && (
@@ -46,9 +46,9 @@ export default function VerifyEmailPage() {
         >
           <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-2" />
           <h2 className="text-xl font-semibold text-gray-900">
-            Email verified
+            Email vérifié
           </h2>
-          <p className="text-gray-600">Redirecting to login...</p>
+          <p className="text-gray-600">Redirection vers la connexion...</p>
         </motion.div>
       )}
       {status === "error" && (
@@ -59,7 +59,7 @@ export default function VerifyEmailPage() {
         >
           <XCircle className="h-10 w-10 text-red-600 mx-auto mb-2" />
           <h2 className="text-xl font-semibold text-gray-900">
-            Verification failed
+            Échec de la vérification
           </h2>
           <p className="text-gray-600">{message}</p>
         </motion.div>

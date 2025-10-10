@@ -26,12 +26,12 @@ export default function ForgotPasswordPage() {
       });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error || "Request failed");
+        throw new Error(data.error || "Échec de la requête");
       }
       setSent(true);
-      show("If an account exists, a reset link was sent", "success");
+      show("Si un compte existe, un lien de réinitialisation a été envoyé", "success");
     } catch (e: any) {
-      const msg = e?.message || "Request failed";
+      const msg = e?.message || "Échec de la requête";
       setError(msg);
       show(msg, "error");
     } finally {
@@ -43,17 +43,18 @@ export default function ForgotPasswordPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-stone-50 to-emerald-50 px-4">
       <div className="w-full max-w-md bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/50 p-6">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">
-          Forgot Password
+          Mot de passe oublié
         </h1>
         {sent ? (
           <div className="text-center text-gray-700">
             <CheckCircle className="h-8 w-8 text-green-600 mx-auto mb-2" />
-            We sent a reset link to <span className="font-medium">
+            Nous avons envoyé un lien de réinitialisation à{" "}
+            <span className="font-medium">
               {email}
             </span>{" "}
-            if it exists in our system.
+            s'il existe dans notre système.
             <div className="text-sm text-gray-500 mt-2">
-              Check your inbox and spam folder.
+              Vérifiez votre boîte de réception et votre dossier spam.
             </div>
           </div>
         ) : (
@@ -86,7 +87,7 @@ export default function ForgotPasswordPage() {
                 <Loader2 className="h-5 w-5 animate-spin" />
               ) : (
                 <>
-                  <span>Send reset link</span>
+                  <span>Envoyer le lien de réinitialisation</span>
                   <ArrowRight className="h-5 w-5" />
                 </>
               )}

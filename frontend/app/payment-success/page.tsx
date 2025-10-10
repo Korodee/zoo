@@ -84,7 +84,7 @@ export default function PaymentSuccessPage() {
       {!showToast && (
         <div className="text-center">
           <CheckCircle className="h-10 w-10 text-green-600 mx-auto mb-2" />
-          <p className="text-gray-700">Redirecting...</p>
+          <p className="text-gray-700">Redirection...</p>
         </div>
       )}
     </div>

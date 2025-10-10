@@ -21,11 +21,11 @@ export default function ResetPasswordPage() {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (password.length < 8) {
-      setError("Password must be at least 8 characters");
+      setError("Le mot de passe doit contenir au moins 8 caractères");
       return;
     }
     if (password !== confirm) {
-      setError("Passwords do not match");
+      setError("Les mots de passe ne correspondent pas");
       return;
     }
     setLoading(true);
@@ -35,7 +35,7 @@ export default function ResetPasswordPage() {
       setDone(true);
       setTimeout(() => router.replace("/login"), 1500);
     } catch (e: any) {
-      setError(e?.message || "Reset failed");
+      setError(e?.message || "Échec de la réinitialisation");
     } finally {
       setLoading(false);
     }
@@ -45,18 +45,18 @@ export default function ResetPasswordPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-stone-50 to-emerald-50 px-4">
       <div className="w-full max-w-md bg-stone-50/90 backdrop-blur-sm rounded-2xl shadow-xl border border-amber-200/50 p-6">
         <h1 className="text-2xl font-bold text-gray-900 mb-4">
-          Reset Password
+          Réinitialiser le mot de passe
         </h1>
         {done ? (
           <p className="text-gray-600">
-            Password updated. Redirecting to login...
+            Mot de passe mis à jour. Redirection vers la connexion...
           </p>
         ) : (
           <form onSubmit={submit} className="space-y-4">
             {error && <p className="text-sm text-red-600">{error}</p>}
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                New password
+                Nouveau mot de passe
               </label>
               <div className="relative">
                 <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -66,13 +66,13 @@ export default function ResetPasswordPage() {
                   onChange={(e) => setPassword(e.target.value)}
                   required
                   className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="Enter a strong password"
+                  placeholder="Entrez un mot de passe fort"
                 />
               </div>
             </div>
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Confirm password
+                Confirmer le mot de passe
               </label>
               <div className="relative">
                 <Lock className="h-5 w-5 text-gray-400 absolute left-3 top-1/2 -translate-y-1/2" />
@@ -82,7 +82,7 @@ export default function ResetPasswordPage() {
                   onChange={(e) => setConfirm(e.target.value)}
                   required
                   className="w-full pl-10 pr-3 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                  placeholder="Re-enter password"
+                  placeholder="Saisissez à nouveau le mot de passe"
                 />
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function ResetPasswordPage() {
                 <Loader2 className="h-5 w-5 animate-spin" />
               ) : (
                 <>
-                  <span>Update password</span>
+                  <span>Mettre à jour le mot de passe</span>
                   <ArrowRight className="h-5 w-5" />
                 </>
               )}

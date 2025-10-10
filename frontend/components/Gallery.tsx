@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Camera, Heart, Star } from "lucide-react";
-import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 
@@ -98,75 +97,6 @@ export default function Gallery() {
       age: "2-4 ans",
       location: "Domaine du Chevreuil Blanc",
     },
-    // {
-    //   name: "Chevreuil Blanc (Albinos)",
-    //   category: "Cervidés",
-    //   image: "/hero-img.jpg",
-    //   description: "Majestueux cerf blanc rare (variante)",
-    //   status: "Actif",
-    //   age: "5 ans",
-    //   location: "Domaine du Chevreuil Blanc",
-    // },
-    // {
-    //   name: "Colonie de Pingouins",
-    //   category: "Oiseaux",
-    //   image:
-    //     "https://images.unsplash.com/photo-1551986782-d0169b3f8fa7?w=600&h=400&fit=crop",
-    //   description: "Adorables amis qui se dandinent",
-    //   status: "Actif",
-    //   age: "5 ans",
-    //   location: "Zone Polaire",
-    // },
-    // {
-    //   name: "Tigre du Bengale",
-    //   category: "Grands Félins",
-    //   image:
-    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-    //   description: "Beauté rayée de la nature sauvage",
-    //   status: "Actif",
-    //   age: "10 ans",
-    //   location: "Territoire des Tigres",
-    // },
-    // {
-    //   name: "Gorille des Montagnes",
-    //   category: "Primates",
-    //   image:
-    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-    //   description: "Intelligent et puissant",
-    //   status: "Actif",
-    //   age: "18 ans",
-    //   location: "Sanctuaire des Gorilles",
-    // },
-    // {
-    //   name: "Panda Roux",
-    //   category: "Mammifères",
-    //   image:
-    //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-    //   description: "Adorable amateur de bambou",
-    //   status: "Actif",
-    //   age: "6 ans",
-    //   location: "Forêt de Bambou",
-    // },
-    // {
-    //   name: "Léopard des Neiges",
-    //   category: "Grands Félins",
-    //   image:
-    //     "https://images.unsplash.com/photo-1561731216-c3a4d99437d5?w=600&h=400&fit=crop",
-    //   description: "Fantôme des montagnes",
-    //   status: "Actif",
-    //   age: "9 ans",
-    //   location: "Habitat Montagneux",
-    // },
-    // {
-    //   name: "Famille de Suricates",
-    //   category: "Mammifères",
-    //   image:
-    //     "https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&h=400&fit=crop",
-    //   description: "Curieux habitants du désert",
-    //   status: "Actif",
-    //   age: "4 ans",
-    //   location: "Zone Désertique",
-    // },
   ];
 
   return (

@@ -77,7 +77,7 @@ export default function PaymentPage() {
     if (!profile) return;
     setIsProcessing(true);
     try {
-      show("Redirecting to secure checkout...", "info", 1800);
+      show("Redirection vers le paiement sécurisé...", "info", 1800);
       const res = await createCheckoutSession(
         profile.id,
         profile.email || "",
@@ -86,7 +86,7 @@ export default function PaymentPage() {
       if (res.url) window.location.href = res.url;
       else throw new Error("Could not start checkout");
     } catch (e: any) {
-      show(e?.message || "Payment failed. Please try again.", "error");
+      show(e?.message || "Échec du paiement. Veuillez réessayer.", "error");
     } finally {
       setIsProcessing(false);
     }
@@ -111,7 +111,7 @@ export default function PaymentPage() {
           transition={{ duration: 0.5 }}
         >
           <p className="text-sm text-gray-600 mb-1">
-            Welcome{firstName ? `, ${firstName}` : ""}
+            Bienvenue{firstName ? `, ${firstName}` : ""}
           </p>
           <h1 className="text-3xl md:text-4xl font-bold text-gray-900">
             Obtenez Votre Carte de Membre - Domaine du Chevreuil Blanc
@@ -314,7 +314,7 @@ export default function PaymentPage() {
                   {isProcessing ? (
                     <>
                       <Loader2 className="h-5 w-5 animate-spin" />
-                      <span>Processing...</span>
+                      <span>Traitement...</span>
                     </>
                   ) : (
                     <>
@@ -328,7 +328,7 @@ export default function PaymentPage() {
                 </motion.button>
                 <div className="mt-3 flex items-center justify-center gap-2 text-xs text-gray-500">
                   <Lock className="h-4 w-4" />
-                  <span>Secure checkout powered by Stripe</span>
+                  <span>Paiement sécurisé par Stripe</span>
                 </div>
 
                 {/* Trust badges */}
