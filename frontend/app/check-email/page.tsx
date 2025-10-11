@@ -18,9 +18,9 @@ export default function CheckEmailPage() {
     setSending(true);
     try {
       await resendVerification(email);
-      show("Verification email sent", "success");
+      show("Email de vérification envoyé", "success");
     } catch (e: any) {
-      show(e?.message || "Failed to resend", "error");
+      show(e?.message || "Échec du renvoi", "error");
     } finally {
       setSending(false);
     }

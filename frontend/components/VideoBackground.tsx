@@ -22,11 +22,7 @@ export default function VideoBackground({
     const video = videoRef.current;
     if (!video) return;
 
-    console.log('VideoBackground: Setting up video element');
-    console.log('Video src:', videoSrc);
-
     const handleCanPlay = () => {
-      console.log('Video can play - setting loaded to true');
       setVideoLoaded(true);
       setIsLoading(false);
     };
@@ -39,15 +35,15 @@ export default function VideoBackground({
     };
 
     const handleLoadStart = () => {
-      console.log('Video load started');
+      // Video load started
     };
 
     const handleLoadedData = () => {
-      console.log('Video data loaded');
+      // Video data loaded
     };
 
     const handleLoadedMetadata = () => {
-      console.log('Video metadata loaded');
+      // Video metadata loaded
     };
 
     video.addEventListener('canplay', handleCanPlay);
@@ -68,10 +64,7 @@ export default function VideoBackground({
     };
   }, [videoSrc]);
 
-  console.log('VideoBackground render state:', { videoError, isLoading, videoLoaded });
-
   if (videoError) {
-    console.log('Rendering fallback image due to video error');
     return (
       <div 
         className={className}

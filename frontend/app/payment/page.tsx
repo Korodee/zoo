@@ -84,7 +84,7 @@ export default function PaymentPage() {
         selectedCard
       );
       if (res.url) window.location.href = res.url;
-      else throw new Error("Could not start checkout");
+      else throw new Error("Impossible de démarrer le paiement");
     } catch (e: any) {
       show(e?.message || "Échec du paiement. Veuillez réessayer.", "error");
     } finally {

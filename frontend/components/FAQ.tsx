@@ -112,13 +112,6 @@ export default function FAQ() {
 
   const visibleFAQs = showAll ? faqData : faqData.slice(0, 5);
 
-  // Debug logging
-  console.log("FAQ Debug:", {
-    showAll,
-    totalFAQs: faqData.length,
-    visibleFAQsLength: visibleFAQs.length,
-    visibleFAQsIds: visibleFAQs.map((faq) => faq.id),
-  });
 
   return (
     <section id="faq" className="py-14 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">

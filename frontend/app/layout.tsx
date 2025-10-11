@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ToastProvider } from "@/components/Toast";
@@ -9,8 +9,6 @@ export const metadata: Metadata = {
   title: "Domaine du Chevreuil Blanc - Parc Animalier",
   description:
     "Découvrez notre parc animalier diversifié avec des chevreuils blancs rares, des cervidés majestueux, des bisons et des lamas. Cartes de membres disponibles.",
-  viewport:
-    "width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no",
   icons: {
     icon: [
       { url: "/favicon.jpg", sizes: "32x32", type: "image/jpeg" },
@@ -28,6 +26,13 @@ export const metadata: Metadata = {
       },
     ],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({

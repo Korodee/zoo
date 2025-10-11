@@ -62,15 +62,10 @@ export default function MemberContent() {
   const router = useRouter();
 
   useEffect(() => {
-    // Debug: confirm hydration and effect execution
-    // eslint-disable-next-line no-console
-    console.log("MemberContent mounted");
     const checkUser = async () => {
       try {
         const profile = await getProfile().catch(() => null);
         if (!profile) {
-          // eslint-disable-next-line no-console
-          console.log("No profile -> unauth");
           setState("unauth");
           return;
         }
@@ -85,8 +80,6 @@ export default function MemberContent() {
             name: profile.name,
             is_member: false,
           });
-          // eslint-disable-next-line no-console
-          console.log("Profile found but not a member");
           setState("notMember");
           return;
         }
@@ -98,8 +91,6 @@ export default function MemberContent() {
           membership_date: membership.membership_date || undefined,
           age_years: (profile as any).age_years,
         });
-        // eslint-disable-next-line no-console
-        console.log("Profile + membership ok");
         setState("ok");
         // Fetch category and global spots
         try {
@@ -111,8 +102,6 @@ export default function MemberContent() {
           setGlobalSpots(g);
         } catch {}
       } catch (error) {
-        // eslint-disable-next-line no-console
-        console.log("Error during user check", error);
         setState("unauth");
       }
     };
@@ -120,8 +109,7 @@ export default function MemberContent() {
   }, []);
 
   useEffect(() => {
-    // eslint-disable-next-line no-console
-    console.log("Access state:", state);
+    // Access state tracking for debugging if needed
   }, [state]);
 
   // Loading state
