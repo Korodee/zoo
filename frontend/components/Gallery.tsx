@@ -81,7 +81,7 @@ export default function Gallery() {
       name: "Chevreuil Blanc",
       category: "Cervidés",
       image:
-        "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072",
+        "https://res.cloudinary.com/dzjeufpgy/image/upload/v1760213244/IMG_3424_kioach.jpg",
       description: "Rare et magnifique cerf blanc",
       status: "Actif",
       age: "3 ans",
