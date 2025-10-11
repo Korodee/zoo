@@ -410,48 +410,155 @@ export default function MemberContent() {
                   <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
-                      🏡 Maison de rêve
+                      🏡 Maison 1M$ (Grand Prix)
                     </span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
-                      💰 50 000 $ en argent
+                      🏠 Maisons 750k$ et 500k$
                     </span>
                   </div>
                   <div className="inline-flex items-center gap-2 rounded-full bg-stone-50/80 backdrop-blur-sm border border-amber-200/50 px-3 py-1.5 shadow-sm">
                     <Award className="h-4 w-4 text-primary-600" />
                     <span className="text-sm font-medium text-gray-900">
-                      🚗 Dodge Ram 1500 Sport
+                      🚐 Roulottes et crédits
                     </span>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="p-4 sm:p-6 md:px-8 md:py-2">
-              <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">Le projet en bref</h3>
-                  <p className="text-sm text-gray-700 leading-relaxed">
-                    Un domaine familial, près de la nature, pensé pour les
-                    familles du Québec. Chaque carte finance des habitats, des
-                    activités et des prix majeurs — le tout avec une transparence
-                    totale et un suivi public sur nos réseaux.
-                  </p>
+            <div className="p-4 sm:p-6 md:px-8 md:py-6">
+              {/* Prize Structure Table */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  🏠 Palier des prix - Maisons et roulottes
+                </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Palier</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">% de l'objectif</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Montant total</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Description du prix</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">1</td><td className="px-3 py-2">100 %</td><td className="px-3 py-2">1 000 000 $</td><td className="px-3 py-2">Maison 1 M$</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">2</td><td className="px-3 py-2">75 %</td><td className="px-3 py-2">750 000 $</td><td className="px-3 py-2">Maison 750 k$</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">3</td><td className="px-3 py-2">50 %</td><td className="px-3 py-2">500 000 $</td><td className="px-3 py-2">Maison 500 k$</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">4</td><td className="px-3 py-2">25 %</td><td className="px-3 py-2">250 000 $</td><td className="px-3 py-2">5 roulottes × 50 000 $ chacune</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">5</td><td className="px-3 py-2">12,5 %</td><td className="px-3 py-2">125 000 $</td><td className="px-3 py-2">Résidence 40 HBDL 2025 (roulotte)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">6</td><td className="px-3 py-2">6,25 %</td><td className="px-3 py-2">62 500 $</td><td className="px-3 py-2">Surveyor 202 RBLE 2026 (roulotte)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">7</td><td className="px-3 py-2">3,125 %</td><td className="px-3 py-2">31 250 $</td><td className="px-3 py-2">Puma 16 BHCE 2026 (roulotte)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">8</td><td className="px-3 py-2">1,5625 %</td><td className="px-3 py-2">15 625 $</td><td className="px-3 py-2">Crédit pour l'achat d'une roulotte usagée (≈15 625 $)</td></tr>
+                      <tr className="hover:bg-gray-50"><td className="px-3 py-2">9</td><td className="px-3 py-2">0,78125 %</td><td className="px-3 py-2">7 813 $</td><td className="px-3 py-2">Crédit pour l'achat d'une roulotte usagée (≈7 813 $)</td></tr>
+                    </tbody>
+                  </table>
                 </div>
-                <div>
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    Pourquoi acheter votre carte ?
-                  </h3>
+              </div>
+
+              {/* Grand Prize and Special Bonus */}
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border border-yellow-200">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    🏆 Le Grand Prix – Une maison d'un million de dollars
+                  </h4>
                   <ul className="space-y-2 text-sm text-gray-700">
-                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Vivre une sortie immersive avec les animaux</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Courir la chance de gagner maison, argent, véhicules, voyages</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Appuyer un projet collectif d’ici, clair et responsable</li>
-                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Laisser votre trace dans un lieu durable pour les familles</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Tirage parmi tous les membres participants</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Le gagnant choisit son terrain et dessine sa maison</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Construction entièrement prise en charge jusqu'à 1 000 000 $</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-emerald-600 mt-0.5" /> Processus entièrement filmé et partagé</li>
                   </ul>
-                  <div className="mt-4"></div>
                 </div>
+                <div className="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-6 border border-purple-200">
+                  <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                    🌟 Bonus spécial
+                  </h4>
+                  <p className="text-sm text-gray-700 mb-3">
+                    Si l'objectif de participation est atteint deux fois en six mois, le Domaine du Chevreuil Blanc offrira deux autres maisons d'un million de dollars à tirer pour les membres !
+                  </p>
+                  <ul className="space-y-2 text-sm text-gray-700">
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5" /> Une première maison d'un million sera tirée dès que le premier objectif est atteint</li>
+                    <li className="flex items-start gap-2"><CheckCircle2 className="h-4 w-4 text-purple-600 mt-0.5" /> Si le même objectif est atteint à nouveau dans les six mois, deux autres maisons d'un million seront ajoutées au tirage</li>
+                  </ul>
+                </div>
+              </div>
+
+              {/* Children's Prize Pyramid */}
+              <div className="mb-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  🏕️ Pyramide des prix — Jeunes (lots plein air)
+                </h3>
+                <p className="text-center text-gray-600 mb-4">
+                  <strong>Montant total : 2 000 000 $ si l'objectif est atteint à 100 %</strong>
+                </p>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Palier</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">% de l'objectif</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Montant total</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Nombre de lots de 5 000 $</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Type de prix</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">1</td><td className="px-3 py-2">100 %</td><td className="px-3 py-2">2 000 000 $</td><td className="px-3 py-2">400 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">2</td><td className="px-3 py-2">75 %</td><td className="px-3 py-2">1 500 000 $</td><td className="px-3 py-2">300 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">3</td><td className="px-3 py-2">50 %</td><td className="px-3 py-2">1 000 000 $</td><td className="px-3 py-2">200 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">4</td><td className="px-3 py-2">25 %</td><td className="px-3 py-2">500 000 $</td><td className="px-3 py-2">100 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">5</td><td className="px-3 py-2">12,5 %</td><td className="px-3 py-2">250 000 $</td><td className="px-3 py-2">50 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">6</td><td className="px-3 py-2">6,25 %</td><td className="px-3 py-2">125 000 $</td><td className="px-3 py-2">25 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">7</td><td className="px-3 py-2">3,125 %</td><td className="px-3 py-2">62 500 $</td><td className="px-3 py-2">12 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2">8</td><td className="px-3 py-2">1,5625 %</td><td className="px-3 py-2">31 250 $</td><td className="px-3 py-2">6 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                      <tr className="hover:bg-gray-50"><td className="px-3 py-2">9</td><td className="px-3 py-2">0,78125 %</td><td className="px-3 py-2">15 625 $</td><td className="px-3 py-2">3 lots</td><td className="px-3 py-2">Lots plein air</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
+              {/* How It Works */}
+              <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-200">
+                <h4 className="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">
+                  💳 Comment ça fonctionne : l'achat de la carte et l'enregistrement des enfants
+                </h4>
+                <p className="text-sm text-gray-700 mb-4">
+                  Au Domaine du Chevreuil Blanc, nous voulons que chaque famille et chaque enfant puisse profiter pleinement de l'expérience et participer aux concours. Voici comment cela fonctionne :
+                </p>
+                <ol className="space-y-3 text-sm text-gray-700">
+                  <li className="flex items-start gap-3">
+                    <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span>
+                    <div>
+                      <strong>La carte de membre</strong><br/>
+                      Le parent doit acheter une carte de 50 $ pour pouvoir enregistrer ses enfants. Cette carte permet de participer aux concours et d'accéder au site.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span>
+                    <div>
+                      <strong>L'inscription des enfants</strong><br/>
+                      Une fois la carte achetée, le parent peut enregistrer tous ses enfants, sans limite de nombre. L'inscription de l'enfant est gratuite, mais dépend de l'achat de la carte parentale.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span>
+                    <div>
+                      <strong>Accès au site et vérification</strong><br/>
+                      Chaque enfant enregistré reçoit un identifiant unique ou un QR code associé à son nom et à la carte du parent. À l'entrée du site, le personnel peut vérifier l'enregistrement rapidement.
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-3">
+                    <span className="bg-green-600 text-white rounded-full w-6 h-6 flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span>
+                    <div>
+                      <strong>Sécurité et transparence</strong><br/>
+                      L'objectif est que tout le monde soit protégé, que la participation soit claire et que les enfants puissent bénéficier de leur inscription même si les parents ne sont pas sur place.
+                    </div>
+                  </li>
+                </ol>
               </div>
             </div>
           </motion.div>

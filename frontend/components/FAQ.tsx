@@ -17,22 +17,22 @@ const itemVariants = {
 const faqData = [
   {
     id: 1,
-    question: "Comment fonctionne le système de catégories d'âge ?",
+    question: "Comment fonctionne le système de paliers de prix ?",
     answer:
-      "Le projet compte 58 catégories d'âge de 18 à 75 ans. Chaque catégorie vise un maximum de 6 000 membres à 50$ chacun. Chaque carte donne 6 mois d'accès exclusif au site et aux suivis du projet. Dès qu'une catégorie atteint 6 000 membres, un prix de 75 000$ (souvent un camion neuf) est tiré immédiatement pour ce groupe d'âge.",
+      "Le Domaine du Chevreuil Blanc fonctionne avec un système de 9 paliers de prix pour les maisons et roulottes. Le palier 1 (100% de l'objectif) offre une maison de 1 000 000$, le palier 2 (75%) une maison de 750 000$, et ainsi de suite jusqu'au palier 9 (0,78125%) avec un crédit pour l'achat d'une roulotte usagée d'environ 7 813$. Plus l'objectif de participation est élevé, plus les prix sont importants.",
   },
   {
     id: 2,
     question: "Les enfants peuvent-ils vraiment participer gratuitement ?",
     answer:
-      "Oui ! Tous les jeunes de 0 à 17 ans participent gratuitement partout au Québec. Pour inscrire un enfant, le parent n'a qu'à acheter une carte de membre de 50$. Les enfants auront accès à des tirages totalisant 2 millions de dollars en prix de plein air (équipements de pêche, camping, aventure) adaptés à leur âge.",
+      "Oui ! Tous les jeunes de 0 à 17 ans participent gratuitement partout au Québec. Pour inscrire un enfant, le parent n'a qu'à acheter une carte de membre de 50$. Les enfants auront accès à des tirages totalisant 2 millions de dollars en prix de plein air (équipements de pêche, camping, aventure) adaptés à leur âge, avec un système de 9 paliers allant de 400 lots de 5 000$ chacun (100% objectif) à 3 lots (0,78125% objectif).",
   },
   {
     id: 3,
     question:
       "Qu'est-ce qui se passe avec le grand prix de la maison d'un million de dollars ?",
     answer:
-      "Une fois que toutes les catégories d'âge auront atteint leur objectif, le Domaine procédera au tirage d'une maison d'une valeur d'un million de dollars parmi tous les membres participants. Le gagnant choisira son propre terrain, dessinera sa maison à son goût, et le Domaine prendra en charge la construction jusqu'à concurrence d'un million de dollars. Tout le processus sera filmé et partagé en toute transparence.",
+      "Le Grand Prix est une maison d'un million de dollars tirée parmi tous les membres participants. Le gagnant choisit son terrain et dessine sa maison. La construction est entièrement prise en charge jusqu'à 1 000 000$. Le processus est entièrement filmé et partagé pour la transparence. Si l'objectif de participation est atteint deux fois en six mois, le Domaine offrira deux autres maisons d'un million de dollars à tirer pour les membres !",
   },
   {
     id: 4,
@@ -69,7 +69,13 @@ const faqData = [
     question:
       "Que se passe-t-il si l'objectif complet est atteint deux fois en six mois ?",
     answer:
-      "Si le projet atteint son objectif deux fois en six mois, deux autres maisons d'un million de dollars seront offertes, pour remercier la population de son soutien et continuer à faire rêver le Québec tout entier. De plus, le Domaine fera également tirer 5 lots de 100 000$ chacun, pour un total de 500 000$ supplémentaires en prix.",
+      "Si l'objectif de participation est atteint deux fois en six mois, le Domaine du Chevreuil Blanc offrira deux autres maisons d'un million de dollars à tirer pour les membres ! Une première maison d'un million sera tirée dès que le premier objectif est atteint. Si le même objectif est atteint à nouveau dans les six mois, deux autres maisons d'un million seront ajoutées au tirage. Cela signifie qu'en encourageant le projet et en participant, les membres contribuent à faire grandir le Domaine et augmentent le nombre de prix majeurs offerts.",
+  },
+  {
+    id: 13,
+    question: "Comment fonctionne l'achat de la carte et l'enregistrement des enfants ?",
+    answer:
+      "Au Domaine du Chevreuil Blanc, nous voulons que chaque famille et chaque enfant puisse profiter pleinement de l'expérience. Le parent doit acheter une carte de 50$ pour pouvoir enregistrer ses enfants. Une fois la carte achetée, le parent peut enregistrer tous ses enfants, sans limite de nombre. L'inscription de l'enfant est gratuite. Chaque enfant enregistré reçoit un identifiant unique ou un QR code pour l'accès au site et la participation aux concours.",
   },
   {
     id: 10,

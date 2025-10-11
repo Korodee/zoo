@@ -99,9 +99,9 @@ export default function About() {
             },
             {
               icon: Camera,
-              title: "Le principe des catégories d'âge",
+              title: "Le système de paliers de prix",
               description:
-                "58 catégories d'âge de 18 à 75 ans, maximum 6 000 membres par catégorie à 50$ chacun. Chaque carte donne 6 mois d'accès exclusif. Dès qu'une catégorie atteint 6 000 membres, un prix de 75 000$",
+                "Système de 9 paliers de prix pour les maisons et roulottes, du palier 1 (100% - maison 1M$) au palier 9 (0,78125% - crédit roulotte usagée). Plus l'objectif de participation est élevé, plus les prix sont importants. Grand Prix : maison d'un million de dollars + bonus spécial de 2 autres maisons si objectif atteint deux fois en 6 mois.",
               color: "from-purple-500 to-indigo-500",
               bgColor: "from-purple-50 to-indigo-50",
               borderColor: "border-purple-200",
@@ -144,50 +144,6 @@ export default function About() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
-
-        <motion.div
-          className="mt-24"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <motion.h3
-            className="text-2xl md:text-3xl font-bold text-gray-900 mb-7 text-center"
-            variants={itemVariants}
-          >
-            Tirages et récompenses
-          </motion.h3>
-          <motion.div
-            className="max-w-4xl mx-auto grid md:grid-cols-2 gap-6"
-            variants={itemVariants}
-          >
-            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-amber-200/50">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                Le grand prix – Une maison d'un million de dollars
-              </h4>
-              <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Tirage parmi tous les membres participants</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Le gagnant choisit son terrain et dessine sa maison</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Construction prise en charge jusqu'à 1 million $</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Processus entièrement filmé et partagé</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" /><span>Si objectif atteint 2 fois en 6 mois : 2 autres maisons</span></li>
-              </ul>
-            </div>
-            <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-amber-200/50">
-              <h4 className="text-xl font-semibold text-gray-900 mb-2">
-                Tirages hebdomadaires
-              </h4>
-              <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Tirage à toutes les semaines</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Plus vite tu participes, plus vite tu gagnes</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Prix parmi les membres inscrits</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>Annoncés sur les réseaux sociaux</span></li>
-                <li className="flex items-start gap-3"><span className="mt-2 h-2.5 w-2.5 rounded-full bg-indigo-500/70" /><span>5 lots de 100 000$ si objectif complet atteint</span></li>
-              </ul>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

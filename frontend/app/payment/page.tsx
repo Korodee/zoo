@@ -165,7 +165,7 @@ export default function PaymentPage() {
               </div>
 
               {/* Card Selection */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+              <div className="grid grid-cols-1 gap-4 mb-6">
                 <motion.button
                   onClick={() => setSelectedCard("adult")}
                   disabled={isAgeKnown && !isEligible("adult")}
@@ -297,6 +297,59 @@ export default function PaymentPage() {
                     <Mail className="h-4 w-4 text-gray-400" />
                     {profile?.email}
                   </span>
+                </div>
+              </div>
+
+              {/* Prize Information */}
+              <div className="mt-6 mb-6 p-4 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
+                <h4 className="font-semibold text-gray-900 mb-3 flex items-center gap-2">
+                  <Trophy className="h-5 w-5 text-yellow-600" />
+                  Ce que vous obtenez avec votre carte
+                </h4>
+                <div className="space-y-2 text-sm text-gray-700">
+                  {selectedCard === "adult" ? (
+                    <>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Accès au Domaine du Chevreuil Blanc pendant 6 mois</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Participation aux 9 paliers de prix (maisons jusqu'à 1M$, roulottes, crédits)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Éligible au Grand Prix (maison d'un million de dollars)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Bonus spécial : 2 maisons supplémentaires si objectif atteint 2 fois en 6 mois</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Enregistrement gratuit de tous vos enfants (0-17 ans)</span>
+                      </div>
+                    </>
+                  ) : (
+                    <>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Participation gratuite aux concours pour enfants</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Accès aux 9 paliers de prix plein air (2M$ total si objectif 100%)</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Jusqu'à 400 lots de 5 000$ chacun en équipements plein air</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
+                        <span>Accès au site avec QR code personnel</span>
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
 

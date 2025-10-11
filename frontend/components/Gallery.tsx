@@ -61,10 +61,20 @@ export default function Gallery() {
       name: "Cerf Sika",
       category: "Cervidés",
       image:
-        "https://plus.unsplash.com/premium_photo-1661819541230-034d07819c9b?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072",
+        "https://images.unsplash.com/photo-1748939238389-f5b85be5b4e0?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2070",
       description: "Élégant cerf d'origine asiatique",
       status: "Actif",
       age: "4 ans",
+      location: "Domaine du Chevreuil Blanc",
+    },
+    {
+      name: "Daim",
+      category: "Cervidés",
+      image:
+        "https://images.unsplash.com/photo-1600382803118-e42a0cec247a?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=2072",
+      description: "Rare et magnifique cerf blanc",
+      status: "Actif",
+      age: "3 ans",
       location: "Domaine du Chevreuil Blanc",
     },
     {
@@ -174,7 +184,7 @@ export default function Gallery() {
         {/* Animal Spotlight */}
 
         <motion.div
-          className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8"
+          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
