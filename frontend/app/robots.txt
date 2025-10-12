@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://chevreuilblanc.ca/sitemap.xml
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
