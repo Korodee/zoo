@@ -460,6 +460,36 @@ export default function MemberContent() {
                 </div>
               </div>
 
+              {/* Money Prize Tiers */}
+              <div className="mb-8">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
+                  💰 Palier des prix - Lots d'argent
+                  </h3>
+                <div className="overflow-x-auto">
+                  <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Palier</th>
+                        <th className="px-3 py-2 text-center text-xs font-bold text-gray-700 border-b whitespace-nowrap">% de l'objectif</th>
+                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Montant total</th>
+                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Répartition (5 lots)</th>
+                      </tr>
+                    </thead>
+                    <tbody className="text-xs">
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">1</td><td className="px-3 py-2 text-center">100 %</td><td className="px-3 py-2 text-center">500 000 $</td><td className="px-3 py-2 text-left">5 × 100 000 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">2</td><td className="px-3 py-2 text-center">75 %</td><td className="px-3 py-2 text-center">375 000 $</td><td className="px-3 py-2 text-left">5 × 75 000 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">3</td><td className="px-3 py-2 text-center">50 %</td><td className="px-3 py-2 text-center">250 000 $</td><td className="px-3 py-2 text-left">5 × 50 000 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">4</td><td className="px-3 py-2 text-center">25 %</td><td className="px-3 py-2 text-center">125 000 $</td><td className="px-3 py-2 text-left">5 × 25 000 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">5</td><td className="px-3 py-2 text-center">12,5 %</td><td className="px-3 py-2 text-center">62 500 $</td><td className="px-3 py-2 text-left">5 × 12 500 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">6</td><td className="px-3 py-2 text-center">6,25 %</td><td className="px-3 py-2 text-center">31 250 $</td><td className="px-3 py-2 text-left">5 × 6 250 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">7</td><td className="px-3 py-2 text-center">3,125 %</td><td className="px-3 py-2 text-center">15 625 $</td><td className="px-3 py-2 text-left">5 × 3 125 $</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">8</td><td className="px-3 py-2 text-center">1,5625 %</td><td className="px-3 py-2 text-center">7 812,50 $</td><td className="px-3 py-2 text-left">5 × 1 562,50 $</td></tr>
+                      <tr className="hover:bg-gray-50"><td className="px-3 py-2 text-center">9</td><td className="px-3 py-2 text-center">0,78125 %</td><td className="px-3 py-2 text-center">3 906,25 $</td><td className="px-3 py-2 text-left">5 × 781,25 $</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+
               {/* Grand Prize and Special Bonus */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-xl p-6 border border-yellow-200">

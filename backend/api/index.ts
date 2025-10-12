@@ -24,7 +24,7 @@ if (!DISABLE_SECURITY) {
   const limiter = rateLimit({
     windowMs: 15 * 60 * 1000, // 15 minutes
     max: 100, // limit each IP to 100 requests per windowMs
-    message: "Too many requests from this IP, please try again later.",
+    message: "Trop de requêtes depuis cette adresse IP, veuillez réessayer plus tard.",
     standardHeaders: true,
     legacyHeaders: false,
   });
@@ -122,7 +122,7 @@ app.use(
     console.error("Error:", err);
 
     if (err.type === "entity.parse.failed") {
-      return res.status(400).json({ error: "Invalid JSON" });
+      return res.status(400).json({ error: "JSON invalide" });
     }
 
     if (err.message === "Not allowed by CORS") {

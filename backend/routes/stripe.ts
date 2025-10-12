@@ -56,7 +56,7 @@ router.post("/create-checkout-session", async (req, res) => {
     const { userId, email, cardType = 'adult' } = req.body;
 
     if (!userId || !email) {
-      return res.status(400).json({ error: "User ID and email are required" });
+      return res.status(400).json({ error: "ID utilisateur et email requis" });
     }
 
     const session = await stripe.checkout.sessions.create({

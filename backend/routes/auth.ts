@@ -9,6 +9,7 @@ import { sendEmail } from "../config/mailer";
 import {
   verifyEmailTemplate,
   resetPasswordTemplate,
+  welcomeEmailTemplate,
 } from "../templates/emailTemplates";
 
 /**
@@ -112,11 +113,11 @@ router.post("/auth/register", async (req, res) => {
   try {
     const { email, password, name, date_of_birth } = req.body;
     if (!email || !password)
-      return res.status(400).json({ error: "Email and password are required" });
+      return res.status(400).json({ error: "Email et mot de passe requis" });
 
     const existingUser = await User.findOne({ email: email.toLowerCase() });
     if (existingUser)
-      return res.status(400).json({ error: "User already exists" });
+      return res.status(400).json({ error: "L'utilisateur existe déjà" });
 
     const hashedPassword = await bcrypt.hash(password, 12);
     const verificationToken = generateToken(24);
@@ -177,7 +178,7 @@ router.post("/auth/register", async (req, res) => {
     )}`;
     await sendEmail({
       to: user.email,
-      subject: "Verify your email • WildLife Hub",
+      subject: "Vérifiez votre email • Domaine du Chevreuil Blanc",
       html: verifyEmailTemplate({ name: user.name || undefined, verifyUrl }),
     });
 
@@ -186,7 +187,7 @@ router.post("/auth/register", async (req, res) => {
     res
       .status(201)
       .json({
-        message: "User created. Verification email sent.",
+        message: "Utilisateur créé. Email de vérification envoyé.",
         token,
         user: {
           id: user._id,
@@ -200,7 +201,7 @@ router.post("/auth/register", async (req, res) => {
       });
   } catch (error) {
     console.error("Registration error:", error);
-    res.status(500).json({ error: "Failed to create user" });
+    res.status(500).json({ error: "Échec de la création de l'utilisateur" });
   }
 });
 
@@ -247,24 +248,24 @@ router.post("/auth/verify-email", async (req, res) => {
   try {
     const { token, email } = req.body;
     if (!email)
-      return res.status(400).json({ error: "Token and email are required" });
+      return res.status(400).json({ error: "Token et email requis" });
 
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user)
-      return res.status(400).json({ error: "Invalid or expired token" });
+      return res.status(400).json({ error: "Token invalide ou expiré" });
 
     // Idempotent: if already verified, respond success
     if (user.is_verified)
-      return res.json({ message: "Email verified successfully" });
+      return res.json({ message: "Email vérifié avec succès" });
 
     if (!token || user.email_verification_token !== token) {
-      return res.status(400).json({ error: "Invalid or expired token" });
+      return res.status(400).json({ error: "Token invalide ou expiré" });
     }
     if (
       user.email_verification_expires &&
       user.email_verification_expires < new Date()
     ) {
-      return res.status(400).json({ error: "Token expired" });
+      return res.status(400).json({ error: "Token expiré" });
     }
 
     user.is_verified = true;
@@ -272,10 +273,23 @@ router.post("/auth/verify-email", async (req, res) => {
     user.email_verification_expires = undefined;
     await user.save();
 
-    res.json({ message: "Email verified successfully" });
+    // Send welcome email after successful verification
+    try {
+      const paymentUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/payment`;
+      await sendEmail({
+        to: user.email,
+        subject: "Bienvenue au Domaine du Chevreuil Blanc 🦌",
+        html: welcomeEmailTemplate({ name: user.name || undefined, paymentUrl }),
+      });
+    } catch (emailError) {
+      console.error("Failed to send welcome email:", emailError);
+      // Don't fail the verification if welcome email fails
+    }
+
+    res.json({ message: "Email vérifié avec succès" });
   } catch (e) {
     console.error("Verify email error:", e);
-    res.status(500).json({ error: "Failed to verify email" });
+    res.status(500).json({ error: "Échec de la vérification de l'email" });
   }
 });
 
@@ -332,7 +346,7 @@ router.post("/auth/login", async (req, res) => {
   try {
     const { email, password } = req.body;
     if (!email || !password)
-      return res.status(400).json({ error: "Email and password are required" });
+      return res.status(400).json({ error: "Email et mot de passe requis" });
 
     // Check database connection
     if (mongoose.connection.readyState !== 1) {
@@ -341,7 +355,7 @@ router.post("/auth/login", async (req, res) => {
     }
 
     const user = await User.findOne({ email: email.toLowerCase() });
-    if (!user) return res.status(401).json({ error: "Invalid credentials" });
+    if (!user) return res.status(401).json({ error: "Identifiants invalides" });
 
     // Enforce verified email
     if (!user.is_verified)
@@ -349,17 +363,17 @@ router.post("/auth/login", async (req, res) => {
         .status(403)
         .json({
           error:
-            "Email not verified. Please verify your email before logging in.",
+            "Email non vérifié. Veuillez vérifier votre email avant de vous connecter.",
         });
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
     if (!isPasswordValid)
-      return res.status(401).json({ error: "Invalid credentials" });
+      return res.status(401).json({ error: "Identifiants invalides" });
 
     const token = signJwt({ userId: user._id, email: user.email });
 
     res.json({
-      message: "Login successful",
+      message: "Connexion réussie",
       token,
       user: {
         id: user._id,
@@ -371,7 +385,7 @@ router.post("/auth/login", async (req, res) => {
     });
   } catch (error) {
     console.error("Login error:", error);
-    res.status(500).json({ error: "Failed to login" });
+    res.status(500).json({ error: "Échec de la connexion" });
   }
 });
 
@@ -409,15 +423,15 @@ router.post("/auth/login", async (req, res) => {
 router.post("/auth/resend-verification", async (req, res) => {
   try {
     const { email } = req.body;
-    if (!email) return res.status(400).json({ error: "Email is required" });
+    if (!email) return res.status(400).json({ error: "Email requis" });
 
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user)
       return res.json({
-        message: "If an account exists, a verification link was sent.",
+        message: "Si un compte existe, un lien de vérification a été envoyé.",
       });
     if (user.is_verified)
-      return res.json({ message: "Email already verified" });
+      return res.json({ message: "Email déjà vérifié" });
 
     const verificationToken = crypto.randomBytes(24).toString("hex");
     user.email_verification_token = verificationToken;
@@ -433,14 +447,14 @@ router.post("/auth/resend-verification", async (req, res) => {
     )}`;
     await sendEmail({
       to: user.email,
-      subject: "Verify your email • WildLife Hub",
+      subject: "Vérifiez votre email • Domaine du Chevreuil Blanc",
       html: verifyEmailTemplate({ name: user.name || undefined, verifyUrl }),
     });
 
-    res.json({ message: "Verification email sent" });
+    res.json({ message: "Email de vérification envoyé" });
   } catch (e) {
     console.error("Resend verification error:", e);
-    res.status(500).json({ error: "Failed to resend verification email" });
+    res.status(500).json({ error: "Échec de l'envoi de l'email de vérification" });
   }
 });
 
@@ -471,7 +485,7 @@ router.post("/auth/resend-verification", async (req, res) => {
 router.post("/auth/forgot-password", async (req, res) => {
   try {
     const { email } = req.body;
-    if (!email) return res.status(400).json({ error: "Email is required" });
+    if (!email) return res.status(400).json({ error: "Email requis" });
 
     const user = await User.findOne({ email: email.toLowerCase() });
     if (!user)
@@ -491,14 +505,14 @@ router.post("/auth/forgot-password", async (req, res) => {
     )}`;
     await sendEmail({
       to: user.email,
-      subject: "Reset your password • WildLife Hub",
+      subject: "Réinitialiser votre mot de passe • Domaine du Chevreuil Blanc",
       html: resetPasswordTemplate({ name: user.name || undefined, resetUrl }),
     });
 
-    res.json({ message: "If an account exists, a reset link was sent." });
+    res.json({ message: "Si un compte existe, un lien de réinitialisation a été envoyé." });
   } catch (e) {
     console.error("Forgot password error:", e);
-    res.status(500).json({ error: "Failed to initiate reset" });
+    res.status(500).json({ error: "Échec de l'initiation de la réinitialisation" });
   }
 });
 
@@ -546,26 +560,26 @@ router.post("/auth/reset-password", async (req, res) => {
     if (!token || !email || !newPassword)
       return res
         .status(400)
-        .json({ error: "Token, email and newPassword are required" });
+        .json({ error: "Token, email et nouveau mot de passe requis" });
 
     const user = await User.findOne({
       email: email.toLowerCase(),
       reset_password_token: token,
     });
     if (!user)
-      return res.status(400).json({ error: "Invalid or expired token" });
+      return res.status(400).json({ error: "Token invalide ou expiré" });
     if (user.reset_password_expires && user.reset_password_expires < new Date())
-      return res.status(400).json({ error: "Token expired" });
+      return res.status(400).json({ error: "Token expiré" });
 
     user.password = await bcrypt.hash(newPassword, 12);
     user.reset_password_token = undefined;
     user.reset_password_expires = undefined;
     await user.save();
 
-    res.json({ message: "Password has been reset" });
+    res.json({ message: "Mot de passe réinitialisé" });
   } catch (e) {
     console.error("Reset password error:", e);
-    res.status(500).json({ error: "Failed to reset password" });
+    res.status(500).json({ error: "Échec de la réinitialisation du mot de passe" });
   }
 });
 
@@ -589,10 +603,10 @@ router.post("/auth/reset-password", async (req, res) => {
  */
 router.post("/auth/logout", async (_req, res) => {
   try {
-    res.json({ message: "Logout successful" });
+    res.json({ message: "Déconnexion réussie" });
   } catch (error) {
     console.error("Logout error:", error);
-    res.status(500).json({ error: "Failed to logout" });
+    res.status(500).json({ error: "Échec de la déconnexion" });
   }
 });
 

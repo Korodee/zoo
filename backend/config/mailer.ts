@@ -47,6 +47,19 @@ export async function sendEmail({
     sendSmtpEmail.sender = { name: fromName, email: fromEmail };
     sendSmtpEmail.to = [{ email: to }];
     
+    // Add headers to improve delivery and avoid promotions folder
+    sendSmtpEmail.headers = {
+      'X-Priority': '3 (Normal)',
+      'X-Mailer': 'Domaine du Chevreuil Blanc System',
+      'X-Message-Type': 'transactional',
+      'List-Unsubscribe': '<mailto:unsubscribe@domaine-chevreuil-blanc.com>',
+      'Precedence': 'bulk',
+      'X-Auto-Response-Suppress': 'All'
+    };
+    
+    // Set reply-to to avoid bounces
+    sendSmtpEmail.replyTo = { name: fromName, email: fromEmail };
+    
     await transactional.sendTransacEmail(sendSmtpEmail);
     console.log(`Email sent successfully to ${to}`);
   } catch (e) {

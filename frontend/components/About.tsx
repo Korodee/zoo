@@ -83,7 +83,7 @@ export default function About() {
               icon: Globe,
               title: "Le Domaine et ses attraits",
               description:
-                "110 acres de nature sécurisée avec un enclos majestueux abritant des cerfs de Virginie, y compris des albinos. Le site accueillera bientôt chevreuils blancs, wapitis, cerfs rouges, daims, sika, lamas, alpagas, sangliers et canards. Des lacs artificiels permettront la pêche à la truite.",
+                "110 acres de nature sécurisée avec un enclos majestueux abritant des cerfs de Virginie, y compris des albinos. Le site accueillera bientôt chevreuils blancs, wapitis, cerfs rouges, daims, sika, lamas, alpagas et canards. Des lacs artificiels permettront la pêche à la truite.",
               color: "from-green-500 to-blue-500",
               bgColor: "from-green-50 to-blue-50",
               borderColor: "border-green-200",

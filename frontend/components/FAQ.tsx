@@ -50,7 +50,7 @@ const faqData = [
     id: 6,
     question: "Quels animaux vivront au Domaine ?",
     answer:
-      "Le site de 110 acres abrite déjà un enclos de cerfs de Virginie, y compris des albinos. À long terme, le Domaine accueillera d'autres espèces : chevreuils blancs, wapitis, cerfs rouges, daims, sika, lamas, alpagas, sangliers et canards. Des lacs artificiels permettront la pêche à la truite.",
+      "Le site de 110 acres abrite déjà un enclos de cerfs de Virginie, y compris des albinos. À long terme, le Domaine accueillera d'autres espèces : chevreuils blancs, wapitis, cerfs rouges, daims, sika, lamas, alpagas et canards. Des lacs artificiels permettront la pêche à la truite.",
   },
   {
     id: 7,

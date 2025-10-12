@@ -159,6 +159,106 @@ export default function PrizeStructure() {
           </div>
         </motion.div>
 
+        {/* Money Prize Tiers */}
+        <motion.div
+          className="max-w-6xl mx-auto mb-12"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <div className="bg-blue-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-blue-200/50 mb-6">
+            <h4 className="text-xl font-semibold text-gray-900 mb-2 text-center">
+              💰 Palier des prix - Lots d'argent
+            </h4>
+            <p className="text-xs text-gray-500 text-center mb-4 md:hidden">
+              ← Faites défiler horizontalement pour voir toutes les colonnes →
+            </p>
+            <div className="overflow-x-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100 shadow-inner">
+              <table className="min-w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
+                <thead className="bg-gray-50">
+                  <tr>
+                    <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b min-w-[60px]">
+                      Palier
+                    </th>
+                    <th className="px-3 py-2 text-center text-xs font-bold text-gray-700 border-b min-w-[110px] whitespace-nowrap">
+                      % de l'objectif
+                    </th>
+                    <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b min-w-[120px]">
+                      Montant total
+                    </th>
+                    <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b min-w-[200px]">
+                      Répartition (5 lots)
+                    </th>
+                  </tr>
+                </thead>
+                <tbody className="text-xs">
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center font-semibold text-emerald-600">
+                      1
+                    </td>
+                    <td className="px-3 py-2 text-center">100 %</td>
+                    <td className="px-3 py-2 text-center font-semibold">500 000 $</td>
+                    <td className="px-3 py-2 text-left">5 × 100 000 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center font-semibold text-emerald-600">
+                      2
+                    </td>
+                    <td className="px-3 py-2 text-center">75 %</td>
+                    <td className="px-3 py-2 text-center font-semibold">375 000 $</td>
+                    <td className="px-3 py-2 text-left">5 × 75 000 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center font-semibold text-emerald-600">
+                      3
+                    </td>
+                    <td className="px-3 py-2 text-center">50 %</td>
+                    <td className="px-3 py-2 text-center font-semibold">250 000 $</td>
+                    <td className="px-3 py-2 text-left">5 × 50 000 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">4</td>
+                    <td className="px-3 py-2 text-center">25 %</td>
+                    <td className="px-3 py-2 text-center">125 000 $</td>
+                    <td className="px-3 py-2 text-left">5 × 25 000 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">5</td>
+                    <td className="px-3 py-2 text-center">12,5 %</td>
+                    <td className="px-3 py-2 text-center">62 500 $</td>
+                    <td className="px-3 py-2 text-left">5 × 12 500 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">6</td>
+                    <td className="px-3 py-2 text-center">6,25 %</td>
+                    <td className="px-3 py-2 text-center">31 250 $</td>
+                    <td className="px-3 py-2 text-left">5 × 6 250 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">7</td>
+                    <td className="px-3 py-2 text-center">3,125 %</td>
+                    <td className="px-3 py-2 text-center">15 625 $</td>
+                    <td className="px-3 py-2 text-left">5 × 3 125 $</td>
+                  </tr>
+                  <tr className="border-b hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">8</td>
+                    <td className="px-3 py-2 text-center">1,5625 %</td>
+                    <td className="px-3 py-2 text-center">7 812,50 $</td>
+                    <td className="px-3 py-2 text-left">5 × 1 562,50 $</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-3 py-2 text-center">9</td>
+                    <td className="px-3 py-2 text-center">0,78125 %</td>
+                    <td className="px-3 py-2 text-center">3 906,25 $</td>
+                    <td className="px-3 py-2 text-left">5 × 781,25 $</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </motion.div>
+
         {/* Grand Prize and Children's Prizes */}
         <motion.div
           className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6"
