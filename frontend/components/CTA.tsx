@@ -216,43 +216,21 @@ export default function CTA() {
               </li>
             </ul>
           </div>
-          {/* Pyramid of prizes */}
+          {/* How draws work */}
           <div className="max-w-5xl mx-auto">
             <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
               <h3 className="text-xl font-semibold text-white mb-3">
-                Pyramide des prix
+                Comment fonctionnent les tirages – Domaine du Chevreuil Blanc
               </h3>
-              <ul className="space-y-2.5 text-gray-300 text-sm">
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span>100 % des cartes vendues → tous les prix remis</span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span>
-                    75 % des cartes vendues → 75 % de la valeur totale des prix
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span>
-                    50 % des cartes vendues → 50 % de la valeur totale des prix
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span>
-                    25 % des cartes vendues → 25 % de la valeur totale des prix
-                  </span>
-                </li>
-                <li className="flex items-start gap-3">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-amber-300" />
-                  <span>
-                    Minimum garanti : certains prix sont toujours remis, même si
-                    le seuil n’est pas atteint
-                  </span>
-                </li>
-              </ul>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                Chaque catégorie d'âge a un objectif de 6 000 cartes à atteindre. Dès que ce palier est atteint, le grand prix de 75 000 $ est tiré immédiatement ! Les prix peuvent être un camion, un bateau ou d'autres surprises, selon la catégorie.
+              </p>
+              <p className="text-gray-300 text-sm leading-relaxed mb-4">
+                C'est un système en pyramide : plus vite vous participez, plus vite les tirages ont lieu. Pour participer, il suffit d'acheter une carte de membre et votre catégorie avance dans le tirage.
+              </p>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Chaque contribution nous aide à faire grandir le Domaine et à offrir plus de prix et d'expériences.
+              </p>
             </div>
             </div>
             </div>
