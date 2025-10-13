@@ -19,7 +19,7 @@ const faqData = [
     id: 1,
     question: "Comment fonctionne le système de paliers de prix ?",
     answer:
-      "Le Domaine du Chevreuil Blanc fonctionne avec un système de 9 paliers de prix pour les maisons et roulottes. Le palier 1 (100% de l'objectif) offre une maison de 1 000 000$, le palier 2 (75%) une maison de 750 000$, et ainsi de suite jusqu'au palier 9 (0,78125%) avec un crédit pour l'achat d'une roulotte usagée d'environ 7 813$. Plus l'objectif de participation est élevé, plus les prix sont importants.",
+      "Le Domaine du Chevreuil Blanc fonctionne avec un système de 9 paliers de prix pour véhicules, bateaux et équipements plein air. Le palier 1 (100% de l'objectif) offre le choix entre un Dodge Ram 2026 ou un bateau Crossline PROX (75 000$), le palier 2 (75%) le choix entre un GMC Terrain ou un bateau 1850 FIS (56 250$), et ainsi de suite jusqu'au palier 9 (0,78125%) avec des lots plein air (585,94$). Plus l'objectif de participation est élevé, plus les prix sont importants.",
   },
   {
     id: 2,

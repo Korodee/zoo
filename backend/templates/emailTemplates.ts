@@ -190,54 +190,30 @@ export function welcomeEmailTemplate(params: {
         <p>Mon objectif est de partager avec vous et surtout avec les jeunes enfants, un projet qui met en valeur la beauté et la richesse de notre environnement, tout en offrant des récompenses exceptionnelles à ceux qui nous soutiennent.</p>
 
         <div class="info-box house-box">
-          <h3>Palier des prix - Maisons et roulottes</h3>
+          <h3>🏆 Pyramide des prix — Adultes (18 ans et plus)</h3>
           <table class="prize-table">
             <thead>
               <tr>
                 <th>Palier</th>
                 <th>% de l'objectif</th>
-                <th>Montant total</th>
+                <th>Montant (exact)</th>
                 <th>Description du prix</th>
               </tr>
             </thead>
             <tbody>
-              <tr><td>1</td><td>100 %</td><td>1 000 000 $</td><td>Maison 1 M$</td></tr>
-              <tr><td>2</td><td>75 %</td><td>750 000 $</td><td>Maison 750 k$</td></tr>
-              <tr><td>3</td><td>50 %</td><td>500 000 $</td><td>Maison 500 k$</td></tr>
-              <tr><td>4</td><td>25 %</td><td>250 000 $</td><td>5 roulottes × 50 000 $ chacune</td></tr>
-              <tr><td>5</td><td>12,5 %</td><td>125 000 $</td><td>Résidence 40 HBDL 2025 (roulotte)</td></tr>
-              <tr><td>6</td><td>6,25 %</td><td>62 500 $</td><td>Surveyor 202 RBLE 2026 (roulotte)</td></tr>
-              <tr><td>7</td><td>3,125 %</td><td>31 250 $</td><td>Puma 16 BHCE 2026 (roulotte)</td></tr>
-              <tr><td>8</td><td>1,5625 %</td><td>15 625 $</td><td>Crédit pour l'achat d'une roulotte usagée (≈15 625 $)</td></tr>
-              <tr><td>9</td><td>0,78125 %</td><td>7 813 $</td><td>Crédit pour l'achat d'une roulotte usagée (≈7 813 $)</td></tr>
+              <tr><td>1</td><td>100 %</td><td>75 000,00 $</td><td>Choix : Dodge Ram 2026 ou Crossline PROX (bateau)</td></tr>
+              <tr><td>2</td><td>75 %</td><td>56 250,00 $</td><td>Choix : GMC Terrain (SUV) ou 1850 FIS (bateau)</td></tr>
+              <tr><td>3</td><td>50 %</td><td>37 500,00 $</td><td>Choix : Mitsubishi 2026 ou Lund 160 (moteur 40 HP + r)</td></tr>
+              <tr><td>4</td><td>25 %</td><td>18 750,00 $</td><td>CFMOTO U-Force équivalent</td></tr>
+              <tr><td>5</td><td>12,5 %</td><td>9 375,00 $</td><td>Sportsman Polaris</td></tr>
+              <tr><td>6</td><td>6,25 %</td><td>4 687,50 $</td><td>Vélo électrique — Mountain Blizzard A30</td></tr>
+              <tr><td>7</td><td>3,125 %</td><td>2 343,75 $</td><td>Lot plein air</td></tr>
+              <tr><td>8</td><td>1,5625 %</td><td>1 171,88 $</td><td>Lot plein air</td></tr>
+              <tr><td>9</td><td>0,78125 %</td><td>585,94 $</td><td>Lot plein air</td></tr>
             </tbody>
           </table>
         </div>
 
-        <div class="info-box money-box">
-          <h3>Palier des prix - Lots d'argent</h3>
-          <table class="prize-table">
-            <thead>
-              <tr>
-                <th>Palier</th>
-                <th>% de l'objectif</th>
-                <th>Montant total</th>
-                <th>Répartition (5 lots)</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>1</td><td>100 %</td><td>500 000 $</td><td>5 × 100 000 $</td></tr>
-              <tr><td>2</td><td>75 %</td><td>375 000 $</td><td>5 × 75 000 $</td></tr>
-              <tr><td>3</td><td>50 %</td><td>250 000 $</td><td>5 × 50 000 $</td></tr>
-              <tr><td>4</td><td>25 %</td><td>125 000 $</td><td>5 × 25 000 $</td></tr>
-              <tr><td>5</td><td>12,5 %</td><td>62 500 $</td><td>5 × 12 500 $</td></tr>
-              <tr><td>6</td><td>6,25 %</td><td>31 250 $</td><td>5 × 6 250 $</td></tr>
-              <tr><td>7</td><td>3,125 %</td><td>15 625 $</td><td>5 × 3 125 $</td></tr>
-              <tr><td>8</td><td>1,5625 %</td><td>7 812,50 $</td><td>5 × 1 562,50 $</td></tr>
-              <tr><td>9</td><td>0,78125 %</td><td>3 906,25 $</td><td>5 × 781,25 $</td></tr>
-            </tbody>
-          </table>
-        </div>
 
         <div class="info-box grand-prize-box">
           <h3>🏡 Le Grand Prix – Une maison d'un million de dollars</h3>

@@ -433,7 +433,7 @@ export default function MemberContent() {
               {/* Prize Structure Table */}
               <div className="mb-8">
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                  🏠 Palier des prix - Maisons et roulottes
+                  🏆 Pyramide des prix — Adultes (18 ans et plus)
                 </h3>
                 <div className="overflow-x-auto">
                   <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
@@ -441,54 +441,25 @@ export default function MemberContent() {
                       <tr>
                         <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Palier</th>
                         <th className="px-3 py-2 text-center text-xs font-bold text-gray-700 border-b whitespace-nowrap">% de l'objectif</th>
-                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Montant total</th>
+                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Montant (exact)</th>
                         <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Description du prix</th>
                       </tr>
                     </thead>
                     <tbody className="text-xs">
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">1</td><td className="px-3 py-2 text-center">100 %</td><td className="px-3 py-2 text-center">1 000 000 $</td><td className="px-3 py-2 text-left">Maison 1 M$</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">2</td><td className="px-3 py-2 text-center">75 %</td><td className="px-3 py-2 text-center">750 000 $</td><td className="px-3 py-2 text-left">Maison 750 k$</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">3</td><td className="px-3 py-2 text-center">50 %</td><td className="px-3 py-2 text-center">500 000 $</td><td className="px-3 py-2 text-left">Maison 500 k$</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">4</td><td className="px-3 py-2 text-center">25 %</td><td className="px-3 py-2 text-center">250 000 $</td><td className="px-3 py-2 text-left">5 roulottes × 50 000 $ chacune</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">5</td><td className="px-3 py-2 text-center">12,5 %</td><td className="px-3 py-2 text-center">125 000 $</td><td className="px-3 py-2 text-left">Résidence 40 HBDL 2025 (roulotte)</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">6</td><td className="px-3 py-2 text-center">6,25 %</td><td className="px-3 py-2 text-center">62 500 $</td><td className="px-3 py-2 text-left">Surveyor 202 RBLE 2026 (roulotte)</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">7</td><td className="px-3 py-2 text-center">3,125 %</td><td className="px-3 py-2 text-center">31 250 $</td><td className="px-3 py-2 text-left">Puma 16 BHCE 2026 (roulotte)</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">8</td><td className="px-3 py-2 text-center">1,5625 %</td><td className="px-3 py-2 text-center">15 625 $</td><td className="px-3 py-2 text-left">Crédit pour l'achat d'une roulotte usagée (≈15 625 $)</td></tr>
-                      <tr className="hover:bg-gray-50"><td className="px-3 py-2 text-center">9</td><td className="px-3 py-2 text-center">0,78125 %</td><td className="px-3 py-2 text-center">7 813 $</td><td className="px-3 py-2 text-left">Crédit pour l'achat d'une roulotte usagée (≈7 813 $)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">1</td><td className="px-3 py-2 text-center">100 %</td><td className="px-3 py-2 text-center">75 000,00 $</td><td className="px-3 py-2 text-left">Choix : Dodge Ram 2026 ou Crossline PROX (bateau)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">2</td><td className="px-3 py-2 text-center">75 %</td><td className="px-3 py-2 text-center">56 250,00 $</td><td className="px-3 py-2 text-left">Choix : GMC Terrain (SUV) ou 1850 FIS (bateau)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">3</td><td className="px-3 py-2 text-center">50 %</td><td className="px-3 py-2 text-center">37 500,00 $</td><td className="px-3 py-2 text-left">Choix : Mitsubishi 2026 ou Lund 160 (moteur 40 HP + r)</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">4</td><td className="px-3 py-2 text-center">25 %</td><td className="px-3 py-2 text-center">18 750,00 $</td><td className="px-3 py-2 text-left">CFMOTO U-Force équivalent</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">5</td><td className="px-3 py-2 text-center">12,5 %</td><td className="px-3 py-2 text-center">9 375,00 $</td><td className="px-3 py-2 text-left">Sportsman Polaris</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">6</td><td className="px-3 py-2 text-center">6,25 %</td><td className="px-3 py-2 text-center">4 687,50 $</td><td className="px-3 py-2 text-left">Vélo électrique — Mountain Blizzard A30</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">7</td><td className="px-3 py-2 text-center">3,125 %</td><td className="px-3 py-2 text-center">2 343,75 $</td><td className="px-3 py-2 text-left">Lot plein air</td></tr>
+                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">8</td><td className="px-3 py-2 text-center">1,5625 %</td><td className="px-3 py-2 text-center">1 171,88 $</td><td className="px-3 py-2 text-left">Lot plein air</td></tr>
+                      <tr className="hover:bg-gray-50"><td className="px-3 py-2 text-center">9</td><td className="px-3 py-2 text-center">0,78125 %</td><td className="px-3 py-2 text-center">585,94 $</td><td className="px-3 py-2 text-left">Lot plein air</td></tr>
                     </tbody>
                   </table>
                 </div>
               </div>
 
-              {/* Money Prize Tiers */}
-              <div className="mb-8">
-                <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">
-                  💰 Palier des prix - Lots d'argent
-                  </h3>
-                <div className="overflow-x-auto">
-                  <table className="w-full border-collapse bg-white rounded-lg shadow-sm border border-gray-200">
-                    <thead className="bg-gray-50">
-                      <tr>
-                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Palier</th>
-                        <th className="px-3 py-2 text-center text-xs font-bold text-gray-700 border-b whitespace-nowrap">% de l'objectif</th>
-                        <th className="px-3 py-2 text-center text-xs font-medium text-gray-700 border-b">Montant total</th>
-                        <th className="px-3 py-2 text-left text-xs font-medium text-gray-700 border-b">Répartition (5 lots)</th>
-                      </tr>
-                    </thead>
-                    <tbody className="text-xs">
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">1</td><td className="px-3 py-2 text-center">100 %</td><td className="px-3 py-2 text-center">500 000 $</td><td className="px-3 py-2 text-left">5 × 100 000 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">2</td><td className="px-3 py-2 text-center">75 %</td><td className="px-3 py-2 text-center">375 000 $</td><td className="px-3 py-2 text-left">5 × 75 000 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">3</td><td className="px-3 py-2 text-center">50 %</td><td className="px-3 py-2 text-center">250 000 $</td><td className="px-3 py-2 text-left">5 × 50 000 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">4</td><td className="px-3 py-2 text-center">25 %</td><td className="px-3 py-2 text-center">125 000 $</td><td className="px-3 py-2 text-left">5 × 25 000 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">5</td><td className="px-3 py-2 text-center">12,5 %</td><td className="px-3 py-2 text-center">62 500 $</td><td className="px-3 py-2 text-left">5 × 12 500 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">6</td><td className="px-3 py-2 text-center">6,25 %</td><td className="px-3 py-2 text-center">31 250 $</td><td className="px-3 py-2 text-left">5 × 6 250 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">7</td><td className="px-3 py-2 text-center">3,125 %</td><td className="px-3 py-2 text-center">15 625 $</td><td className="px-3 py-2 text-left">5 × 3 125 $</td></tr>
-                      <tr className="border-b hover:bg-gray-50"><td className="px-3 py-2 text-center">8</td><td className="px-3 py-2 text-center">1,5625 %</td><td className="px-3 py-2 text-center">7 812,50 $</td><td className="px-3 py-2 text-left">5 × 1 562,50 $</td></tr>
-                      <tr className="hover:bg-gray-50"><td className="px-3 py-2 text-center">9</td><td className="px-3 py-2 text-center">0,78125 %</td><td className="px-3 py-2 text-center">3 906,25 $</td><td className="px-3 py-2 text-left">5 × 781,25 $</td></tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
 
               {/* Grand Prize and Special Bonus */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">

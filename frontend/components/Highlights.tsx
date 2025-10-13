@@ -45,7 +45,7 @@ export default function Highlights() {
               <h3 className="font-semibold">Maison d'1 million $</h3>
             </div>
             <p className="text-sm text-neutral-600">
-              Grand prix final + 58 prix de 75 000$ par catégorie d'âge + tirages hebdomadaires.
+              Grand prix final + véhicules, bateaux, équipements plein air par catégorie d'âge + tirages hebdomadaires.
             </p>
           </motion.div>
 

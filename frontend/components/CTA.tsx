@@ -52,7 +52,7 @@ export default function CTA() {
               <h3 className="font-semibold text-white">Maisons</h3>
             </div>
             <p className="mt-2 text-sm text-gray-300">
-              3 maisons de rêve à 1 000 000 $ chacune
+              Véhicules, bateaux et équipements plein air
             </p>
           </div>
           <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
@@ -61,7 +61,7 @@ export default function CTA() {
               <h3 className="font-semibold text-white">Argent</h3>
             </div>
             <p className="mt-2 text-sm text-gray-300">
-              3 000 000 $ en argent (25 000 $ et 50 000 $)
+              Grand prix maison + prix enfants
             </p>
           </div>
           <div className="bg-black/20 backdrop-blur-md rounded-xl p-6 border border-white/20 ring-1 ring-white/10 shadow-lg">
@@ -105,16 +105,13 @@ export default function CTA() {
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
                   <span>
-                    Maisons pour adultes – 3 maisons de rêve à 1 000 000 $
-                    chacune; choix du terrain dans n’importe quelle ville du
-                    Québec; processus filmé du début à la remise des clés
+                    Véhicules et bateaux – Dodge Ram 2026, GMC Terrain, Mitsubishi 2026, bateaux Crossline PROX, 1850 FIS, Lund 160, CFMOTO U-Force, Sportsman Polaris, vélos électriques et lots plein air
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
                   <span className="mt-2 h-2.5 w-2.5 rounded-full bg-yellow-300 shadow-[0_0_0_3px_rgba(255,255,255,0.08)]" />
                   <span>
-                    Argent comptant – 3 000 000 $ en argent; 1 500 000 $ en lots
-                    de 25 000 $ et 1 500 000 $ en lots de 50 000 $
+                    Grand prix maison – 1 maison d'un million de dollars tirée parmi tous les membres participants; le gagnant choisit son terrain et dessine sa maison; processus entièrement filmé
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
