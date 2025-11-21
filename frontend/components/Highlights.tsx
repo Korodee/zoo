@@ -62,7 +62,7 @@ export default function Highlights() {
           <motion.div variants={item} className="rounded-xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-5 shadow-sm">
             <div className="flex items-center gap-3 mb-2">
               <Heart className="h-6 w-6 text-pink-700" />
-              <h3 className="font-semibold">50$ pour 6 mois</h3>
+              <h3 className="font-semibold">50$ pour 1 an</h3>
             </div>
             <p className="text-sm text-neutral-600">
               Accès exclusif au site et aux suivis du projet. 58 catégories d'âge de 18-75 ans.

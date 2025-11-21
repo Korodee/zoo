@@ -40,7 +40,10 @@ export default function CTA() {
           </h2>
           <p className="mt-3 text-lg text-gray-300 max-w-3xl mx-auto">
             Des prix exceptionnels pour adultes et enfants, une expérience
-            filmée et un projet collectif unique au Québec. 🎉 6 mois d'essai gratuit à l'achat de la carte.
+            filmée et un projet collectif unique au Québec. 🎉 1 an d'essai gratuit à l'achat de la carte.
+          </p>
+          <p className="mt-2 text-base text-gray-200">
+            Besoin d'aide? Appelez-nous au <span className="font-semibold">+1 (819) 329-6264</span>.
           </p>
         </div>
 

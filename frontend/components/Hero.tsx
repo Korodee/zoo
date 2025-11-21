@@ -119,15 +119,18 @@ export default function Hero() {
             />
           </div>
         </motion.div>
-        {/* Badges: 6 mois d'essai gratuit + date d'ouverture */}
+        {/* Badges: 1 an d'essai gratuit + infos */}
         <div className="mb-4 flex flex-col sm:flex-row items-center justify-center gap-2">
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/20 text-green-200 border border-green-400/40 text-xs sm:text-sm">
-            🎉 6 mois d'accès exclusif à 50$ seulement
+            🎉 1 an d'accès exclusif à 50$ seulement
           </span>
           <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-white border border-white/30 text-xs sm:text-sm">
             👶 Enfants de 0-17 ans gratuits partout au Québec
           </span>
         </div>
+        <p className="text-sm text-gray-200 mb-6">
+          Besoin d'assistance? Appelez-nous au <span className="font-semibold">+1 (819) 329-6264</span>.
+        </p>
         <motion.h1
           className="text-4xl md:text-6xl font-bold mb-6 leading-tight"
           variants={itemVariants}

@@ -118,7 +118,7 @@ export default function PaymentPage() {
           </h1>
           <p className="text-gray-600 mt-2">
             Accédez au parc animalier et participez aux concours exclusifs avec
-            6 mois d'accès exclusif à 50$ seulement.
+            1 an d'accès exclusif à 50$ seulement.
           </p>
 
           {/* Steps */}
@@ -311,7 +311,7 @@ export default function PaymentPage() {
                     <>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
-                        <span>Accès au Domaine du Chevreuil Blanc pendant 6 mois</span>
+                        <span>Accès au Domaine du Chevreuil Blanc pendant 1 an</span>
                       </div>
                       <div className="flex items-start gap-2">
                         <CheckCircle className="h-4 w-4 text-green-600 mt-0.5" />
@@ -399,6 +399,9 @@ export default function PaymentPage() {
                     <span>Stripe</span>
                   </div>
                 </div>
+                <p className="mt-4 text-center text-xs text-gray-500">
+                  Besoin d'aide? Appelez-nous au <span className="font-semibold">+1 (819) 329-6264</span>.
+                </p>
               </div>
             </div>
 

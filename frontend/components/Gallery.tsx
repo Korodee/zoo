@@ -169,7 +169,7 @@ export default function Gallery() {
           </div>
           <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-green-600 mb-2">50$</div>
-            <div className="text-sm text-gray-600">Carte Adulte (6 mois)</div>
+            <div className="text-sm text-gray-600">Carte Adulte (1 an)</div>
           </div>
           <div className="bg-stone-50/80 backdrop-blur-sm rounded-xl p-6 shadow-lg border border-emerald-200/50 text-center">
             <div className="text-2xl font-bold text-blue-600 mb-2">Gratuit</div>

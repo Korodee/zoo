@@ -130,7 +130,9 @@ export default function Contact() {
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="font-semibold text-gray-900 text-sm">Téléphone</p>
-                    <p className="text-gray-600 text-xs sm:text-sm">819-329-6264</p>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      +1 (819) 329-6264
+                    </p>
                   </div>
                 </motion.div>
                 <motion.div
