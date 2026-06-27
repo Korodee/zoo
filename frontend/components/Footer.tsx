@@ -187,7 +187,7 @@ export default function Footer() {
         </motion.div> */}
 
         <motion.div
-          className="md:hidden border-t border-white/10 py- flex flex-col md:flex-row justify-center items-center"
+          className="md:hidden border-t border-white/10 py-6 flex flex-col md:flex-row justify-center items-center"
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"

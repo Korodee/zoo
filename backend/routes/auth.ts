@@ -277,20 +277,14 @@ router.post("/auth/verify-email", async (req, res) => {
     user.email_verification_expires = undefined;
     await user.save();
 
-    // Send welcome email after successful verification
-    try {
-      const paymentUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/payment`;
-      const welcomeResult = await sendEmail({
-        to: user.email,
-        subject: "Bienvenue au Domaine du Chevreuil Blanc 🦌",
-        html: welcomeEmailTemplate({ name: user.name || undefined, paymentUrl }),
-      });
-      if (!welcomeResult.ok) {
-        console.error("Failed to send welcome email:", welcomeResult.error);
-      }
-    } catch (emailError) {
-      console.error("Failed to send welcome email:", emailError);
-      // Don't fail the verification if welcome email fails
+    const paymentUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/payment`;
+    const welcomeResult = await sendEmail({
+      to: user.email,
+      subject: "Bienvenue au Domaine du Chevreuil Blanc 🦌",
+      html: welcomeEmailTemplate({ name: user.name || undefined, paymentUrl }),
+    });
+    if (!welcomeResult.ok) {
+      console.error("Failed to send welcome email:", welcomeResult.error);
     }
 
     res.json({ message: "Email vérifié avec succès" });

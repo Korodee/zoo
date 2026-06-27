@@ -12,7 +12,7 @@ import {
   CreditCard,
   Mail,
   Crown,
-  LogIn,
+  HelpCircle,
 } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
@@ -105,7 +105,13 @@ export default function Navbar() {
 
   if (isLoading) {
     return (
-      <nav className="bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100 sticky top-0 z-50">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 ${
+          forceScrolledNav
+            ? "scrolled bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
+            : "bg-white/80 backdrop-blur-md shadow-sm border-b border-gray-100"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="h-8 w-32 bg-gray-200 animate-pulse rounded" />
@@ -148,16 +154,16 @@ export default function Navbar() {
             <Link href="/" className={linkClass}>
               Accueil
             </Link>
-            <Link href="#about" className={linkClass}>
+            <Link href="/#about" className={linkClass}>
               À propos
             </Link>
-            <Link href="#membership" className={linkClass}>
+            <Link href="/signup" className={linkClass}>
               Adhésion
             </Link>
-            <Link href="#faq" className={linkClass}>
+            <Link href="/#faq" className={linkClass}>
               FAQ
             </Link>
-            <Link href="#contact" className={linkClass}>
+            <Link href="/#contact" className={linkClass}>
               Contact
             </Link>
           </nav>
@@ -175,18 +181,11 @@ export default function Navbar() {
               </div>
             ) : (
               <div className="flex items-center gap-3">
-                <Link
-                  href="/login"
-                  className={linkClass}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <Link href="/login" className={linkClass}>
                   Accès Membres
                 </Link>
                 <Link
                   href="/signup"
-                  target="_blank"
-                  rel="noopener noreferrer"
                   className="text-sm md:text-base px-4 py-2 rounded-full border border-white/40 bg-white/10 backdrop-blur-sm text-white font-medium shadow-sm hover:bg-white/20 hover:text-gray-900 transition-all duration-200 scrolled:bg-primary-600 scrolled:border-primary-600 scrolled:text-white scrolled:hover:bg-primary-700"
                 >
                   Obtenir ma Carte
@@ -233,7 +232,7 @@ export default function Navbar() {
                     <span className="font-semibold text-base">Accueil</span>
                   </Link>
                   <Link
-                    href="#about"
+                    href="/#about"
                     className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-green-50 hover:to-emerald-50 hover:text-green-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-green-100 to-emerald-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
@@ -242,7 +241,7 @@ export default function Navbar() {
                     <span className="font-semibold text-base">À propos</span>
                   </Link>
                   <Link
-                    href="#membership"
+                    href="/signup"
                     className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-purple-50 hover:to-pink-50 hover:text-purple-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-100 to-pink-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
@@ -251,7 +250,16 @@ export default function Navbar() {
                     <span className="font-semibold text-base">Adhésion</span>
                   </Link>
                   <Link
-                    href="#contact"
+                    href="/#faq"
+                    className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-sky-50 hover:to-blue-50 hover:text-sky-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-sky-100 to-blue-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
+                      <HelpCircle className="h-5 w-5 text-sky-600 group-hover:text-sky-700" />
+                    </div>
+                    <span className="font-semibold text-base">FAQ</span>
+                  </Link>
+                  <Link
+                    href="/#contact"
                     className="group flex items-center py-2 gap-4 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-orange-50 hover:to-red-50 hover:text-orange-700 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                   >
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-orange-100 to-red-200 flex items-center justify-center group-hover:scale-110 transition-all duration-300">
@@ -295,8 +303,6 @@ export default function Navbar() {
                     <>
                       <Link
                         href="/login"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="group flex items-center justify-center gap-4 py-2 rounded-xl text-gray-700 hover:bg-gradient-to-r hover:from-gray-50 hover:to-gray-100 hover:text-gray-800 transition-all duration-300 hover:scale-[1.02] hover:shadow-md"
                       >
                         <span className="font-semibold text-base">
@@ -305,8 +311,6 @@ export default function Navbar() {
                       </Link>
                       <Link
                         href="/signup"
-                        target="_blank"
-                        rel="noopener noreferrer"
                         className="group w-full flex items-center gap-4 justify-center py-4 rounded-xl bg-gradient-to-r from-primary-600 via-primary-700 to-primary-800 text-white hover:shadow-xl transition-all duration-300 hover:scale-[1.02] relative overflow-hidden"
                       >
                         <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/10 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />

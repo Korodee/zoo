@@ -90,61 +90,50 @@ router.post("/contact", async (req, res) => {
       </div>
     `;
 
-    // Send email to the park's email address
-    try {
-      const parkEmailResult = await sendEmail({
-        to: "koroskki@gmail.com",
-        subject,
-        html,
-      });
-      if (parkEmailResult.ok) {
-        console.log("Email sent to koroskki@gmail.com");
-      } else {
-        console.error("Failed to send email to park:", parkEmailResult.error);
-      }
-    } catch (emailError) {
-      console.error("Failed to send email to park:", emailError);
-      // Continue anyway, don't fail the entire request
+    const contactInbox =
+      process.env.CONTACT_EMAIL ||
+      process.env.MAIL_FROM ||
+      "le.domaine.du.chevreuil.blanc@gmail.com";
+
+    const parkEmailResult = await sendEmail({
+      to: contactInbox,
+      subject,
+      html,
+    });
+    if (!parkEmailResult.ok) {
+      console.error("Failed to send email to park:", parkEmailResult.error);
     }
 
-    // Send confirmation email to the contact person
-    try {
-      const confirmationSubject = "Message reçu - Domaine du Chevreuil Blanc";
-      const confirmationHtml = `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #2563eb;">Message reçu</h2>
-          <p>Bonjour ${name},</p>
-          <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
-          <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
-            <p><strong>Votre message:</strong></p>
-            <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
-              ${message.replace(/\n/g, '<br>')}
-            </div>
+    const confirmationSubject = "Message reçu - Domaine du Chevreuil Blanc";
+    const confirmationHtml = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #2563eb;">Message reçu</h2>
+        <p>Bonjour ${name},</p>
+        <p>Nous avons bien reçu votre message et nous vous répondrons dans les plus brefs délais.</p>
+        <div style="background: #f8fafc; padding: 20px; border-radius: 8px; margin: 20px 0;">
+          <p><strong>Votre message:</strong></p>
+          <div style="background: white; padding: 15px; border-radius: 4px; margin-top: 10px;">
+            ${message.replace(/\n/g, '<br>')}
           </div>
-          <p>Merci de votre intérêt pour le Domaine du Chevreuil Blanc.</p>
-          <p style="color: #64748b; font-size: 14px;">
-            Cet email est envoyé automatiquement, merci de ne pas y répondre.
-          </p>
         </div>
-      `;
+        <p>Merci de votre intérêt pour le Domaine du Chevreuil Blanc.</p>
+        <p style="color: #64748b; font-size: 14px;">
+          Cet email est envoyé automatiquement, merci de ne pas y répondre.
+        </p>
+      </div>
+    `;
 
-      const confirmationResult = await sendEmail({
-        to: email,
-        subject: confirmationSubject,
-        html: confirmationHtml,
-      });
-      if (confirmationResult.ok) {
-        console.log("Confirmation email sent to user");
-      } else {
-        console.error("Failed to send confirmation email:", confirmationResult.error);
-      }
-    } catch (emailError) {
-      console.error("Failed to send confirmation email:", emailError);
-      // Continue anyway, don't fail the entire request
+    const confirmationResult = await sendEmail({
+      to: email,
+      subject: confirmationSubject,
+      html: confirmationHtml,
+    });
+    if (!confirmationResult.ok) {
+      console.error("Failed to send confirmation email:", confirmationResult.error);
     }
 
-    res.json({ 
-      message: "Contact form submitted successfully" 
+    res.json({
+      message: "Contact form submitted successfully",
     });
   } catch (error) {
     console.error("Error submitting contact form:", error);

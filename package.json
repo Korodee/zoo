@@ -33,8 +33,5 @@
     "photography"
   ],
   "author": "Your Name",
-  "license": "MIT",
-  "dependencies": {
-    "mongoose": "^8.19.1"
-  }
+  "license": "MIT"
 }

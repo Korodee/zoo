@@ -12,9 +12,8 @@
   } from "lucide-react";
   import { motion } from "framer-motion";
   import Image from "next/image";
-  import { login, register, getAgeSpots, getGlobalSpots } from "@/utils/api";
+  import { login, register, getAgeSpots, getGlobalSpots, resendVerification } from "@/utils/api";
   import { useToast } from "@/components/Toast";
-  import { resendVerification } from "@/utils/api";
 
   interface AuthFormProps {
     mode: "signup" | "login";

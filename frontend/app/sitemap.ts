@@ -82,19 +82,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.4,
     },
-    // Auth callback - low priority (internal use)
-    {
-      url: `${baseUrl}/auth/callback`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
-    // Confirm email - low priority
-    {
-      url: `${baseUrl}/confirm-email`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly',
-      priority: 0.3,
-    },
   ]
 }
