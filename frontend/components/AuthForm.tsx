@@ -55,8 +55,17 @@
       try {
         if (mode === "signup") {
           show("Création de votre compte...", "info", 1500);
-          await register(email, password, name, dob || undefined);
-          show("Compte créé ! Veuillez vérifier votre email.", "success");
+          const result = await register(email, password, name, dob || undefined);
+          if (result.emailSent === false) {
+            show(
+              result.message ||
+                "Compte créé, mais l'email de vérification n'a pas pu être envoyé. Utilisez « Renvoyer » sur la page suivante.",
+              "error",
+              6000
+            );
+          } else {
+            show("Compte créé ! Veuillez vérifier votre email.", "success");
+          }
           // Friendly page: tell the user to check their inbox
           window.open(`/check-email?email=${encodeURIComponent(email)}`, "_self");
         } else {

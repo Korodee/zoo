@@ -26,6 +26,7 @@ export default function Navbar() {
   const [isLoading, setIsLoading] = useState(true);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
+  const forceScrolledNav = pathname === "/conditions";
 
   useEffect(() => {
     setMounted(true);
@@ -48,6 +49,7 @@ export default function Navbar() {
     init();
 
     const handleScroll = () => {
+      if (forceScrolledNav) return;
       const navbar = document.getElementById("navbar");
       if (!navbar) return;
       if (window.scrollY > 50) navbar.classList.add("scrolled");
@@ -55,7 +57,7 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [pathname]);
+  }, [pathname, forceScrolledNav]);
 
   const handleSignOut = async () => {
     await logout();
@@ -68,7 +70,11 @@ export default function Navbar() {
   // Prevent hydration mismatch by not rendering until mounted
   if (!mounted) {
     return (
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-transparent">
+      <nav
+        className={`fixed top-0 left-0 right-0 z-50 ${
+          forceScrolledNav ? "scrolled" : "bg-transparent"
+        }`}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between h-16">
             <div className="flex items-center">
@@ -80,7 +86,13 @@ export default function Navbar() {
                   height={40}
                   className="rounded-lg"
                 />
-                <span className="text-xl font-semibold tracking-tight text-white">
+                <span
+                  className={`text-xl font-semibold tracking-tight ${
+                    forceScrolledNav
+                      ? "text-gray-900"
+                      : "text-white"
+                  }`}
+                >
                   Domaine du Chevreuil Blanc
                 </span>
               </div>
@@ -109,7 +121,9 @@ export default function Navbar() {
   return (
     <nav
       id="navbar"
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-transparent${
+        forceScrolledNav ? " scrolled" : ""
+      }`}
     >
       <div className="max-w-[83rem] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="relative flex items-center justify-between h-16 md:h-18">

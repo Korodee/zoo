@@ -19,6 +19,10 @@ export const validateEnv = (): void => {
       throw new Error(`Missing required environment variables: ${missingVars.join(', ')}`);
     }
   }
+
+  if (!process.env.BREVO_API_KEY) {
+    console.warn('Warning: BREVO_API_KEY is not set — verification emails will not be sent.');
+  }
   
   console.log('Environment validation passed');
 };

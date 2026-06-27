@@ -1,5 +1,3 @@
-import axios from "axios";
-
 export type UserProfile = {
   id: string;
   email: string;
@@ -46,6 +44,9 @@ export async function register(email: string, password: string, name?: string, d
   if (data.token) saveToken(data.token);
   return data as {
     token: string;
+    emailSent?: boolean;
+    emailError?: string;
+    message?: string;
     user: { id: string; email: string; name?: string; is_member: boolean };
   };
 }
@@ -176,6 +177,21 @@ export async function getGlobalSpots(): Promise<{ sold: number; cap: number; rem
   const res = await fetch(`${BASE_URL}/api/stats/spots`);
   if (!res.ok) throw new Error("Failed to fetch global spots");
   return (await res.json()) as { sold: number; cap: number; remaining: number; unlocked: boolean };
+}
+
+export type RegistrationStats = {
+  adults: number;
+  children: number;
+  total: number;
+  unknown: number;
+};
+
+export async function getRegistrationStats(): Promise<RegistrationStats> {
+  const res = await fetch(`${BASE_URL}/api/stats/registrations`, {
+    cache: "no-store",
+  });
+  if (!res.ok) throw new Error("Failed to fetch registration stats");
+  return (await res.json()) as RegistrationStats;
 }
 
 export async function createCheckoutSession(userId: string, email: string, cardType: 'adult' | 'child' = 'adult') {

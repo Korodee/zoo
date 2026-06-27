@@ -9,6 +9,7 @@ import mongoose from "mongoose";
 import { connectDB } from "./config/database";
 import { setupSwagger } from "./config/swagger";
 import { validateEnv } from "./config/validateEnv";
+import { checkBrevoConnection } from "./config/mailer";
 
 // Import routes
 import authRoutes from "./routes/auth";
@@ -90,17 +91,24 @@ app.use(express.urlencoded({ extended: true }));
 setupSwagger(app);
 
 // Health check endpoint
-app.get("/health", (req, res) => {
+app.get("/health", async (_req, res) => {
   const dbStatus = mongoose.connection.readyState === 1 ? "connected" : "disconnected";
-  
+  const emailStatus = await checkBrevoConnection();
+
   res.json({
-    status: dbStatus === "connected" ? "OK" : "WARNING",
+    status: dbStatus === "connected" && emailStatus.ok ? "OK" : "WARNING",
     timestamp: new Date().toISOString(),
     environment: NODE_ENV,
     database: {
       type: "MongoDB",
       status: dbStatus,
       readyState: mongoose.connection.readyState,
+    },
+    email: {
+      provider: "Brevo",
+      configured: Boolean(process.env.BREVO_API_KEY),
+      status: emailStatus.ok ? "connected" : "error",
+      ...(emailStatus.error ? { error: emailStatus.error } : {}),
     },
     version: "1.0.0",
   });

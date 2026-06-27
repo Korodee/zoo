@@ -176,7 +176,7 @@ router.post("/auth/register", async (req, res) => {
     }/verify-email?token=${verificationToken}&email=${encodeURIComponent(
       user.email
     )}`;
-    await sendEmail({
+    const emailResult = await sendEmail({
       to: user.email,
       subject: "Vérifiez votre email • Domaine du Chevreuil Blanc",
       html: verifyEmailTemplate({ name: user.name || undefined, verifyUrl }),
@@ -187,7 +187,11 @@ router.post("/auth/register", async (req, res) => {
     res
       .status(201)
       .json({
-        message: "Utilisateur créé. Email de vérification envoyé.",
+        message: emailResult.ok
+          ? "Utilisateur créé. Email de vérification envoyé."
+          : "Utilisateur créé, mais l'email de vérification n'a pas pu être envoyé.",
+        emailSent: emailResult.ok,
+        ...(emailResult.error ? { emailError: emailResult.error } : {}),
         token,
         user: {
           id: user._id,
@@ -276,11 +280,14 @@ router.post("/auth/verify-email", async (req, res) => {
     // Send welcome email after successful verification
     try {
       const paymentUrl = `${process.env.FRONTEND_URL || "http://localhost:3000"}/payment`;
-      await sendEmail({
+      const welcomeResult = await sendEmail({
         to: user.email,
         subject: "Bienvenue au Domaine du Chevreuil Blanc 🦌",
         html: welcomeEmailTemplate({ name: user.name || undefined, paymentUrl }),
       });
+      if (!welcomeResult.ok) {
+        console.error("Failed to send welcome email:", welcomeResult.error);
+      }
     } catch (emailError) {
       console.error("Failed to send welcome email:", emailError);
       // Don't fail the verification if welcome email fails
@@ -445,11 +452,18 @@ router.post("/auth/resend-verification", async (req, res) => {
     }/verify-email?token=${verificationToken}&email=${encodeURIComponent(
       user.email
     )}`;
-    await sendEmail({
+    const emailResult = await sendEmail({
       to: user.email,
       subject: "Vérifiez votre email • Domaine du Chevreuil Blanc",
       html: verifyEmailTemplate({ name: user.name || undefined, verifyUrl }),
     });
+
+    if (!emailResult.ok) {
+      return res.status(502).json({
+        error: "Impossible d'envoyer l'email de vérification.",
+        emailError: emailResult.error,
+      });
+    }
 
     res.json({ message: "Email de vérification envoyé" });
   } catch (e) {
@@ -503,11 +517,15 @@ router.post("/auth/forgot-password", async (req, res) => {
     }/reset-password?token=${resetToken}&email=${encodeURIComponent(
       user.email
     )}`;
-    await sendEmail({
+    const emailResult = await sendEmail({
       to: user.email,
       subject: "Réinitialiser votre mot de passe • Domaine du Chevreuil Blanc",
       html: resetPasswordTemplate({ name: user.name || undefined, resetUrl }),
     });
+
+    if (!emailResult.ok) {
+      console.error("Forgot password email failed:", emailResult.error);
+    }
 
     res.json({ message: "Si un compte existe, un lien de réinitialisation a été envoyé." });
   } catch (e) {

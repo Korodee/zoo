@@ -123,6 +123,15 @@ export default function Footer() {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/conditions"
+                  className="text-gray-300 hover:text-white transition-colors duration-300 flex items-center group"
+                >
+                  <span className="w-2 h-2 bg-primary-500 rounded-full mr-3 group-hover:scale-150 transition-transform duration-300" />
+                  Conditions des récompenses
+                </Link>
+              </li>
             </ul>
           </motion.div>
 

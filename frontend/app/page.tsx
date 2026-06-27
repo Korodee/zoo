@@ -4,6 +4,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Intro from "@/components/Intro";
 import Highlights from "@/components/Highlights";
+import RegistrationCounter from "@/components/RegistrationCounter";
 import PrizeStructure from "@/components/PrizeStructure/PrizeStructure";
 import About from "@/components/About";
 import Gallery from "@/components/Gallery";
@@ -21,6 +22,7 @@ export default function Home() {
       <About />
       <Intro />
       <Highlights />
+      <RegistrationCounter />
       <PrizeStructure />
       <Gallery />
       <Testimonials />

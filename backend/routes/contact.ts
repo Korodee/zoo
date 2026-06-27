@@ -92,12 +92,16 @@ router.post("/contact", async (req, res) => {
 
     // Send email to the park's email address
     try {
-      await sendEmail({
+      const parkEmailResult = await sendEmail({
         to: "koroskki@gmail.com",
         subject,
         html,
       });
-      console.log("Email sent to koroskki@gmail.com");
+      if (parkEmailResult.ok) {
+        console.log("Email sent to koroskki@gmail.com");
+      } else {
+        console.error("Failed to send email to park:", parkEmailResult.error);
+      }
     } catch (emailError) {
       console.error("Failed to send email to park:", emailError);
       // Continue anyway, don't fail the entire request
@@ -124,12 +128,16 @@ router.post("/contact", async (req, res) => {
         </div>
       `;
 
-      await sendEmail({
+      const confirmationResult = await sendEmail({
         to: email,
         subject: confirmationSubject,
         html: confirmationHtml,
       });
-      console.log("Confirmation email sent to user");
+      if (confirmationResult.ok) {
+        console.log("Confirmation email sent to user");
+      } else {
+        console.error("Failed to send confirmation email:", confirmationResult.error);
+      }
     } catch (emailError) {
       console.error("Failed to send confirmation email:", emailError);
       // Continue anyway, don't fail the entire request

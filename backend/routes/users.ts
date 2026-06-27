@@ -154,6 +154,39 @@ router.get("/stats/spots", async (_req, res) => {
   res.json({ sold: count, cap, remaining: Math.max(0, cap - count), unlocked });
 });
 
+const ADULT_MIN_AGE = 18;
+
+// Registration counts by age category (public)
+/**
+ * @openapi
+ * /api/stats/registrations:
+ *   get:
+ *     tags: [Users]
+ *     summary: Get registered user counts by age category
+ *     responses:
+ *       200:
+ *         description: Registration counts (adults 18+, children 0-17)
+ */
+router.get("/stats/registrations", async (_req, res) => {
+  try {
+    const [adults, children, total] = await Promise.all([
+      User.countDocuments({ age_years: { $gte: ADULT_MIN_AGE } }),
+      User.countDocuments({ age_years: { $gte: 0, $lt: ADULT_MIN_AGE } }),
+      User.countDocuments({}),
+    ]);
+
+    res.json({
+      adults,
+      children,
+      total,
+      unknown: Math.max(0, total - adults - children),
+    });
+  } catch (error) {
+    console.error("Error fetching registration stats:", error);
+    res.status(500).json({ error: "Failed to fetch registration stats" });
+  }
+});
+
 // Secure members export for Google Sheets with pagination + ETag
 /**
  * @openapi
