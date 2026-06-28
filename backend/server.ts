@@ -141,6 +141,7 @@ app.get("/api/probe", (_req, res) => {
     routes: [
       "/api/members/sheet",
       "/api/stats/spots",
+      "/api/stats/registrations",
       "/api/age/spots/:age",
     ],
   });

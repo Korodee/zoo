@@ -25,8 +25,17 @@ Make sure these environment variables are set in your Vercel project:
 ## Vercel Configuration
 
 1. Ensure `vercel.json` is properly configured
-2. Check that the build command is correct
-3. Verify the function timeout is set to 30 seconds
+2. Set the project **Root Directory** to `backend` (monorepo)
+3. Connect the GitHub repo and enable deploys from the `main` branch
+4. Check that the build command is correct
+5. Verify the function timeout is set to 30 seconds
+
+After pushing backend changes, redeploy from the Vercel dashboard if auto-deploy is not enabled.
+Verify the deployment with:
+```
+GET https://your-backend.vercel.app/api/probe
+GET https://your-backend.vercel.app/api/stats/registrations
+```
 
 ## Health Check
 
