@@ -59,7 +59,7 @@ export default function PrizeStructure() {
         >
           <div className="bg-stone-50/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-amber-200/50 mb-6">
             <h4 className="text-xl font-semibold text-gray-900 mb-2 text-center">
-              🏆 Pyramide des prix — Adultes (18 ans et plus)
+              Pyramide des prix — Adultes (18 ans et plus)
             </h4>
             <p className="text-xs text-gray-500 text-center mb-4 md:hidden">
               ← Faites défiler horizontalement pour voir toutes les colonnes →
@@ -152,90 +152,87 @@ export default function PrizeStructure() {
 
         {/* Grand Prize and Children's Prizes */}
         <motion.div
-          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6"
+          className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8 md:gap-10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-br from-yellow-50 to-amber-50 rounded-2xl p-6 shadow-lg border border-yellow-200">
-            <h4 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              🏆 Le Grand Prix – Une maison d'un million de dollars
+          <article className="border border-stone-300 bg-white p-6 md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-800 mb-2">
+              Grand prix
+            </p>
+            <h4 className="text-xl md:text-2xl font-bold text-stone-900 mb-5 leading-snug">
+              Une maison d&apos;un million de dollars
             </h4>
-            <ul className="space-y-2.5 text-gray-700 text-sm leading-relaxed">
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-                <span>Tirage parmi tous les membres participants</span>
+            <ul className="space-y-3 text-stone-700 text-sm leading-relaxed list-none">
+              <li className="border-l-2 border-amber-700/40 pl-4">
+                Tirage parmi tous les membres participants
               </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-                <span>Le gagnant choisit son terrain et dessine sa maison</span>
+              <li className="border-l-2 border-amber-700/40 pl-4">
+                Le gagnant choisit son terrain et dessine sa maison
               </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-                <span>
-                  Construction entièrement prise en charge jusqu'à 1 000 000 $
-                </span>
+              <li className="border-l-2 border-amber-700/40 pl-4">
+                Construction entièrement prise en charge jusqu&apos;à 1&nbsp;000&nbsp;000&nbsp;$
               </li>
-              <li className="flex items-start gap-3">
-                <span className="mt-2 h-2.5 w-2.5 rounded-full bg-emerald-500/70" />
-                <span>Processus entièrement filmé et partagé</span>
+              <li className="border-l-2 border-amber-700/40 pl-4">
+                Processus entièrement filmé et partagé
               </li>
             </ul>
-            <div className="mt-4 p-3 bg-purple-100 rounded-lg border border-purple-200">
-              <h5 className="font-semibold text-purple-800 mb-2">
-                🌟 Bonus spécial
-              </h5>
-              <p className="text-xs text-purple-700">
-                Si l'objectif de participation est atteint deux fois en six
-                mois, le Domaine du Chevreuil Blanc offrira deux autres maisons
-                d'un million de dollars à tirer pour les membres !
+            <div className="mt-6 pt-5 border-t border-stone-200">
+              <p className="text-xs font-semibold uppercase tracking-widest text-stone-500 mb-2">
+                Bonus spécial
+              </p>
+              <p className="text-sm text-stone-700 leading-relaxed">
+                Si l&apos;objectif de participation est atteint deux fois en six mois,
+                le Domaine offrira deux autres maisons d&apos;un million de dollars
+                à tirer pour les membres.
               </p>
             </div>
-          </div>
-          <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-6 shadow-lg border border-blue-200">
-            <h4 className="text-xl font-semibold text-gray-900 mb-3 flex items-center gap-2">
-              🏕️ Pyramide des prix — Jeunes (lots plein air)
+          </article>
+
+          <article className="border border-stone-300 bg-white p-6 md:p-8">
+            <p className="text-xs font-semibold uppercase tracking-widest text-amber-800 mb-2">
+              Jeunes · 0 à 17 ans
+            </p>
+            <h4 className="text-xl md:text-2xl font-bold text-stone-900 mb-2 leading-snug">
+              Pyramide des prix — lots plein air
             </h4>
-            <p className="text-sm text-gray-600 mb-4">
-              <strong>
-                Montant total : 2 000 000 $ si l'objectif est atteint à 100 %
-              </strong>
+            <p className="text-sm text-stone-600 mb-5">
+              2&nbsp;000&nbsp;000&nbsp;$ en lots si l&apos;objectif est atteint à 100&nbsp;%
             </p>
-            <div className="space-y-2 text-xs">
-              <div className="flex justify-between items-center p-2 bg-white rounded border">
-                <span className="font-medium">Palier 1 (100%)</span>
-                <span className="text-emerald-600 font-semibold">
-                  400 lots de 5 000$
-                </span>
-              </div>
-              <div className="flex justify-between items-center p-2 bg-white rounded border">
-                <span className="font-medium">Palier 2 (75%)</span>
-                <span className="text-blue-600 font-semibold">
-                  300 lots de 5 000$
-                </span>
-              </div>
-              <div className="flex justify-between items-center p-2 bg-white rounded border">
-                <span className="font-medium">Palier 3 (50%)</span>
-                <span className="text-blue-600 font-semibold">
-                  200 lots de 5 000$
-                </span>
-              </div>
-              <div className="flex justify-between items-center p-2 bg-white rounded border">
-                <span className="font-medium">Palier 4 (25%)</span>
-                <span className="text-blue-600 font-semibold">
-                  100 lots de 5 000$
-                </span>
-              </div>
-              <div className="text-xs text-gray-500 text-center mt-2">
-                ... et 5 autres paliers jusqu'au palier 9
-              </div>
+            <div className="overflow-x-auto">
+              <table className="w-full text-sm border-collapse">
+                <thead>
+                  <tr className="border-b border-stone-300 text-left text-xs uppercase tracking-wide text-stone-500">
+                    <th className="py-2 pr-3 font-semibold">Palier</th>
+                    <th className="py-2 font-semibold text-right">Lots</th>
+                  </tr>
+                </thead>
+                <tbody className="text-stone-800">
+                  <tr className="border-b border-stone-100">
+                    <td className="py-2.5 pr-3">1 · 100&nbsp;%</td>
+                    <td className="py-2.5 text-right font-medium tabular-nums">400 × 5&nbsp;000&nbsp;$</td>
+                  </tr>
+                  <tr className="border-b border-stone-100">
+                    <td className="py-2.5 pr-3">2 · 75&nbsp;%</td>
+                    <td className="py-2.5 text-right font-medium tabular-nums">300 × 5&nbsp;000&nbsp;$</td>
+                  </tr>
+                  <tr className="border-b border-stone-100">
+                    <td className="py-2.5 pr-3">3 · 50&nbsp;%</td>
+                    <td className="py-2.5 text-right font-medium tabular-nums">200 × 5&nbsp;000&nbsp;$</td>
+                  </tr>
+                  <tr className="border-b border-stone-100">
+                    <td className="py-2.5 pr-3">4 · 25&nbsp;%</td>
+                    <td className="py-2.5 text-right font-medium tabular-nums">100 × 5&nbsp;000&nbsp;$</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-            <p className="text-xs text-gray-600 mt-3 italic">
-              Même au plus petit palier, il y a toujours des chances de gagner
-              des lots plein air !
+            <p className="text-xs text-stone-500 mt-4">
+              Paliers 5 à 9 · jusqu&apos;à 585,94&nbsp;$ par lot
             </p>
-          </div>
+          </article>
         </motion.div>
 
         {/* How It Works */}
@@ -246,49 +243,37 @@ export default function PrizeStructure() {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl p-6 shadow-lg border border-green-200">
-            <h4 className="text-xl font-semibold text-gray-900 mb-4 text-center">
-              💳 Comment ça fonctionne : l'achat de la carte et l'enregistrement
-              des enfants
+          <div className="bg-stone-50/80 border border-amber-200/50 p-6 md:p-8">
+            <h4 className="text-lg font-bold text-stone-900 mb-6 text-center">
+              Comment ça fonctionne — carte et inscription des enfants
             </h4>
-            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-700">
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-stone-700 leading-relaxed">
               <div>
-                <h5 className="font-semibold text-gray-900 mb-2">
-                  1. La carte de membre
-                </h5>
+                <p className="font-semibold text-stone-900 mb-1">1. La carte de membre</p>
                 <p>
-                  Le parent doit acheter une carte de 50 $ pour pouvoir
-                  enregistrer ses enfants. Cette carte permet de participer aux
-                  concours et d'accéder au site.
+                  Le parent achète une carte de 50&nbsp;$ pour enregistrer ses enfants
+                  et participer aux concours.
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-900 mb-2">
-                  2. L'inscription des enfants
-                </h5>
+                <p className="font-semibold text-stone-900 mb-1">2. L&apos;inscription des enfants</p>
                 <p>
-                  Une fois la carte achetée, le parent peut enregistrer tous ses
-                  enfants, sans limite de nombre. L'inscription de l'enfant est
-                  gratuite.
+                  Une fois la carte achetée, tous les enfants peuvent être inscrits,
+                  sans limite — gratuitement.
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-900 mb-2">
-                  3. Accès au site et vérification
-                </h5>
+                <p className="font-semibold text-stone-900 mb-1">3. Accès et vérification</p>
                 <p>
-                  Chaque enfant enregistré reçoit un identifiant unique ou un QR
-                  code pour l'accès au site et la participation aux activités.
+                  Chaque enfant reçoit un identifiant ou un code QR pour l&apos;accès
+                  au site et aux activités.
                 </p>
               </div>
               <div>
-                <h5 className="font-semibold text-gray-900 mb-2">
-                  4. Sécurité et transparence
-                </h5>
+                <p className="font-semibold text-stone-900 mb-1">4. Sécurité</p>
                 <p>
-                  L'objectif est que tout le monde soit protégé et que les
-                  enfants puissent bénéficier de leur inscription même si les
-                  parents ne sont pas sur place.
+                  Les enfants peuvent profiter du site en toute sécurité, même si
+                  les parents ne sont pas sur place.
                 </p>
               </div>
             </div>

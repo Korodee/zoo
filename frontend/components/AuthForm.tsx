@@ -11,7 +11,7 @@
     ArrowRight,
   } from "lucide-react";
   import { motion } from "framer-motion";
-  import Image from "next/image";
+  import SiteLogo from "@/components/SiteLogo";
   import { login, register, getAgeSpots, getGlobalSpots, resendVerification } from "@/utils/api";
   import { useToast } from "@/components/Toast";
 
@@ -114,13 +114,7 @@
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <Image
-                  src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-                  alt="Domaine du Chevreuil Blanc"
-                  width={64}
-                  height={64}
-                  className="rounded-lg"
-                />
+                <SiteLogo className="h-20 w-auto" width={120} height={160} />
               </motion.div>
               <motion.h2
                 className="text-3xl font-bold text-gray-900 mb-2"

@@ -14,9 +14,9 @@ import {
   Crown,
   HelpCircle,
 } from "lucide-react";
-import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { logout, getProfile } from "@/utils/api";
+import SiteLogo from "@/components/SiteLogo";
 
 export default function Navbar() {
   const [user, setUser] = useState<{ email?: string; name?: string } | null>(
@@ -79,22 +79,7 @@ export default function Navbar() {
           <div className="flex justify-between h-16">
             <div className="flex items-center">
               <div className="flex items-center gap-2">
-                <Image
-                  src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-                  alt="Domaine du Chevreuil Blanc"
-                  width={40}
-                  height={40}
-                  className="rounded-lg"
-                />
-                <span
-                  className={`text-xl font-semibold tracking-tight ${
-                    forceScrolledNav
-                      ? "text-gray-900"
-                      : "text-white"
-                  }`}
-                >
-                  Domaine du Chevreuil Blanc
-                </span>
+                <SiteLogo className="h-12 w-auto" width={180} height={240} />
               </div>
             </div>
           </div>
@@ -136,16 +121,7 @@ export default function Navbar() {
           {/* Left: logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image
-                src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-                alt="Domaine du Chevreuil Blanc"
-                width={40}
-                height={40}
-                className="rounded-lg"
-              />
-              <span className="hidden md:block text-xl font-semibold tracking-tight text-white transition-colors duration-300 scrolled:text-gray-900">
-                Domaine du Chevreuil Blanc
-              </span>
+              <SiteLogo className="h-12 md:h-24 w-auto" width={180} height={240} priority />
             </Link>
           </div>
 

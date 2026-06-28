@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Heart, Globe, Camera } from "lucide-react";
-import Image from "next/image";
+import SiteLogo from "@/components/SiteLogo";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -41,15 +41,9 @@ export default function About() {
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-primary-600 to-primary-700 rounded-full mb-6 shadow-lg"
+            className="inline-flex items-center justify-center mb-6"
           >
-            <Image
-              src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-              alt="Domaine du Chevreuil Blanc"
-              width={32}
-              height={32}
-              className="rounded-full"
-            />
+            <SiteLogo className="h-24 w-auto" width={180} height={240} />
           </motion.div>
           <motion.h2
             className="text-4xl md:text-5xl font-bold text-gray-900 mb-6"

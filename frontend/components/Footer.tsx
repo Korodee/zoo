@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import Image from "next/image";
+import SiteLogo from "@/components/SiteLogo";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -34,16 +34,7 @@ export default function Footer() {
         >
           <motion.div variants={itemVariants} className="lg:col-span-2">
             <div className="flex items-center space-x-3 mb-6">
-              <Image
-                src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-                alt="Domaine du Chevreuil Blanc"
-                width={46}
-                height={46}
-                className="rounded-xl"
-              />
-              <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-                Domaine du Chevreuil Blanc
-              </h3>
+              <SiteLogo className="h-16 w-auto" width={120} height={160} />
             </div>
             <p className="text-gray-300 leading-relaxed md:mb-6 max-w-md">
               🌍 Vision: premier d’une série de domaines familiaux à travers la

@@ -4,7 +4,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ArrowRight, Play, Pause, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
+import SiteLogo from "@/components/SiteLogo";
 
 const itemVariants = {
   hidden: { opacity: 0, y: 20 },
@@ -110,12 +110,11 @@ export default function Hero() {
           className="mb-4"
         >
           <div className="hidden md:inline-flex items-center justify-center mb-6">
-            <Image
-              src="https://res.cloudinary.com/dzjeufpgy/image/upload/v1760037125/logo_wnc6cr.jpg"
-              alt="Domaine du Chevreuil Blanc"
-              width={80}
-              height={80}
-              className="rounded-full"
+            <SiteLogo
+              className="h-36 md:h-44 w-auto"
+              width={176}
+              height={234}
+              priority
             />
           </div>
         </motion.div>
