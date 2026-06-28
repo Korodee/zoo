@@ -125,56 +125,78 @@ export default function RegistrationCounter() {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
-              <motion.div
-                variants={itemVariants}
-                className="rounded-2xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-6 md:p-8 shadow-sm text-center"
-              >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-100 mb-4">
-                  <UserRound className="h-6 w-6 text-primary-700" />
-                </div>
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
-                  Adultes
-                </p>
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 tabular-nums">
-                  {formatCount(stats.adults)}
-                </p>
-                <p className="text-sm text-gray-600 mt-2">18 ans et plus</p>
-              </motion.div>
+            {stats.breakdownAvailable ? (
+              <div className="grid sm:grid-cols-2 gap-4 md:gap-6">
+                <motion.div
+                  variants={itemVariants}
+                  className="rounded-2xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-6 md:p-8 shadow-sm text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary-100 mb-4">
+                    <UserRound className="h-6 w-6 text-primary-700" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
+                    Adultes
+                  </p>
+                  <p className="text-4xl md:text-5xl font-bold text-gray-900 tabular-nums">
+                    {formatCount(stats.adults)}
+                  </p>
+                  <p className="text-sm text-gray-600 mt-2">18 ans et plus</p>
+                </motion.div>
 
+                <motion.div
+                  variants={itemVariants}
+                  className="rounded-2xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-6 md:p-8 shadow-sm text-center"
+                >
+                  <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-green-100 mb-4">
+                    <Baby className="h-6 w-6 text-green-700" />
+                  </div>
+                  <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
+                    Enfants
+                  </p>
+                  <p className="text-4xl md:text-5xl font-bold text-gray-900 tabular-nums">
+                    {formatCount(stats.children)}
+                  </p>
+                  <p className="text-sm text-gray-600 mt-2">0 à 17 ans</p>
+                </motion.div>
+              </div>
+            ) : (
               <motion.div
                 variants={itemVariants}
-                className="rounded-2xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-6 md:p-8 shadow-sm text-center"
+                className="rounded-2xl border border-amber-200/50 bg-stone-50/80 backdrop-blur-sm p-8 md:p-10 shadow-sm text-center"
               >
-                <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-green-100 mb-4">
-                  <Baby className="h-6 w-6 text-green-700" />
-                </div>
-                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-1">
-                  Enfants
+                <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">
+                  Membres inscrits
                 </p>
-                <p className="text-4xl md:text-5xl font-bold text-gray-900 tabular-nums">
-                  {formatCount(stats.children)}
+                <p className="text-5xl md:text-6xl font-bold text-gray-900 tabular-nums">
+                  {formatCount(stats.total)}
                 </p>
-                <p className="text-sm text-gray-600 mt-2">0 à 17 ans</p>
               </motion.div>
-            </div>
+            )}
 
             <motion.div
               variants={itemVariants}
               className="rounded-xl border border-primary-200/60 bg-primary-50/50 px-5 py-4 text-center space-y-1"
             >
-              <p className="text-gray-700">
-                <span className="font-semibold text-primary-800">
-                  {formatCount(stats.total)}
-                </span>{" "}
-                {stats.total === 1 ? "membre inscrit au total" : "membres inscrits au total"}
-              </p>
-              {stats.unknown > 0 && (
+              {stats.breakdownAvailable ? (
+                <>
+                  <p className="text-gray-700">
+                    <span className="font-semibold text-primary-800">
+                      {formatCount(stats.total)}
+                    </span>{" "}
+                    {stats.total === 1 ? "membre inscrit au total" : "membres inscrits au total"}
+                  </p>
+                  {stats.unknown > 0 && (
+                    <p className="text-sm text-gray-600">
+                      {formatCount(stats.adults)} adulte{stats.adults !== 1 ? "s" : ""}{" "}
+                      + {formatCount(stats.children)} enfant
+                      {stats.children !== 1 ? "s" : ""}{" "}
+                      + {formatCount(stats.unknown)} sans date de naissance
+                    </p>
+                  )}
+                </>
+              ) : (
                 <p className="text-sm text-gray-600">
-                  {formatCount(stats.adults)} adulte{stats.adults !== 1 ? "s" : ""}{" "}
-                  + {formatCount(stats.children)} enfant
-                  {stats.children !== 1 ? "s" : ""}{" "}
-                  + {formatCount(stats.unknown)} sans date de naissance
+                  Répartition adultes / enfants disponible après la prochaine mise à jour du serveur.
                 </p>
               )}
               {refreshing && (

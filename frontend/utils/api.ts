@@ -173,10 +173,28 @@ export async function getAgeSpots(age: number): Promise<{ sold: number; cap: num
   return (await res.json()) as { sold: number; cap: number; remaining: number; unlocked: boolean };
 }
 
-export async function getGlobalSpots(): Promise<{ sold: number; cap: number; remaining: number; unlocked: boolean }>{
-  const res = await fetch(`${BASE_URL}/api/stats/spots`);
+export async function getGlobalSpots(): Promise<{
+  sold: number;
+  cap: number;
+  remaining: number;
+  unlocked: boolean;
+  adults?: number;
+  children?: number;
+  total?: number;
+  unknown?: number;
+}> {
+  const res = await fetch(`${BASE_URL}/api/stats/spots`, { cache: "no-store" });
   if (!res.ok) throw new Error("Failed to fetch global spots");
-  return (await res.json()) as { sold: number; cap: number; remaining: number; unlocked: boolean };
+  return (await res.json()) as {
+    sold: number;
+    cap: number;
+    remaining: number;
+    unlocked: boolean;
+    adults?: number;
+    children?: number;
+    total?: number;
+    unknown?: number;
+  };
 }
 
 export type RegistrationStats = {
@@ -184,14 +202,30 @@ export type RegistrationStats = {
   children: number;
   total: number;
   unknown: number;
+  breakdownAvailable: boolean;
 };
 
 export async function getRegistrationStats(): Promise<RegistrationStats> {
-  const res = await fetch(`${BASE_URL}/api/stats/registrations`, {
-    cache: "no-store",
-  });
-  if (!res.ok) throw new Error("Failed to fetch registration stats");
-  return (await res.json()) as RegistrationStats;
+  const spots = await getGlobalSpots();
+  const total = spots.total ?? spots.sold;
+
+  if (typeof spots.adults === "number" && typeof spots.children === "number") {
+    return {
+      adults: spots.adults,
+      children: spots.children,
+      total,
+      unknown: spots.unknown ?? Math.max(0, total - spots.adults - spots.children),
+      breakdownAvailable: true,
+    };
+  }
+
+  return {
+    adults: 0,
+    children: 0,
+    total,
+    unknown: total,
+    breakdownAvailable: false,
+  };
 }
 
 export async function createCheckoutSession(userId: string, email: string, cardType: 'adult' | 'child' = 'adult') {

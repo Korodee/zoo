@@ -136,6 +136,23 @@ router.get("/age/spots/:age", async (req, res) => {
   res.json({ sold: count, cap, remaining: Math.max(0, cap - count), unlocked });
 });
 
+const ADULT_MIN_AGE = 18;
+
+async function getRegistrationCounts() {
+  const [adults, children, total] = await Promise.all([
+    User.countDocuments({ age_years: { $gte: ADULT_MIN_AGE } }),
+    User.countDocuments({ age_years: { $gte: 0, $lt: ADULT_MIN_AGE } }),
+    User.countDocuments({}),
+  ]);
+
+  return {
+    adults,
+    children,
+    total,
+    unknown: Math.max(0, total - adults - children),
+  };
+}
+
 // Global registrations spots (all users)
 /**
  * @openapi
@@ -148,39 +165,31 @@ router.get("/age/spots/:age", async (req, res) => {
  *         description: Spots information (global)
  */
 router.get("/stats/spots", async (_req, res) => {
-  const count = await User.countDocuments({});
-  const cap = 5000;
-  const unlocked = count >= cap;
-  res.json({ sold: count, cap, remaining: Math.max(0, cap - count), unlocked });
-});
-
-const ADULT_MIN_AGE = 18;
-
-// Registration counts by age category (public)
-/**
- * @openapi
- * /api/stats/registrations:
- *   get:
- *     tags: [Users]
- *     summary: Get registered user counts by age category
- *     responses:
- *       200:
- *         description: Registration counts (adults 18+, children 0-17)
- */
-router.get("/stats/registrations", async (_req, res) => {
   try {
-    const [adults, children, total] = await Promise.all([
-      User.countDocuments({ age_years: { $gte: ADULT_MIN_AGE } }),
-      User.countDocuments({ age_years: { $gte: 0, $lt: ADULT_MIN_AGE } }),
-      User.countDocuments({}),
-    ]);
+    const { adults, children, total, unknown } = await getRegistrationCounts();
+    const cap = 5000;
+    const unlocked = total >= cap;
 
     res.json({
+      sold: total,
+      cap,
+      remaining: Math.max(0, cap - total),
+      unlocked,
       adults,
       children,
       total,
-      unknown: Math.max(0, total - adults - children),
+      unknown,
     });
+  } catch (error) {
+    console.error("Error fetching stats/spots:", error);
+    res.status(500).json({ error: "Failed to fetch registration stats" });
+  }
+});
+
+router.get("/stats/registrations", async (_req, res) => {
+  try {
+    const counts = await getRegistrationCounts();
+    res.json(counts);
   } catch (error) {
     console.error("Error fetching registration stats:", error);
     res.status(500).json({ error: "Failed to fetch registration stats" });

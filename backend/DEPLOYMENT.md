@@ -26,12 +26,25 @@ Make sure these environment variables are set in your Vercel project:
 
 1. Ensure `vercel.json` is properly configured
 2. Set the project **Root Directory** to `backend` (monorepo)
-3. Connect the GitHub repo and enable deploys from the `main` branch
+3. Connect the GitHub repo `Korodee/zoo` and enable deploys from the `main` branch
 4. Check that the build command is correct
 5. Verify the function timeout is set to 30 seconds
 
-After pushing backend changes, redeploy from the Vercel dashboard if auto-deploy is not enabled.
-Verify the deployment with:
+### Manual redeploy (required if Git is not connected)
+
+1. Open [vercel.com](https://vercel.com) → **zoo-backend** project
+2. **Settings → Git** → connect `Korodee/zoo`, branch `main`, root directory **`backend`**
+3. **Deployments** → **Redeploy** latest (or push to `main` after adding GitHub secrets below)
+
+### GitHub Actions auto-deploy (optional)
+
+Add these secrets in GitHub → Settings → Secrets → Actions:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_BACKEND_PROJECT_ID`
+
+After pushing backend changes, verify the deployment with:
 ```
 GET https://your-backend.vercel.app/api/probe
 GET https://your-backend.vercel.app/api/stats/registrations
